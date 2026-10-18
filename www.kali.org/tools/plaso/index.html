@@ -1,0 +1,1041 @@
+﻿<!doctype html><html lang=en-us><head itemscope itemtype=https://www.kali.org/><meta charset=utf-8><meta name=viewport content="width=device-width"><title itemprop=name>plaso | Kali Linux Tools</title>
+<meta itemprop=name content="plaso | Kali Linux Tools"><meta name=application-name content="plaso | Kali Linux Tools"><meta name=twitter:title content="plaso | Kali Linux Tools"><meta property="og:site_name" content="Kali Linux"><meta property="og:title" content="plaso | Kali Linux Tools"><meta itemprop=description content><meta name=description content><meta name=twitter:description content><meta property="og:description" content><meta name=keywords content="kali,linux,kalilinux,Penetration,Testing,Penetration Testing,Distribution,Advanced"><meta name=apple-mobile-web-app-status-bar-style content="black-translucent"><meta name=msapplication-navbutton-color content="#367BF0"><meta name=theme-color content="#367BF0"><meta name=language content="English"><meta property="og:locale" content="en_US"><meta itemprop=image content="../../images/kali-logo.svg"><meta property="og:image" content="../../images/kali-logo.svg"><meta name=twitter:image content="../../images/kali-logo.svg"><meta name=twitter:image:src content="../../images/kali-logo.svg"><meta property="og:updated_time" content=2026-05-25T00:00:00Z><meta name=twitter:site content="@kalilinux"><meta name=twitter:creator content="@kalilinux"><link rel="alternate icon" class=js-site-favicon type=image/png href=../../images/favicon.png><link rel=icon class=js-site-favicon type=image/svg+xml href=../../images/favicon.svg><link rel=sitemap type=application/xml title=Sitemap href=https://www.kali.org/sitemap.xml><link href=https://www.kali.org/rss.xml type=application/rss+xml title="Kali Linux" rel=alternate><link href=https://www.kali.org/rss.xml type=application/rss+xml title="Kali Linux" rel=feed><link rel=canonical href="./index.html" itemprop=url><meta name=twitter:url content="https://www.kali.org/tools/plaso/"><meta property="og:url" content="https://www.kali.org/tools/plaso/"><meta name=url content="https://www.kali.org/tools/plaso/"><link href="../../style.min.css" rel=stylesheet><style>:root{--primary-color:#367BF0;--body-color:light-dark(#f9f9f9, #010409);--text-color:light-dark(#636363, #eeeeec);--text-color-dark:light-dark(#242738, white);--white-color:light-dark(#ffffff, #16171d);--font-family:Noto Sans;--color-kali-blue:#2777ff;--color-kali-purple:#a400a4}</style><script>const $=document.querySelector.bind(document),$$=document.querySelectorAll.bind(document)</script></head><body><header><nav class=container><a id=logo href=https://www.kali.org/ style=background-image:url(../../images/kali-logo.svg)></a><ul id=navigation><li><a href="https://www.offsec.com/events/the-gauntlet/?utm_source=kali&utm_medium=web&utm_campaign=menu">Join Free CTF</a></li><li><a href=https://www.kali.org/get-kali/>Get Kali</a></li><li><a href=https://www.kali.org/blog/>Blog</a></li><li class=dropdown-menu><span>Documentation <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/docs/>Documentation Pages</a>
+<a href="../all-tools/index.html">Tools Documentation</a>
+<a href=https://www.kali.org/faq/>Frequently Asked Questions</a>
+<a href="https://bugs.kali.org/search.php?project_id=1&category_id[]=General%20Bug&category_id[]=Kali%20Package%20Bug&category_id[]=Kali%20Package%20Improvement&status[]=30&status[]=40&status[]=50&sticky=on&sort=id%2Clast_updated&dir=DESC%2CDESC&hide_status=-2&match_type=0">Known Issues</a></div></li><li class=dropdown-menu><span>Community <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/community/>Community Support</a>
+<a href=https://forums.kali.org/>Forums</a>
+<a href=https://discord.kali.org/>Discord</a>
+<a href=https://www.kali.org/newsletter/>Join Newsletter</a>
+<a href=https://http.kali.org/README?mirrorlist>Mirror Location</a>
+<a href=https://www.kali.org/docs/community/contribute/>Get Involved</a></div></li><li><a href="https://www.offsec.com/kali-training/courses/?utm_source=kali&utm_medium=web&utm_campaign=menu">Courses</a></li><li class=dropdown-menu><span>Developers <i class=ti-angle-down></i></span><div><a href=https://gitlab.com/kalilinux>Git Repositories</a>
+<a href=https://pkg.kali.org/>Packages</a>
+<a href=https://autopkgtest.kali.org/>Auto Package Test</a>
+<a href=https://bugs.kali.org/>Bug Tracker</a>
+<a href=https://nethunter.kali.org/>Kali NetHunter Stats</a></div></li><li class=dropdown-menu><span>About <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/features/>Kali Linux Overview</a>
+<a href=https://gitlab.com/kalilinux/documentation/press-pack/-/archive/main/press-pack-main.zip>Press Pack</a>
+<a href=https://www.kali.org/wallpapers/>Wallpapers</a>
+<a href=https://offsec.usa.dowlis.com/kali/view-all.html>Kali Swag Store</a>
+<a href=https://www.kali.org/about-us/>Meet The Kali Team</a>
+<a href=https://www.kali.org/partnerships/>Partnerships</a>
+<a href=https://www.kali.org/contact/>Contact Us</a></div></li></ul><button title="show menu"><div></div><div></div><div></div></button></nav></header><link href="../../tools.min.css" rel=stylesheet><main class=container><aside><a href="../all-tools/index.html" title="↤ Go back"></a><ul><li><a><h3>plaso</h3></a></li></ul><img src=../../images/kali-tools-icon-missing.svg>
+<code>version: 20260119</code> <code>arch: all</code><hr><div id=package-links><a href=https://github.com/log2timeline/plaso target=_blank><i class=ti-world></i> plaso Homepage</a><span><span>|</span><a href=https://pkg.kali.org/pkg/plaso target=_blank><i class=ti-target></i> Package Tracker</a></span><span><span>|</span><a href=https://salsa.debian.org/pkg-security-team/plaso target=_blank><i class=ti-folder></i> Source Code Repository</a></span><br><a href=https://gitlab.com/-/ide/project/kalilinux/documentation/kali-tools/edit/main/-/plaso/index.md rel=noopener target=_blank><i class=ti-pencil-alt></i> Edit this page</a></span></div><hr><div id=categories><h4><a href="../index.html">Categories <i class=ti-link></i></a></h4><ul class=table-of-contents><li><ul></ul></li></ul></div><hr><div id=metapackages><h4><a href=https://www.kali.org/docs/general-use/metapackages/>Metapackages <i class=ti-link></i></a></h4><ul class=table-of-contents><li><ul><li><a href="../kali-meta/index.html#kali-linux-everything" title=kali-linux-everything>everything</a></li></ul></li><li>Tools:<ul><li><a href="../kali-meta/index.html#kali-tools-forensics" title=kali-tools-forensics>forensics</a></li><li><a href="../kali-meta/index.html#kali-tools-respond" title=kali-tools-respond>respond</a></li></ul></li></ul></div><hr><div id=binaries><h4><a href=#packages-and-binaries>Packages & Binaries <i class=ti-link></i></a></h4><ul class=table-of-contents><li><a href=#plaso title="plaso package"><i class=ti-package></i>
+plaso</a></li><li><a href=#python3-plaso title="python3-plaso package"><i class=ti-package></i>
+python3-plaso</a><ul><li><a href=#plaso-image_export title="plaso-image_export command">plaso-image_export</a></li><li><a href=#plaso-log2timeline title="plaso-log2timeline command">plaso-log2timeline</a></li><li><a href=#plaso-pinfo title="plaso-pinfo command">plaso-pinfo</a></li><li><a href=#plaso-psort title="plaso-psort command">plaso-psort</a></li><li><a href=#plaso-psteal title="plaso-psteal command">plaso-psteal</a></ul></li></ul></div><hr><div class=darkmode-switch><span>LIGHT</span><label class=switch>
+<input type=checkbox name=toggle-darkmode><div></div></label><span>DARK</span></div></aside><section id=content><h1 id=packages-and-binaries>Packages and Binaries:</h1><div id=packages-info><h3 id=plaso>plaso</h3><p><strong>Super timeline all the things &ndash; metapackage</strong><br>This is a metapackage that depends on the Python 3
+package of the Plaso libraries and scripts.</p><p><strong>Installed size:</strong> <code>39 KB</code><br><strong>How to install:</strong> <code>sudo apt install plaso</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>python3-plaso</li></ul></div></details><hr><h3 id=python3-plaso>python3-plaso</h3><p><strong>Super timeline all the things &ndash; Python 3</strong><br>Plaso (plaso langar að safna öllu) is the Python based back-end
+engine used by tools such as log2timeline for automatic creation of a
+super timelines. The goal of log2timeline (and thus plaso) is to
+provide a single tool that can parse various log files and forensic
+artifacts from computers and related systems, such as network
+equipment to produce a single correlated timeline. This timeline can
+then be easily analysed by forensic investigators/analysts, speeding
+up investigations by correlating the vast amount of information found
+on an average computer system.</p><p>This package contains a Plaso installation for Python 3.</p><p><strong>Installed size:</strong> <code>12.85 MB</code><br><strong>How to install:</strong> <code>sudo apt install python3-plaso</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>python3</li><li>python3-acstore</li><li>python3-artifacts</li><li>python3-certifi</li><li>python3-cffi</li><li>python3-cffi-backend</li><li>python3-chardet</li><li>python3-cryptography</li><li>python3-dateutil</li><li>python3-defusedxml</li><li>python3-dfdatetime</li><li>python3-dfvfs</li><li>python3-dfwinreg</li><li>python3-dtfabric</li><li>python3-elasticsearch</li><li>python3-flor</li><li>python3-fsapfs</li><li>python3-idna</li><li>python3-libbde</li><li>python3-libcreg</li><li>python3-libesedb</li><li>python3-libevt</li><li>python3-libevtx</li><li>python3-libewf</li><li>python3-libfsext</li><li>python3-libfshfs</li><li>python3-libfsntfs</li><li>python3-libfsxfs</li><li>python3-libfvde</li><li>python3-libfwnt</li><li>python3-libfwsi</li><li>python3-liblnk</li><li>python3-libluksde</li><li>python3-libmodi</li><li>python3-libmsiecf</li><li>python3-libolecf</li><li>python3-libqcow</li><li>python3-libregf</li><li>python3-libscca</li><li>python3-libsigscan</li><li>python3-libsmdev</li><li>python3-libsmraw</li><li>python3-libvhdi</li><li>python3-libvmdk</li><li>python3-libvsgpt</li><li>python3-libvshadow</li><li>python3-libvslvm</li><li>python3-lz4</li><li>python3-pefile</li><li>python3-psutil</li><li>python3-pycaes</li><li>python3-pyfcrypto</li><li>python3-pyfsfat</li><li>python3-pyparsing</li><li>python3-pyphdi</li><li>python3-pytz</li><li>python3-pyvsapm</li><li>python3-redis</li><li>python3-requests</li><li>python3-tsk</li><li>python3-urllib3</li><li>python3-xattr</li><li>python3-xlsxwriter</li><li>python3-yaml</li><li>python3-yara</li><li>python3-zmq</li><li>python3-zstd</li></ul></div></details><h5 id=plaso-image_export>plaso-image_export</h5><pre><code>root@kali:~# plaso-image_export -h
+usage: plaso-image_export [-h] [--troubles] [-V] [-d] [-q] [-u]
+                          [--artifact_definitions PATH]
+                          [--custom_artifact_definitions PATH] [--data PATH]
+                          [--process_memory_limit SIZE] [--vfs_back_end TYPE]
+                          [--logfile FILENAME] [--partitions PARTITIONS]
+                          [--volumes VOLUMES] [--no_vss] [--vss_only]
+                          [--vss_stores VSS_STORES] [--credential TYPE:DATA]
+                          [--artifact_filters ARTIFACT_FILTERS]
+                          [--artifact_filters_file PATH]
+                          [--date-filter TYPE_START_END] [-f FILE_FILTER]
+                          [-x EXTENSIONS] [--names NAMES]
+                          [--signatures IDENTIFIERS] [--enable_artifacts_map]
+                          [-w PATH] [--include_duplicates] [--no_hashes]
+                          [IMAGE]
+
+This is a simple collector designed to export files inside an image, both within a regular RAW image as well as inside a VSS. The tool uses a collection filter that uses the same syntax as a targeted plaso filter.
+
+positional arguments:
+  IMAGE                 The full path to the image file that we are about to
+                        extract files from, it should be a raw image or
+                        another image that Plaso supports.
+
+options:
+  -h, --help            Show this help message and exit.
+  --troubles            Show troubleshooting information.
+  -V, --version         Show the version information.
+  -d, --debug           Enable debug output.
+  -q, --quiet           Disable informational output.
+  -u, --unattended      Enable unattended mode and do not ask the user for
+                        additional input when needed, but terminate with an
+                        error instead.
+  --artifact_definitions, --artifact-definitions PATH
+                        Path to a directory or file containing artifact
+                        definitions, which are .yaml files. Artifact
+                        definitions can be used to describe and quickly
+                        collect data of interest, such as specific files or
+                        Windows Registry keys.
+  --custom_artifact_definitions, --custom-artifact-definitions PATH
+                        Path to a directory or file containing custom artifact
+                        definitions, which are .yaml files. Artifact
+                        definitions can be used to describe and quickly
+                        collect data of interest, such as specific files or
+                        Windows Registry keys.
+  --data PATH           Path to a directory containing the data files.
+  --process_memory_limit, --process-memory-limit SIZE
+                        Maximum amount of memory (data segment) a process is
+                        allowed to allocate in bytes, where 0 represents no
+                        limit. The default limit is 4294967296 (4 GiB). This
+                        applies to both the main (foreman) process and the
+                        worker processes. This limit is enforced by the
+                        operating system and will supersede the worker memory
+                        limit (--worker_memory_limit).
+  --vfs_back_end, --vfs-back-end TYPE
+                        The preferred dfVFS back-end: &quot;auto&quot;, &quot;fsext&quot;,
+                        &quot;fsfat&quot;, &quot;fshfs&quot;, &quot;fsntfs&quot;, &quot;tsk&quot; or &quot;vsgpt&quot;.
+  --logfile, --log_file, --log-file FILENAME
+                        Path of the file in which to store log messages, by
+                        default this file will be named: &quot;image_export-
+                        YYYYMMDDThhmmss.log.gz&quot;. Note that the file will be
+                        gzip compressed if the extension is &quot;.gz&quot;.
+  --partitions, --partition PARTITIONS
+                        Define partitions to be processed. A range of
+                        partitions can be defined as: &quot;3..5&quot;. Multiple
+                        partitions can be defined as: &quot;1,3,5&quot; (a list of comma
+                        separated values). Ranges and lists can also be
+                        combined as: &quot;1,3..5&quot;. The first partition is 1. All
+                        partitions can be specified with: &quot;all&quot;.
+  --volumes, --volume VOLUMES
+                        Define volumes to be processed. A range of volumes can
+                        be defined as: &quot;3..5&quot;. Multiple volumes can be defined
+                        as: &quot;1,3,5&quot; (a list of comma separated values). Ranges
+                        and lists can also be combined as: &quot;1,3..5&quot;. The first
+                        volume is 1. All volumes can be specified with: &quot;all&quot;.
+  --no_vss, --no-vss    Do not scan for Volume Shadow Snapshots (VSS). This
+                        means that Volume Shadow Snapshots (VSS) are not
+                        processed. WARNING: this option is deprecated use
+                        --vss_stores=none instead.
+  --vss_only, --vss-only
+                        Do not process the current volume if Volume Shadow
+                        Snapshots (VSS) have been selected.
+  --vss_stores, --vss-stores VSS_STORES
+                        Define Volume Shadow Snapshots (VSS) (or stores) that
+                        need to be processed. A range of snapshots can be
+                        defined as: &quot;3..5&quot;. Multiple snapshots can be defined
+                        as: &quot;1,3,5&quot; (a list of comma separated values). Ranges
+                        and lists can also be combined as: &quot;1,3..5&quot;. The first
+                        snapshot is 1. All snapshots can be defined as: &quot;all&quot;
+                        and no snapshots as: &quot;none&quot;.
+  --credential TYPE:DATA
+                        Define a credentials that can be used to unlock
+                        encrypted volumes e.g. BitLocker. The credential is
+                        defined as type:data e.g. &quot;password:BDE-test&quot;.
+                        Supported credential types are: key_data, password,
+                        recovery_password, startup_key. Binary key data is
+                        expected to be passed in BASE-16 encoding
+                        (hexadecimal). WARNING credentials passed via command
+                        line arguments can end up in logs, so use this option
+                        with care.
+  --artifact_filters, --artifact-filters ARTIFACT_FILTERS
+                        Names of forensic artifact definitions, provided on
+                        the command command line (comma separated). Forensic
+                        artifacts are stored in .yaml files that are directly
+                        pulled from the artifact definitions project. You can
+                        also specify a custom artifacts yaml file (see
+                        --custom_artifact_definitions). Artifact definitions
+                        can be used to describe and quickly collect data of
+                        interest, such as specific files or Windows Registry
+                        keys.
+  --artifact_filters_file, --artifact-filters_file PATH
+                        Names of forensic artifact definitions, provided in a
+                        file with one artifact name per line. Forensic
+                        artifacts are stored in .yaml files that are directly
+                        pulled from the artifact definitions project. You can
+                        also specify a custom artifacts yaml file (see
+                        --custom_artifact_definitions). Artifact definitions
+                        can be used to describe and quickly collect data of
+                        interest, such as specific files or Windows Registry
+                        keys.
+  --date-filter, --date_filter TYPE_START_END
+                        Filter based on file entry date and time ranges. This
+                        parameter is formatted as
+                        &quot;TIME_VALUE,START_DATE_TIME,END_DATE_TIME&quot; where
+                        TIME_VALUE defines which file entry timestamp the
+                        filter applies to e.g. atime, ctime, crtime, bkup,
+                        etc. START_DATE_TIME and END_DATE_TIME define
+                        respectively the start and end of the date time range.
+                        A date time range requires at minimum start or end to
+                        time of the boundary and END defines the end time.
+                        Both timestamps be set. The date time values are
+                        formatted as: YYYY-MM-DD hh:mm:ss.######[+-]##:##
+                        Where # are numeric digits ranging from 0 to 9 and the
+                        seconds fraction can be either 3 or 6 digits. The time
+                        of day, seconds fraction and time zone offset are
+                        optional. The default time zone is UTC. E.g. &quot;atime,
+                        2013-01-01 23:12:14, 2013-02-23&quot;. This parameter can
+                        be repeated as needed to add additional date
+                        boundaries, e.g. once for atime, once for crtime, etc.
+  -f, --filter-file, --filter_file, --file-filter, --file_filter FILE_FILTER
+                        List of files to include for targeted collection of
+                        files to parse, one line per file path, setup is
+                        /path|file - where each element can contain either a
+                        variable set in the preprocessing stage or a regular
+                        expression.
+  -x, --extensions EXTENSIONS
+                        Filter on file name extensions. This option accepts
+                        multiple multiple comma separated values e.g.
+                        &quot;csv,docx,pst&quot;.
+  --names NAMES         Filter on file names. This option accepts a comma
+                        separated string denoting all file names, e.g. -x
+                        &quot;NTUSER.DAT,UsrClass.dat&quot;.
+  --signatures IDENTIFIERS
+                        Filter on file format signature identifiers. This
+                        option accepts multiple comma separated values e.g.
+                        &quot;esedb,lnk&quot;. Use &quot;list&quot; to show an overview of the
+                        supported file format signatures.
+  --enable_artifacts_map
+                        Output a JSON file mapping extracted files/directories
+                        to artifact definitions.
+  -w, --write PATH      The directory in which extracted files should be
+                        stored.
+  --include_duplicates, --include-duplicates
+                        By default a digest hash (SHA-256) is calculated for
+                        each file (data stream). These hashes are compared to
+                        the previously exported files and duplicates are
+                        skipped. Use this option to include duplicate files in
+                        the export.
+  --no_hashes, --no-hashes
+                        Do not generate the hashes.json file
+
+And that is how you export files, plaso style.
+</code></pre><hr><h5 id=plaso-log2timeline>plaso-log2timeline</h5><pre><code>root@kali:~# plaso-log2timeline -h
+usage: plaso-log2timeline [-h] [--troubles] [-V] [--artifact_definitions PATH]
+                          [--custom_artifact_definitions PATH] [--data PATH]
+                          [--archives TYPES]
+                          [--artifact_filters ARTIFACT_FILTERS]
+                          [--artifact_filters_file PATH]
+                          [--extract_winreg_binary] [--preferred_year YEAR]
+                          [--skip_compressed_streams] [-f FILE_FILTER]
+                          [--hasher_file_size_limit SIZE]
+                          [--hashers HASHER_LIST]
+                          [--parsers PARSER_FILTER_EXPRESSION]
+                          [--yara_rules PATH] [--partitions PARTITIONS]
+                          [--volumes VOLUMES] [--codepage CODEPAGE]
+                          [--language LANGUAGE_TAG]
+                          [--no_extract_winevt_resources] [-z TIME_ZONE]
+                          [--no_vss] [--vss_only] [--vss_stores VSS_STORES]
+                          [--credential TYPE:DATA] [-d] [-q] [-u] [--info]
+                          [--use_markdown] [--no_dependencies_check]
+                          [--logfile FILENAME] [--status_view TYPE]
+                          [--status_view_file PATH]
+                          [--status_view_interval SECONDS]
+                          [--buffer_size BUFFER_SIZE]
+                          [--queue_size QUEUE_SIZE] [--single_process]
+                          [--process_memory_limit SIZE]
+                          [--temporary_directory DIRECTORY]
+                          [--vfs_back_end TYPE] [--worker_memory_limit SIZE]
+                          [--worker_timeout MINUTES] [--workers WORKERS]
+                          [--sigsegv_handler] [--profilers PROFILERS_LIST]
+                          [--profiling_directory DIRECTORY]
+                          [--profiling_sample_rate SAMPLE_RATE]
+                          [--storage_file PATH] [--storage_format FORMAT]
+                          [--task_storage_format FORMAT]
+                          [SOURCE]
+
+log2timeline is a command line tool to extract events from individual 
+files, recursing a directory (e.g. mount point) or storage media 
+image or device.
+
+More information can be gathered from here:
+    https://plaso.readthedocs.io/en/latest/sources/user/Using-log2timeline.html
+
+positional arguments:
+  SOURCE                Path to a source device, file or directory. If the
+                        source is a supported storage media device or image
+                        file, archive file or a directory, the files within
+                        are processed recursively.
+
+options:
+  -h, --help            Show this help message and exit.
+  --troubles            Show troubleshooting information.
+  -V, --version         Show the version information.
+
+data location arguments:
+  --artifact_definitions, --artifact-definitions PATH
+                        Path to a directory or file containing artifact
+                        definitions, which are .yaml files. Artifact
+                        definitions can be used to describe and quickly
+                        collect data of interest, such as specific files or
+                        Windows Registry keys.
+  --custom_artifact_definitions, --custom-artifact-definitions PATH
+                        Path to a directory or file containing custom artifact
+                        definitions, which are .yaml files. Artifact
+                        definitions can be used to describe and quickly
+                        collect data of interest, such as specific files or
+                        Windows Registry keys.
+  --data PATH           Path to a directory containing the data files.
+
+extraction arguments:
+  --archives TYPES      Define a list of archive and storage media image types
+                        for which to process embedded file entries, such as
+                        TAR (archive.tar) or ZIP (archive.zip). This is a
+                        comma separated list where each entry is the name of
+                        an archive type, such as &quot;tar,zip&quot;. &quot;all&quot; indicates
+                        that all archive types should be enabled. &quot;none&quot;
+                        disables processing file entries embedded in archives.
+                        Use &quot;--archives list&quot; to list the available archive
+                        types. WARNING: this can make processing significantly
+                        slower.
+  --artifact_filters, --artifact-filters ARTIFACT_FILTERS
+                        Names of forensic artifact definitions, provided on
+                        the command command line (comma separated). Forensic
+                        artifacts are stored in .yaml files that are directly
+                        pulled from the artifact definitions project. You can
+                        also specify a custom artifacts yaml file (see
+                        --custom_artifact_definitions). Artifact definitions
+                        can be used to describe and quickly collect data of
+                        interest, such as specific files or Windows Registry
+                        keys.
+  --artifact_filters_file, --artifact-filters_file PATH
+                        Names of forensic artifact definitions, provided in a
+                        file with one artifact name per line. Forensic
+                        artifacts are stored in .yaml files that are directly
+                        pulled from the artifact definitions project. You can
+                        also specify a custom artifacts yaml file (see
+                        --custom_artifact_definitions). Artifact definitions
+                        can be used to describe and quickly collect data of
+                        interest, such as specific files or Windows Registry
+                        keys.
+  --extract_winreg_binary, --extract-winreg-binary
+                        Extract binary Windows Registry values. WARNING: This
+                        can make processing significantly slower.
+  --preferred_year, --preferred-year YEAR
+                        When a format's timestamp does not include a year,
+                        e.g. syslog, use this as the initial year instead of
+                        attempting auto-detection.
+  --skip_compressed_streams, --skip-compressed-streams
+                        Skip processing file content within compressed
+                        streams, such as syslog.gz and syslog.bz2.
+  -f, --filter-file, --filter_file, --file-filter, --file_filter FILE_FILTER
+                        List of files to include for targeted collection of
+                        files to parse, one line per file path, setup is
+                        /path|file - where each element can contain either a
+                        variable set in the preprocessing stage or a regular
+                        expression.
+  --hasher_file_size_limit, --hasher-file-size-limit SIZE
+                        Define the maximum file size in bytes that hashers
+                        should process. Any larger file will be skipped. A
+                        size of 0 represents no limit.
+  --hashers HASHER_LIST
+                        Define a list of hashers to use by the tool. This is a
+                        comma separated list where each entry is the name of a
+                        hasher, such as &quot;md5,sha256&quot;. &quot;all&quot; indicates that all
+                        hashers should be enabled. &quot;none&quot; disables all
+                        hashers. Use &quot;--hashers list&quot; or &quot;--info&quot; to list the
+                        available hashers.
+  --parsers PARSER_FILTER_EXPRESSION
+                        Define which presets, parsers and/or plugins to use,
+                        or show possible values. The expression is a comma
+                        separated string where each element is a preset,
+                        parser or plugin name. Each element can be prepended
+                        with an exclamation mark to exclude the item. Matching
+                        is case insensitive. Examples: &quot;linux,!bash_history&quot;
+                        enables the linux preset, without the bash_history
+                        parser. &quot;sqlite,!sqlite/chrome_history&quot; enables all
+                        sqlite plugins except for chrome_history&quot;.
+                        &quot;win7,syslog&quot; enables the win7 preset, as well as the
+                        syslog parser. Use &quot;--parsers list&quot; or &quot;--info&quot; to
+                        list available presets, parsers and plugins.
+  --yara_rules, --yara-rules PATH
+                        Path to a file containing Yara rules definitions.
+  --partitions, --partition PARTITIONS
+                        Define partitions to be processed. A range of
+                        partitions can be defined as: &quot;3..5&quot;. Multiple
+                        partitions can be defined as: &quot;1,3,5&quot; (a list of comma
+                        separated values). Ranges and lists can also be
+                        combined as: &quot;1,3..5&quot;. The first partition is 1. All
+                        partitions can be specified with: &quot;all&quot;.
+  --volumes, --volume VOLUMES
+                        Define volumes to be processed. A range of volumes can
+                        be defined as: &quot;3..5&quot;. Multiple volumes can be defined
+                        as: &quot;1,3,5&quot; (a list of comma separated values). Ranges
+                        and lists can also be combined as: &quot;1,3..5&quot;. The first
+                        volume is 1. All volumes can be specified with: &quot;all&quot;.
+  --codepage CODEPAGE   The preferred codepage, which is used for decoding
+                        single-byte or multi-byte character extracted strings.
+  --language LANGUAGE_TAG
+                        The preferred language, which is used for extracting
+                        and formatting Windows EventLog message strings. Use &quot;
+                        --language list&quot; to see a list of supported language
+                        tags. The en-US (LCID 0x0409) language is used as
+                        fallback if preprocessing could not determine the
+                        system language or no language information is
+                        available in the winevt-rc.db database.
+  --no_extract_winevt_resources, --no-extract-winevt-resources
+                        Do not extract Windows EventLog resources such as
+                        event message template strings. By default Windows
+                        EventLog resources will be extracted when a Windows
+                        EventLog parser is enabled.
+  -z, --zone, --timezone TIME_ZONE
+                        preferred time zone of extracted date and time values
+                        that are stored without a time zone indicator. The
+                        time zone is determined based on the source data where
+                        possible otherwise it will default to UTC. Use &quot;list&quot;
+                        to see a list of available time zones.
+  --no_vss, --no-vss    Do not scan for Volume Shadow Snapshots (VSS). This
+                        means that Volume Shadow Snapshots (VSS) are not
+                        processed. WARNING: this option is deprecated use
+                        --vss_stores=none instead.
+  --vss_only, --vss-only
+                        Do not process the current volume if Volume Shadow
+                        Snapshots (VSS) have been selected.
+  --vss_stores, --vss-stores VSS_STORES
+                        Define Volume Shadow Snapshots (VSS) (or stores) that
+                        need to be processed. A range of snapshots can be
+                        defined as: &quot;3..5&quot;. Multiple snapshots can be defined
+                        as: &quot;1,3,5&quot; (a list of comma separated values). Ranges
+                        and lists can also be combined as: &quot;1,3..5&quot;. The first
+                        snapshot is 1. All snapshots can be defined as: &quot;all&quot;
+                        and no snapshots as: &quot;none&quot;.
+  --credential TYPE:DATA
+                        Define a credentials that can be used to unlock
+                        encrypted volumes e.g. BitLocker. The credential is
+                        defined as type:data e.g. &quot;password:BDE-test&quot;.
+                        Supported credential types are: key_data, password,
+                        recovery_password, startup_key. Binary key data is
+                        expected to be passed in BASE-16 encoding
+                        (hexadecimal). WARNING credentials passed via command
+                        line arguments can end up in logs, so use this option
+                        with care.
+
+informational arguments:
+  -d, --debug           Enable debug output.
+  -q, --quiet           Disable informational output.
+  -u, --unattended      Enable unattended mode and do not ask the user for
+                        additional input when needed, but terminate with an
+                        error instead.
+  --info                Print out information about supported plugins and
+                        parsers.
+  --use_markdown, --use-markdown
+                        Output lists in Markdown format use in combination
+                        with &quot;--hashers list&quot;, &quot;--parsers list&quot; or &quot;--timezone
+                        list&quot;
+  --no_dependencies_check, --no-dependencies-check
+                        Disable the dependencies check.
+  --logfile, --log_file, --log-file FILENAME
+                        Path of the file in which to store log messages, by
+                        default this file will be named: &quot;log2timeline-
+                        YYYYMMDDThhmmss.log.gz&quot;. Note that the file will be
+                        gzip compressed if the extension is &quot;.gz&quot;.
+  --status_view, --status-view TYPE
+                        The processing status view mode: &quot;file&quot;, &quot;linear&quot;,
+                        &quot;none&quot; or &quot;window&quot;.
+  --status_view_file, --status-view-file PATH
+                        The name of the status view file.
+  --status_view_interval, --status-view-interval SECONDS
+                        Number of seconds to update the status view.
+
+processing arguments:
+  --buffer_size, --buffer-size, --bs BUFFER_SIZE
+                        The buffer size for the output (defaults to 196MiB).
+  --queue_size, --queue-size QUEUE_SIZE
+                        The maximum number of queued items per worker
+                        (defaults to 125000)
+  --single_process, --single-process
+                        Indicate that the tool should run in a single process.
+  --process_memory_limit, --process-memory-limit SIZE
+                        Maximum amount of memory (data segment) a process is
+                        allowed to allocate in bytes, where 0 represents no
+                        limit. The default limit is 4294967296 (4 GiB). This
+                        applies to both the main (foreman) process and the
+                        worker processes. This limit is enforced by the
+                        operating system and will supersede the worker memory
+                        limit (--worker_memory_limit).
+  --temporary_directory, --temporary-directory DIRECTORY
+                        Path to the directory that should be used to store
+                        temporary files created during processing.
+  --vfs_back_end, --vfs-back-end TYPE
+                        The preferred dfVFS back-end: &quot;auto&quot;, &quot;fsext&quot;,
+                        &quot;fsfat&quot;, &quot;fshfs&quot;, &quot;fsntfs&quot;, &quot;tsk&quot; or &quot;vsgpt&quot;.
+  --worker_memory_limit, --worker-memory-limit SIZE
+                        Maximum amount of memory (data segment and shared
+                        memory) a worker process is allowed to consume in
+                        bytes, where 0 represents no limit. The default limit
+                        is 2147483648 (2 GiB). If a worker process exceeds
+                        this limit it is killed by the main (foreman) process.
+  --worker_timeout, --worker-timeout MINUTES
+                        Number of minutes before a worker process that is not
+                        providing status updates is considered inactive. The
+                        default timeout is 15.0 minutes. If a worker process
+                        exceeds this timeout it is killed by the main
+                        (foreman) process.
+  --workers WORKERS     Number of worker processes. The default is the number
+                        of available system CPUs minus one, for the main
+                        (foreman) process.
+  --sigsegv_handler, --sigsegv-handler
+                        Enables the SIGSEGV handler. WARNING this
+                        functionality is experimental and will a deadlock
+                        worker process if a real segfault is caught, but not
+                        signal SIGSEGV. This functionality is therefore
+                        primarily intended for debugging purposes
+
+profiling arguments:
+  --profilers PROFILERS_LIST
+                        List of profilers to use by the tool. This is a comma
+                        separated list where each entry is the name of a
+                        profiler. Use &quot;--profilers list&quot; to list the available
+                        profilers.
+  --profiling_directory, --profiling-directory DIRECTORY
+                        Path to the directory that should be used to store the
+                        profiling sample files. By default the sample files
+                        are stored in the current working directory.
+  --profiling_sample_rate, --profiling-sample-rate SAMPLE_RATE
+                        Profiling sample rate (defaults to a sample every 1000
+                        files).
+
+storage arguments:
+  --storage_file, --storage-file PATH
+                        The path of the storage file. If not specified, one
+                        will be made in the form &lt;timestamp&gt;-&lt;source&gt;.plaso
+  --storage_format, --storage-format FORMAT
+                        Format of the storage file, the default is: sqlite.
+                        Supported options: sqlite
+  --task_storage_format, --task-storage-format FORMAT
+                        Format for task storage, the default is: sqlite.
+                        Supported options: redis, sqlite
+
+Example usage:
+
+Run the tool against a storage media image (full kitchen sink)
+    log2timeline.py /cases/mycase/storage.plaso ímynd.dd
+
+Instead of answering questions, indicate some of the options on the
+command line (including data from particular VSS stores).
+    log2timeline.py --vss_stores 1,2 /cases/plaso_vss.plaso image.E01
+
+And that is how you build a timeline using log2timeline...
+</code></pre><hr><h5 id=plaso-pinfo>plaso-pinfo</h5><pre><code>root@kali:~# plaso-pinfo -h
+usage: plaso-pinfo [-h] [--troubles] [-V] [--logfile FILENAME]
+                   [--process_memory_limit SIZE] [--compare STORAGE_FILE]
+                   [--output_format FORMAT] [--hash TYPE] [--report TYPE]
+                   [--sections SECTIONS_LIST] [-v] [-w OUTPUTFILE]
+                   [PATH]
+
+Shows information about a Plaso storage file, for example how it was collected, what information was extracted from a source, etc.
+
+positional arguments:
+  PATH                  Path to a storage file.
+
+options:
+  -h, --help            Show this help message and exit.
+  --troubles            Show troubleshooting information.
+  -V, --version         Show the version information.
+  --logfile, --log_file, --log-file FILENAME
+                        Path of the file in which to store log messages, by
+                        default this file will be named: &quot;pinfo-
+                        YYYYMMDDThhmmss.log.gz&quot;. Note that the file will be
+                        gzip compressed if the extension is &quot;.gz&quot;.
+  --process_memory_limit, --process-memory-limit SIZE
+                        Maximum amount of memory (data segment) a process is
+                        allowed to allocate in bytes, where 0 represents no
+                        limit. The default limit is 4294967296 (4 GiB). This
+                        applies to both the main (foreman) process and the
+                        worker processes. This limit is enforced by the
+                        operating system and will supersede the worker memory
+                        limit (--worker_memory_limit).
+  --compare STORAGE_FILE
+                        The path of the storage file to compare against.
+  --output_format, --output-format FORMAT
+                        Format of the output, the default is: text. Supported
+                        options: json, markdown, text.
+  --hash TYPE           Type of hash to output in file_hashes report.
+                        Supported options: md5, sha1, sha256
+  --report TYPE         Report on specific information. Supported options:
+                        browser_search, chrome_extension,
+                        environment_variables, file_hashes, list, none,
+                        windows_services, winevt_providers
+  --sections SECTIONS_LIST
+                        List of sections to output. This is a comma separated
+                        list where each entry is the name of a section. Use &quot;
+                        --sections list&quot; to list the available sections and &quot;
+                        --sections all&quot; to show all available sections.
+  -v, --verbose         Print verbose output.
+  -w, --write OUTPUTFILE
+                        Output filename.
+</code></pre><hr><h5 id=plaso-psort>plaso-psort</h5><pre><code>root@kali:~# plaso-psort -h
+usage: plaso-psort [-h] [--troubles] [-V] [--analysis PLUGIN_LIST]
+                   [--process_memory_limit SIZE]
+                   [--temporary_directory DIRECTORY]
+                   [--worker_memory_limit SIZE] [--worker_timeout MINUTES]
+                   [--logfile FILENAME] [-d] [-q] [-u] [--status_view TYPE]
+                   [--status_view_file PATH] [--status_view_interval SECONDS]
+                   [--slice DATE_TIME] [--slice_size SLICE_SIZE] [--slicer]
+                   [--data PATH] [-a] [--language LANGUAGE_TAG]
+                   [--additional_fields ADDITIONAL_FIELDS]
+                   [--custom_fields CUSTOM_FIELDS]
+                   [--custom_formatter_definitions PATH] [--dynamic_time]
+                   [--output_time_zone TIME_ZONE] [-o FORMAT] [-w OUTPUT_FILE]
+                   [--fields FIELDS] [--profilers PROFILERS_LIST]
+                   [--profiling_directory DIRECTORY]
+                   [--profiling_sample_rate SAMPLE_RATE]
+                   [PATH] [FILTER]
+
+Application to read, filter and process output from a Plaso storage file.
+
+positional arguments:
+  PATH                  Path to a storage file.
+
+options:
+  -h, --help            Show this help message and exit.
+  --troubles            Show troubleshooting information.
+  -V, --version         Show the version information.
+
+Analysis Arguments:
+  --analysis PLUGIN_LIST
+                        A comma separated list of analysis plugin names to be
+                        loaded or &quot;--analysis list&quot; to see a list of available
+                        plugins.
+
+Processing:
+  --process_memory_limit, --process-memory-limit SIZE
+                        Maximum amount of memory (data segment) a process is
+                        allowed to allocate in bytes, where 0 represents no
+                        limit. The default limit is 4294967296 (4 GiB). This
+                        applies to both the main (foreman) process and the
+                        worker processes. This limit is enforced by the
+                        operating system and will supersede the worker memory
+                        limit (--worker_memory_limit).
+  --temporary_directory, --temporary-directory DIRECTORY
+                        Path to the directory that should be used to store
+                        temporary files created during processing.
+  --worker_memory_limit, --worker-memory-limit SIZE
+                        Maximum amount of memory (data segment and shared
+                        memory) a worker process is allowed to consume in
+                        bytes, where 0 represents no limit. The default limit
+                        is 2147483648 (2 GiB). If a worker process exceeds
+                        this limit it is killed by the main (foreman) process.
+  --worker_timeout, --worker-timeout MINUTES
+                        Number of minutes before a worker process that is not
+                        providing status updates is considered inactive. The
+                        default timeout is 15.0 minutes. If a worker process
+                        exceeds this timeout it is killed by the main
+                        (foreman) process.
+
+Informational Arguments:
+  --logfile, --log_file, --log-file FILENAME
+                        Path of the file in which to store log messages, by
+                        default this file will be named: &quot;psort-
+                        YYYYMMDDThhmmss.log.gz&quot;. Note that the file will be
+                        gzip compressed if the extension is &quot;.gz&quot;.
+  -d, --debug           Enable debug output.
+  -q, --quiet           Disable informational output.
+  -u, --unattended      Enable unattended mode and do not ask the user for
+                        additional input when needed, but terminate with an
+                        error instead.
+  --status_view, --status-view TYPE
+                        The processing status view mode: &quot;file&quot;, &quot;linear&quot;,
+                        &quot;none&quot; or &quot;window&quot;.
+  --status_view_file, --status-view-file PATH
+                        The name of the status view file.
+  --status_view_interval, --status-view-interval SECONDS
+                        Number of seconds to update the status view.
+
+Filter Arguments:
+  --slice DATE_TIME     Date and time to create a time slice around. This
+                        parameter, if defined, will display all events that
+                        happened X minutes before and after the defined date,
+                        where X is controlled by the --slice_size option,
+                        which is 5 minutes by default. The date and time must
+                        be specified in ISO 8601 format including time zone
+                        offset, for example: 20200619T20:09:23+02:00.
+  --slice_size, --slice-size SLICE_SIZE
+                        Defines the slice size. In the case of a regular time
+                        slice it defines the number of minutes the slice size
+                        should be. In the case of the --slicer it determines
+                        the number of events before and after a filter match
+                        has been made that will be included in the result set.
+                        The default value is 5. See --slice or --slicer for
+                        more details about this option.
+  --slicer              Create a time slice around every filter match. This
+                        parameter, if defined will save all X events before
+                        and after a filter match has been made. X is defined
+                        by the --slice_size parameter.
+  FILTER                A filter that can be used to filter the dataset before
+                        it is written into storage. More information about the
+                        filters and how to use them can be found here: https:/
+                        /plaso.readthedocs.io/en/latest/sources/user/Event-
+                        filters.html
+
+Input Arguments:
+  --data PATH           Path to a directory containing the data files.
+
+Output Arguments:
+  -a, --include_all, --include-all
+                        By default the psort removes duplicate entries from
+                        the output. This parameter changes that behavior so
+                        all events are included.
+  --language LANGUAGE_TAG
+                        The preferred language, which is used for extracting
+                        and formatting Windows EventLog message strings. Use &quot;
+                        --language list&quot; to see a list of supported language
+                        tags. The en-US (LCID 0x0409) language is used as
+                        fallback if preprocessing could not determine the
+                        system language or no language information is
+                        available in the winevt-rc.db database.
+  --additional_fields, --additional-fields ADDITIONAL_FIELDS
+                        Defines additional fields to be included in the output
+                        besides the default fields. Multiple additional field
+                        names can be defined as a list of comma separated
+                        values. Output formats that support additional fields
+                        are: dynamic, opensearch and xlsx.
+  --custom_fields, --custom-fields CUSTOM_FIELDS
+                        Defines custom fields to be included in the output
+                        besides the default fields. A custom field is defined
+                        as &quot;name:value&quot;. Multiple custom field names can be
+                        defined as list of comma separated values. Note that
+                        regular fields will are favoured above custom fields
+                        with same name. Output formats that support this are:
+                        dynamic, opensearch and xlsx.
+  --custom_formatter_definitions, --custom-formatter-definitions PATH
+                        Path to a file containing custom event formatter
+                        definitions, which is a .yaml file. Custom event
+                        formatter definitions can be used to customize event
+                        messages and override the built-in event formatter
+                        definitions.
+  --dynamic_time, --dynamic-time
+                        Indicate that the output should use dynamic time.
+                        Output formats that support dynamic time are: dynamic
+  --output_time_zone, --output-time-zone TIME_ZONE
+                        time zone of date and time values written to the
+                        output, if supported by the output format. Use &quot;list&quot;
+                        to see a list of available time zones. Output formats
+                        that support an output time zone are: dynamic and
+                        l2t_csv.
+
+Output Format Arguments:
+  -o, --output_format, --output-format FORMAT
+                        The output format. Use &quot;-o list&quot; to see a list of
+                        available output formats.
+  -w, --write OUTPUT_FILE
+                        Output filename.
+  --fields FIELDS       Defines which fields should be included in the output.
+
+profiling arguments:
+  --profilers PROFILERS_LIST
+                        List of profilers to use by the tool. This is a comma
+                        separated list where each entry is the name of a
+                        profiler. Use &quot;--profilers list&quot; to list the available
+                        profilers.
+  --profiling_directory, --profiling-directory DIRECTORY
+                        Path to the directory that should be used to store the
+                        profiling sample files. By default the sample files
+                        are stored in the current working directory.
+  --profiling_sample_rate, --profiling-sample-rate SAMPLE_RATE
+                        Profiling sample rate (defaults to a sample every 1000
+                        files).
+</code></pre><hr><h5 id=plaso-psteal>plaso-psteal</h5><pre><code>root@kali:~# plaso-psteal -h
+usage: plaso-psteal [-h] [--troubles] [-V] [--artifact_definitions PATH]
+                    [--custom_artifact_definitions PATH] [--data PATH]
+                    [--archives TYPES] [--extract_winreg_binary]
+                    [--preferred_year YEAR] [--skip_compressed_streams]
+                    [--hasher_file_size_limit SIZE] [--hashers HASHER_LIST]
+                    [--parsers PARSER_FILTER_EXPRESSION] [--storage_file PATH]
+                    [--partitions PARTITIONS] [--volumes VOLUMES]
+                    [--codepage CODEPAGE] [--language LANGUAGE_TAG]
+                    [--no_extract_winevt_resources] [-z TIME_ZONE] [--no_vss]
+                    [--vss_only] [--vss_stores VSS_STORES]
+                    [--credential TYPE:DATA] [-d] [-q] [-u]
+                    [--no_dependencies_check] [--status_view TYPE]
+                    [--status_view_file PATH] [--status_view_interval SECONDS]
+                    [--source SOURCE] [--additional_fields ADDITIONAL_FIELDS]
+                    [--custom_fields CUSTOM_FIELDS]
+                    [--custom_formatter_definitions PATH] [--dynamic_time]
+                    [--output_time_zone TIME_ZONE] [-o FORMAT]
+                    [-w OUTPUT_FILE] [--fields FIELDS]
+                    [--buffer_size BUFFER_SIZE] [--queue_size QUEUE_SIZE]
+                    [--single_process] [--process_memory_limit SIZE]
+                    [--temporary_directory DIRECTORY] [--vfs_back_end TYPE]
+                    [--worker_memory_limit SIZE] [--worker_timeout MINUTES]
+                    [--workers WORKERS]
+
+psteal is a command line tool to extract events from individual 
+files, recursing a directory (e.g. mount point) or storage media 
+image or device. The output events will be stored in a storage file.
+This tool will then read the output and process the events into a CSV 
+file.
+
+More information can be gathered from here:
+    https://plaso.readthedocs.io/en/latest/sources/user/Using-log2timeline.html
+
+options:
+  -h, --help            Show this help message and exit.
+  --troubles            Show troubleshooting information.
+  -V, --version         Show the version information.
+
+data location arguments:
+  --artifact_definitions, --artifact-definitions PATH
+                        Path to a directory or file containing artifact
+                        definitions, which are .yaml files. Artifact
+                        definitions can be used to describe and quickly
+                        collect data of interest, such as specific files or
+                        Windows Registry keys.
+  --custom_artifact_definitions, --custom-artifact-definitions PATH
+                        Path to a directory or file containing custom artifact
+                        definitions, which are .yaml files. Artifact
+                        definitions can be used to describe and quickly
+                        collect data of interest, such as specific files or
+                        Windows Registry keys.
+  --data PATH           Path to a directory containing the data files.
+
+extraction arguments:
+  --archives TYPES      Define a list of archive and storage media image types
+                        for which to process embedded file entries, such as
+                        TAR (archive.tar) or ZIP (archive.zip). This is a
+                        comma separated list where each entry is the name of
+                        an archive type, such as &quot;tar,zip&quot;. &quot;all&quot; indicates
+                        that all archive types should be enabled. &quot;none&quot;
+                        disables processing file entries embedded in archives.
+                        Use &quot;--archives list&quot; to list the available archive
+                        types. WARNING: this can make processing significantly
+                        slower.
+  --extract_winreg_binary, --extract-winreg-binary
+                        Extract binary Windows Registry values. WARNING: This
+                        can make processing significantly slower.
+  --preferred_year, --preferred-year YEAR
+                        When a format's timestamp does not include a year,
+                        e.g. syslog, use this as the initial year instead of
+                        attempting auto-detection.
+  --skip_compressed_streams, --skip-compressed-streams
+                        Skip processing file content within compressed
+                        streams, such as syslog.gz and syslog.bz2.
+  --hasher_file_size_limit, --hasher-file-size-limit SIZE
+                        Define the maximum file size in bytes that hashers
+                        should process. Any larger file will be skipped. A
+                        size of 0 represents no limit.
+  --hashers HASHER_LIST
+                        Define a list of hashers to use by the tool. This is a
+                        comma separated list where each entry is the name of a
+                        hasher, such as &quot;md5,sha256&quot;. &quot;all&quot; indicates that all
+                        hashers should be enabled. &quot;none&quot; disables all
+                        hashers. Use &quot;--hashers list&quot; or &quot;--info&quot; to list the
+                        available hashers.
+  --parsers PARSER_FILTER_EXPRESSION
+                        Define which presets, parsers and/or plugins to use,
+                        or show possible values. The expression is a comma
+                        separated string where each element is a preset,
+                        parser or plugin name. Each element can be prepended
+                        with an exclamation mark to exclude the item. Matching
+                        is case insensitive. Examples: &quot;linux,!bash_history&quot;
+                        enables the linux preset, without the bash_history
+                        parser. &quot;sqlite,!sqlite/chrome_history&quot; enables all
+                        sqlite plugins except for chrome_history&quot;.
+                        &quot;win7,syslog&quot; enables the win7 preset, as well as the
+                        syslog parser. Use &quot;--parsers list&quot; or &quot;--info&quot; to
+                        list available presets, parsers and plugins.
+  --storage_file, --storage-file PATH
+                        The path of the storage file. If not specified, one
+                        will be made in the form &lt;timestamp&gt;-&lt;source&gt;.plaso
+  --partitions, --partition PARTITIONS
+                        Define partitions to be processed. A range of
+                        partitions can be defined as: &quot;3..5&quot;. Multiple
+                        partitions can be defined as: &quot;1,3,5&quot; (a list of comma
+                        separated values). Ranges and lists can also be
+                        combined as: &quot;1,3..5&quot;. The first partition is 1. All
+                        partitions can be specified with: &quot;all&quot;.
+  --volumes, --volume VOLUMES
+                        Define volumes to be processed. A range of volumes can
+                        be defined as: &quot;3..5&quot;. Multiple volumes can be defined
+                        as: &quot;1,3,5&quot; (a list of comma separated values). Ranges
+                        and lists can also be combined as: &quot;1,3..5&quot;. The first
+                        volume is 1. All volumes can be specified with: &quot;all&quot;.
+  --codepage CODEPAGE   The preferred codepage, which is used for decoding
+                        single-byte or multi-byte character extracted strings.
+  --language LANGUAGE_TAG
+                        The preferred language, which is used for extracting
+                        and formatting Windows EventLog message strings. Use &quot;
+                        --language list&quot; to see a list of supported language
+                        tags. The en-US (LCID 0x0409) language is used as
+                        fallback if preprocessing could not determine the
+                        system language or no language information is
+                        available in the winevt-rc.db database.
+  --no_extract_winevt_resources, --no-extract-winevt-resources
+                        Do not extract Windows EventLog resources such as
+                        event message template strings. By default Windows
+                        EventLog resources will be extracted when a Windows
+                        EventLog parser is enabled.
+  -z, --zone, --timezone TIME_ZONE
+                        preferred time zone of extracted date and time values
+                        that are stored without a time zone indicator. The
+                        time zone is determined based on the source data where
+                        possible otherwise it will default to UTC. Use &quot;list&quot;
+                        to see a list of available time zones.
+  --no_vss, --no-vss    Do not scan for Volume Shadow Snapshots (VSS). This
+                        means that Volume Shadow Snapshots (VSS) are not
+                        processed. WARNING: this option is deprecated use
+                        --vss_stores=none instead.
+  --vss_only, --vss-only
+                        Do not process the current volume if Volume Shadow
+                        Snapshots (VSS) have been selected.
+  --vss_stores, --vss-stores VSS_STORES
+                        Define Volume Shadow Snapshots (VSS) (or stores) that
+                        need to be processed. A range of snapshots can be
+                        defined as: &quot;3..5&quot;. Multiple snapshots can be defined
+                        as: &quot;1,3,5&quot; (a list of comma separated values). Ranges
+                        and lists can also be combined as: &quot;1,3..5&quot;. The first
+                        snapshot is 1. All snapshots can be defined as: &quot;all&quot;
+                        and no snapshots as: &quot;none&quot;.
+  --credential TYPE:DATA
+                        Define a credentials that can be used to unlock
+                        encrypted volumes e.g. BitLocker. The credential is
+                        defined as type:data e.g. &quot;password:BDE-test&quot;.
+                        Supported credential types are: key_data, password,
+                        recovery_password, startup_key. Binary key data is
+                        expected to be passed in BASE-16 encoding
+                        (hexadecimal). WARNING credentials passed via command
+                        line arguments can end up in logs, so use this option
+                        with care.
+
+informational arguments:
+  -d, --debug           Enable debug output.
+  -q, --quiet           Disable informational output.
+  -u, --unattended      Enable unattended mode and do not ask the user for
+                        additional input when needed, but terminate with an
+                        error instead.
+  --no_dependencies_check, --no-dependencies-check
+                        Disable the dependencies check.
+  --status_view, --status-view TYPE
+                        The processing status view mode: &quot;file&quot;, &quot;linear&quot;,
+                        &quot;none&quot; or &quot;window&quot;.
+  --status_view_file, --status-view-file PATH
+                        The name of the status view file.
+  --status_view_interval, --status-view-interval SECONDS
+                        Number of seconds to update the status view.
+
+input arguments:
+  --source SOURCE       The source to process
+
+output arguments:
+  --additional_fields, --additional-fields ADDITIONAL_FIELDS
+                        Defines additional fields to be included in the output
+                        besides the default fields. Multiple additional field
+                        names can be defined as a list of comma separated
+                        values. Output formats that support additional fields
+                        are: dynamic, opensearch and xlsx.
+  --custom_fields, --custom-fields CUSTOM_FIELDS
+                        Defines custom fields to be included in the output
+                        besides the default fields. A custom field is defined
+                        as &quot;name:value&quot;. Multiple custom field names can be
+                        defined as list of comma separated values. Note that
+                        regular fields will are favoured above custom fields
+                        with same name. Output formats that support this are:
+                        dynamic, opensearch and xlsx.
+  --custom_formatter_definitions, --custom-formatter-definitions PATH
+                        Path to a file containing custom event formatter
+                        definitions, which is a .yaml file. Custom event
+                        formatter definitions can be used to customize event
+                        messages and override the built-in event formatter
+                        definitions.
+  --dynamic_time, --dynamic-time
+                        Indicate that the output should use dynamic time.
+                        Output formats that support dynamic time are: dynamic
+  --output_time_zone, --output-time-zone TIME_ZONE
+                        time zone of date and time values written to the
+                        output, if supported by the output format. Use &quot;list&quot;
+                        to see a list of available time zones. Output formats
+                        that support an output time zone are: dynamic and
+                        l2t_csv.
+
+output format arguments:
+  -o, --output_format, --output-format FORMAT
+                        The output format. Use &quot;-o list&quot; to see a list of
+                        available output formats.
+  -w, --write OUTPUT_FILE
+                        Output filename.
+  --fields FIELDS       Defines which fields should be included in the output.
+
+processing arguments:
+  --buffer_size, --buffer-size, --bs BUFFER_SIZE
+                        The buffer size for the output (defaults to 196MiB).
+  --queue_size, --queue-size QUEUE_SIZE
+                        The maximum number of queued items per worker
+                        (defaults to 125000)
+  --single_process, --single-process
+                        Indicate that the tool should run in a single process.
+  --process_memory_limit, --process-memory-limit SIZE
+                        Maximum amount of memory (data segment) a process is
+                        allowed to allocate in bytes, where 0 represents no
+                        limit. The default limit is 4294967296 (4 GiB). This
+                        applies to both the main (foreman) process and the
+                        worker processes. This limit is enforced by the
+                        operating system and will supersede the worker memory
+                        limit (--worker_memory_limit).
+  --temporary_directory, --temporary-directory DIRECTORY
+                        Path to the directory that should be used to store
+                        temporary files created during processing.
+  --vfs_back_end, --vfs-back-end TYPE
+                        The preferred dfVFS back-end: &quot;auto&quot;, &quot;fsext&quot;,
+                        &quot;fsfat&quot;, &quot;fshfs&quot;, &quot;fsntfs&quot;, &quot;tsk&quot; or &quot;vsgpt&quot;.
+  --worker_memory_limit, --worker-memory-limit SIZE
+                        Maximum amount of memory (data segment and shared
+                        memory) a worker process is allowed to consume in
+                        bytes, where 0 represents no limit. The default limit
+                        is 2147483648 (2 GiB). If a worker process exceeds
+                        this limit it is killed by the main (foreman) process.
+  --worker_timeout, --worker-timeout MINUTES
+                        Number of minutes before a worker process that is not
+                        providing status updates is considered inactive. The
+                        default timeout is 15.0 minutes. If a worker process
+                        exceeds this timeout it is killed by the main
+                        (foreman) process.
+  --workers WORKERS     Number of worker processes. The default is the number
+                        of available system CPUs minus one, for the main
+                        (foreman) process.
+
+Example usage:
+
+Run the tool against a storage media image (full kitchen sink)
+    psteal.py --source ímynd.dd -w imynd.timeline.txt
+
+And that is how you build a timeline using psteal...
+</code></pre><hr></div><br><br><p id=post-meta>Updated on: 2026-May-25<br></p><hr><div id=pagination><div><a href=https://gitlab.com/-/ide/project/kalilinux/documentation/kali-tools/edit/main/-/plaso/index.md rel=noopener target=_blank><i class=ti-pencil-alt></i> Edit this page</a></div><div><a href="../parted/index.html"><i class=ti-arrow-left></i>
+<span>parted</span>
+</a><a href="../portspoof/index.html"><span>portspoof</span>
+<i class=ti-arrow-right></i></a></div></div></section></main><script>$$("#packages-info pre > code").forEach(e=>e.classList.add("language-console"))</script><script src=https://www.kali.org/plugins/highlight/highlight.pack.js></script><script src="https://www.kali.org/highlighting.min.js?ver=0a73a6a2757f0224a67ef43d491edbe9"></script><footer><div class=darkmode-switch><span>LIGHT</span><label class=switch>
+<input type=checkbox name=toggle-darkmode><div></div></label><span>DARK</span></div><div class=container><div><h4>Links</h4><a href=https://www.kali.org/ rel=noopener target=_blank>Home</a>
+<a href=https://www.kali.org/get-kali/ rel=noopener target=_blank>Download / Get Kali</a>
+<a href=https://www.kali.org/blog/ rel=noopener target=_blank>Blog</a>
+<a href=https://www.kali.org/docs/ rel=noopener target=_blank>OS Documentation</a>
+<a href="../index.html" rel=noopener target=_blank>Tool Documentation</a>
+<a href=https://status.kali.org/ rel=noopener target=_blank>System Status</a>
+<a href=https://old.kali.org/ rel=noopener target=_blank>Archived Releases</a>
+<a href=https://www.kali.org/partnerships/ rel=noopener target=_blank>Partnerships</a></div><div><h4>Platforms</h4><a href=https://arm.kali.org/ rel=noopener target=_blank>ARM (SBC)</a>
+<a href=https://nethunter.kali.org/ rel=noopener target=_blank>NetHunter (Mobile)</a><br><a href=https://aws.amazon.com/marketplace/pp/B08LL91KKB title="Amazon AWS" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183.0.08-.048.16-.152.24l-.503.335a.383.383.0 01-.208.072c-.08.0-.16-.04-.239-.112a2.47 2.47.0 01-.287-.375 6.18 6.18.0 01-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67.0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533.0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272.0.551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28.0-.568.031-.863.103s-.583.16-.862.272a2.287 2.287.0 01-.28.104.488.488.0 01-.127.023c-.112.0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597.0 01.224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84.0 011.246-.151c.95.0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263.0.534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66.0 00-.735-.136 6.02 6.02.0 00-.75-.048c-.535.0-.926.104-1.19.32-.263.215-.39.518-.39.917.0.375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144.0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398.0 01-.072-.32c0-.128.064-.2.191-.2h.783c.151.0.255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549.0 01.32-.08h.638c.152.0.256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52.0 01.311-.08h.743c.127.0.2.065.2.2.0.04-.009.08-.017.128a1.137 1.137.0 01-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51.0 01-.303.08h-.687c-.151.0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415.0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563.0 01-.048-.224v-.407c0-.167.064-.247.183-.247.048.0.096.008.144.024s.12.048.2.08c.271.12.566.215.878.279.319.064.63.096.95.096.502.0.894-.088 1.165-.264a.86.86.0 00.415-.758.777.777.0 00-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902.0 01-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175.0.359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69.0 01.24.2.43.43.0 01.071.263v.375c0 .168-.064.256-.184.256a.83.83.0 01-.303-.096 3.652 3.652.0 00-1.532-.311c-.455.0-.815.071-1.062.223-.248.152-.375.383-.375.71.0.224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117.0.343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zm1.509 3.88c-2.626 1.94-6.442 2.969-9.722 2.969-4.598.0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914.0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zm1.094-1.246c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"/></svg>
+Amazon AWS
+</a><a href=https://hub.docker.com/u/kalilinux title=Docker rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M4.82 17.275c-.684.0-1.304-.56-1.304-1.24s.56-1.243 1.305-1.243c.748.0 1.31.56 1.31 1.242s-.622 1.24-1.305 1.24zm16.012-6.763c-.135-.992-.75-1.8-1.56-2.42l-.315-.25-.254.31c-.494.56-.69 1.553-.63 2.295.06.562.24 1.12.554 1.554-.254.13-.568.25-.81.377-.57.187-1.124.25-1.68.25H.097l-.06.37c-.12 1.182.06 2.42.562 3.54l.244.435v.06c1.5 2.483 4.17 3.6 7.078 3.6 5.594.0 10.182-2.42 12.357-7.633 1.425.062 2.864-.31 3.54-1.676l.18-.31-.3-.187c-.81-.494-1.92-.56-2.85-.31l-.018.002zm-8.008-.992h-2.428v2.42h2.43V9.518l-.002.003zm0-3.043h-2.428v2.42h2.43V6.48l-.002-.003zm0-3.104h-2.428v2.42h2.43v-2.42h-.002zm2.97 6.147H13.38v2.42h2.42V9.518l-.007.003zm-8.998.0H4.383v2.42h2.422V9.518l-.01.003zm3.03.0h-2.4v2.42H9.84V9.518l-.015.003zm-6.03.0H1.4v2.42h2.428V9.518l-.03.003zm6.03-3.043h-2.4v2.42H9.84V6.48l-.015-.003zm-3.045.0H4.387v2.42H6.8V6.48l-.016-.003z"/></svg>
+Docker
+</a><a href=https://www.linode.com/marketplace/apps/kali-linux/kali-linux/ title=Linode rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor"><path d="m9.7572 21.543c-.21543-1.3514-.38438-2.4903-.37538-2.5308.017008-.07597 3.1734-2.3103 3.2109-2.2727.02721.02645.30916 4.8132.29118 4.9432-.0087.06349-.4854.49368-1.3388 1.2082-.72884.61028-1.3412 1.1095-1.3607 1.1094-.01965-75e-6-.2118-1.1059-.42728-2.4573zM7.709 22.9686l-.98536-.75859-.45604-2.2603c-.25085-1.2432-.45143-2.2992-.44576-2.3467.00794-.06803.2406.07748 1.0868.68035l1.0764.76683.3651 2.2757c.20081 1.2516.36038 2.304.35463 2.3385-.00605.03779-.4286-.25928-.99579-.69577zm6.4796-2.708c-.05413-.67589-.26906-4.4802-.25391-4.4942.10443-.09487 3.0591-2.1356 3.0918-2.1356.02797.0.0359.36586.02041.97361-.01361.53548-.03742 1.5988-.05291 2.3628l-.02835 1.3892-1.3386 1.1211c-.73625.61659-1.3545 1.1273-1.3739 1.135-.01927.0076-.04845-.1508-.06456-.35187zM9.0927 17.425c-3515e-7-.034015-.18826-1.2359-.41764-2.6682s-.40025-2.622-.37965-2.6439c.020409-.02268.90006-.55283 1.9543-1.18 1.9099-1.1361 1.917-1.1398 1.9494-1.016.03174.1217.33124 5.1734.3078 5.1942-.02986.02645-3.1702 2.2195-3.2847 2.294-.099439.06463-.12918.06917-.1296.0189zm-2.5369-1.0543c-.60442-.42826-1.1149-.79355-1.1344-.81177-.038589-.037794-1.0281-4.9311-1.0087-4.9894.00983-.03024 2.4743 1.582 2.4757 1.6187 2306e-7.0076.17768 1.12.39428 2.4748.2166 1.3548.38895 2.4685.38298 2.4749-.00605.0076-.5054-.33902-1.1098-.76713zm11.833-.75753c.01587-.84522.03175-1.8651.03515-2.2665l.006-.72979 1.2935-.90538c.71142-.49795 1.2992-.89802 1.3061-.88902.0068.0076-.02267.97036-.06603 2.1363l-.07869 2.1199-.13655.1149c-1.0407.87496-2.347 1.955-2.3653 1.9556-.01285 529e-6-.01058-.69071.0056-1.5359zm-4.5751-1.7362c-.01512-.14854-.05178-.71082-.08168-1.2499l-.05439-.98011.10454-.07899c.05749-.04346.17522-.11679.26162-.16365l.15712-.08466 1.0817.51008c.59497.28044 1.0753.5303 1.0673.55502-.01474.04611-2.423 1.7557-2.4784 1.7594-.01701.0011-.04286-.11943-.05787-.26759zm2.8451-2.8867c-.54841-.26079-.99636-.48624-.99545-.5006 903e-6-.01512.56035-.34507 1.2433-.73519l1.2416-.70904 1.012.31219c.55657.17159 1.0159.32655 1.0207.34394.0091.034016-2.4539 1.7738-2.4996 1.767-.01398-.0021-.47414-.21732-1.0225-.47822zm-8.6457-.34923c-3515e-7-.018898-.19854-1.2719-.4405-2.7816-.24197-1.5097-.42648-2.7592-.41-2.7766.044863-.047622 4.6088-2.115 4.6269-2.096.017385.018897.30716 4.8457.3066 5.1095l-355e-6.1663-1.9301 1.1474c-2.195 1.305-2.1519 1.2803-2.1527 1.231zm-2.767-1.1814-1.2426-.83369-.52316-2.6237c-.28774-1.4431-.51787-2.6297-.51141-2.6371.013606-.015118 2.648 1.6215 2.7321 1.6978.048151.043842.85818 4.9077.85818 5.153.0.04573-.015874.08202-.03515.08013-.019276-.001585-.59437-.37815-1.2779-.83668zm-.30013-6.4717c-.81502-.50785-1.4767-.94016-1.4703-.96068.010961-.034016 4.0645-1.8972 4.379-2.0117.14128-.051402.19404-.022677 1.6328.87598.81774.51103 1.4699.94356 1.4493.96121-.020788.018898-.89265.41941-1.9378.8928-1.0452.47339-2.0513.92935-2.2358 1.0133l-.33547.15231z" style="stroke-width:3.7795"/></svg>
+Linode
+</a><a href=https://azuremarketplace.microsoft.com/en/marketplace/apps/kali-linux.kali title="Microsoft Azure" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M5.483 21.3H24L14.025 4.013l-3.038 8.347 5.836 6.938L5.483 21.3zM13.23 2.7 6.105 8.677.0 19.253h5.505v.014L13.23 2.7z"/></svg>
+Microsoft Azure
+</a><a href=https://www.microsoft.com/en-us/p/kali-linux/9pkr34tncv07 title="Microsoft Store" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6.0H12.6V0H24v11.4z"/></svg>
+Microsoft Store (WSL)
+</a><a href=https://portal.cloud.hashicorp.com/vagrant/discover/kalilinux title=Vagrant rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M5.672 6.774V4.917l3.164-1.822L3.56.005.397 1.852v2.263L7.52 21.41 12 23.995v-6.496l2.107-1.224-.024-.015 4.245-9.486V4.917l5.275-3.065L20.439.005l-5.272 3.087h-.003v2.11L12 12.584v2.467l-2.11 1.224zm3.164-3.66L8.814 3.1 5.672 4.917v1.857l4.218 9.501L12 15.234v-2.65L8.836 5.202zm9.492 1.803v1.857l-4.22 9.101L12 17.332v6.663l4.521-2.607L23.603 4.05V1.852z"/></svg>
+Vagrant</a></div><div><h4>Development</h4><a href=https://bugs.kali.org/ rel=noopener target=_blank>Bug Tracker</a>
+<a href=https://autopkgtest.kali.org/ rel=noopener target=_blank>Continuous Integration</a>
+<a href=https://http.kali.org/README?mirrorlist rel=noopener target=_blank>Network Mirror</a>
+<a href=https://pkg.kali.org/ rel=noopener target=_blank>Package Tracker</a>
+<a href=https://gitlab.com/kalilinux title=GitLab rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.423-.73-.423-.867.0L16.418 9.45H7.582L4.919 1.263C4.783.84 4.185.84 4.05 1.26L1.386 9.449.044 13.587c-.121.375.014.789.331 1.023L12 23.054l11.625-8.443c.318-.235.453-.647.33-1.024"/></svg>
+GitLab</a></div><div><h4>Community</h4><a href=https://discord.kali.org/ title=Discord rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M20.317 4.3698a19.7913 19.7913.0 00-4.8851-1.5152.0741.0741.0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868.0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077.0 00-.0785-.037 19.7363 19.7363.0 00-4.8852 1.515.0699.0699.0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824.0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777.0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076.0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077.0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743.0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614.0a.0739.0739.0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077.0 01-.0066.1276 12.2986 12.2986.0 01-1.873.8914.0766.0766.0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076.0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077.0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061.0 00-.0312-.0286zM8.02 15.3312c-1.1825.0-2.1569-1.0857-2.1569-2.419.0-1.3332.9555-2.4189 2.157-2.4189 1.2108.0 2.1757 1.0952 2.1568 2.419.0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748.0c-1.1825.0-2.1569-1.0857-2.1569-2.419.0-1.3332.9554-2.4189 2.1569-2.4189 1.2108.0 2.1757 1.0952 2.1568 2.419.0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+Discord
+</a><a href=https://forums.kali.org/ rel=noopener target=_blank>Support Forum</a><br><a href=https://video.infosec.exchange/c/kalilinux/videos title=PeerTube rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 6.545v10.91L20.727 12M3.273 12v12L12 17.455M3.273.0v12L12 6.545"/></svg>
+PeerTube</a></div><div><h4>Follow Us</h4><a href=https://bsky.app/profile/kalilinux.bsky.social title=Bluesky rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908.0 3.08.0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741.0 01-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478.0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+Bluesky
+</a><a href=https://www.facebook.com/KaliLinux title=Facebook rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M23.9981 11.9991C23.9981 5.37216 18.626.0 11.9991.0 5.37216.0.0 5.37216.0 11.9991c0 5.9891 4.38789 10.9531 10.1242 11.8533V15.4676H7.07758V11.9991H10.1242V9.35553c0-3.00727 1.7914-4.66839 4.5322-4.66839 1.3128.0 2.686.23435 2.686.23435v2.9529h-1.513C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991h3.3279l-.532 3.4685H13.8739v8.3848C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991z"/></svg>
+Facebook
+</a><a href=https://www.instagram.com/kalilinux/ title=Instagram rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 0C8.74.0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333.0 8.74.0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26.0 12 0zm0 2.16c3.203.0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211.0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844.0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405.0-6.162 2.76-6.162 6.162.0 3.405 2.76 6.162 6.162 6.162 3.405.0 6.162-2.76 6.162-6.162.0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21.0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795.0-1.44-.646-1.44-1.44.0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+Instagram
+</a><a rel=me href=https://infosec.exchange/@kalilinux title=Mastodon rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="m11.193 24c-1.434.0-2.928-.208-4.456-.621-5.772-1.565-5.752-8.642-5.736-14.326l.002-.916c0-5.302 3.417-6.927 3.563-6.993C7.83-.387 16.176-.39 19.443 1.147c.139.063 3.556 1.688 3.556 6.99.001.142.034 3.697-.455 6.243-.381 1.985-3.118 3.897-6.101 4.263l-.237.031c-1.188.156-4.176.551-7.768-.154.326 1.349 1.425 1.625 3.613 1.702 1.835.07 3.511-.466 3.527-.471.223-.073.465-.035.657.099s.311.349.321.581l.083 1.854c.013.286-.137.554-.388.691-.063.035-1.578.853-4.209 1-.28.016-.563.024-.849.024zm.809-22.504c-2.687.0-5.374.336-6.805 1.008-.111.054-2.694 1.336-2.694 5.633l-.002.92c-.015 5.442-.033 11.61 4.628 12.875 1.675.453 3.3.642 4.827.546 1.525-.085 2.611-.423 3.162-.637l-.018-.421c-.754.163-1.891.344-3.099.302-1.759-.062-4.699-.167-5.114-3.364-.034-.249-.05-.514-.05-.796.0-.231.106-.449.289-.591.182-.143.419-.19.644-.137 3.768.942 7.019.513 8.242.353l.25-.032c2.476-.304 4.582-1.864 4.811-3.058.46-2.399.428-5.917.428-5.952.0-4.305-2.582-5.588-2.692-5.64-1.433-.673-4.12-1.009-6.807-1.009z"/><path d="m18.725 15c-.414.0-.75-.336-.75-.75.0-1.065.008-1.976.015-2.759.033-3.665.017-4.298-.753-5.174-.511-.562-1.359-.876-2.21-.809-.448.035-1.281.215-1.817 1.029l-.567.94c-.136.225-.379.362-.642.362s-.506-.138-.642-.362l-.583-.966c-.521-.789-1.356-.97-1.806-1.004-.848-.064-1.699.25-2.217.82-.76.86-.776 1.497-.744 5.188.007.778.015 1.681.015 2.735.0.414-.336.75-.75.75s-.75-.336-.75-.75c0-1.05-.008-1.947-.015-2.723-.032-3.746-.042-4.877 1.128-6.201.831-.913 2.152-1.413 3.447-1.313 1.204.093 2.262.688 2.916 1.636.668-.957 1.717-1.543 2.91-1.636 1.296-.103 2.621.397 3.444 1.304 1.18 1.34 1.169 2.464 1.136 6.188-.007.779-.015 1.686-.015 2.745.0.414-.336.75-.75.75z"/><path d="m11.999 12.13c-.414.0-.75-.336-.75-.75V7.091c0-.414.336-.75.75-.75s.75.336.75.75v4.289c0 .414-.336.75-.75.75z"/></svg>
+Mastodon
+</a><a href=https://kalilinux.substack.com/ title=Substack rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="m22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812zm21.08-10.812H1.46v2.836h21.08z"/></svg>
+Substack
+</a><a href=https://x.com/kalilinux title=X rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zM17.61 20.644h2.039L6.486 3.24H4.298z"/></svg>
+X</a><br><a href=https://www.kali.org/newsletter/ title=Newsletter rel=noopener target=_blank><svg viewBox="0 0 32 32" fill="currentcolor" width="24" height="24"><path d="m0 0h32v32H0z" fill="none"/><path d="m0 4v24h32V4zm28.149 2-12.151 9.719L3.851 6zM2 25.999V7.081l13.998 11.197L29.999 7.081v18.918z"/></svg>
+Newsletter
+</a><a href=https://www.kali.org/rss.xml title=RSS rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M19.199 24C19.199 13.467 10.533 4.8.0 4.8V0c13.165.0 24 10.835 24 24h-4.801zM3.291 17.415c1.814.0 3.293 1.479 3.293 3.295.0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526.0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727.0 15.909 7.184 15.909 15.91z"/></svg>
+RSS</a></div><div><h4>Policies</h4><a href=https://www.kali.org/docs/policy/cookie/>Cookie Policy</a>
+<a href=https://www.kali.org/docs/policy/privacy/>Privacy Policy</a>
+<a href=https://www.kali.org/docs/policy/trademark/>Trademark Policy</a></div><div><svg id="footer-logo" viewBox="0 0 135.47 135.47"><path fill="currentcolor" d="m71.766 36.352s-10.212-.6795-27.602 4.7619c-17.722 5.5452-27.773 13.405-27.773 13.405s26.414-14.748 56.228-15.586zm38.09 16.035 1.3276-.08664s-7.6062-9.2286-22.165-13.724c8.1839 3.3267 15.307 7.7345 20.837 13.81zm2.1727 3.8344c.20411-.3539.86302 1.1243 1.3634 1.7453.0212.124.0564.19967-.23373.13998-.0244-.12747-.0665-.16444-.0665-.16444s-.70029-.41667-.91499-.71224c-.21487-.29556-.253-.81255-.14825-1.0086zm17.867 43.93s1.6147-18.538-27.511-22.812c-3.6915-.54163-8.3599-.9585-13.082-.97044-23.344.30865-24.195-26.924-6.6044-28.299 7.2901-.60152 15.995 3.3311 24.505 7.2941-.0316 1.0569.0121 1.9961.70646 2.864.69414.86762 3.3607 1.8142 4.2128 2.3031.85203.48907 3.5816 2.2245 5.2543 4.4017.36275-.67854 3.3921-2.6504 3.3921-2.6504s-.72571.01579-2.414-.61519c-1.6885-.63098-3.6921-2.5401-3.7395-2.6504-.0473-.11052-.0788-.28401.31578-.36295.2996-.25224-.37893-1.0727-.67874-1.3723-.2996-.2998-2.3036-3.7073-2.3508-3.7863-.0473-.07894-.0632-.1577-.20507-.25243-.4419-.1421-2.3826.20506-2.3826.20506s-2.9847-1.4659-4.0135-4.6264c.015.55358-.5118 1.158.0 2.4298-1.5562-.65832-2.8929-1.7811-3.9472-4.5557-.62751 1.5781.0 2.5815.0 2.5815s-3.6646-1.024-4.2509-4.4036c-.6435 1.5171.0 2.4296.0 2.4296s-5.9742-3.1172-15.901-3.1624c-6.646-.60961-8.0296-12.301-7.4139-14.269.0.0-9.586-5.0521-28.456-7.2841-18.87-2.2322-34.346-.33638-34.346-.33638s33.421-1.6039 60.195 9.2356c.91018 4.0709 3.6482 10.851 5.1229 14.11-4.2197 2.9175-8.9781 5.6609-9.7191 15.391-.74074 9.7297 7.6245 18.288 17.998 18.552 9.8502.52469 16.656.59921 24.905 4.8759 7.8739 4.3537 14.33 17.62 14.969 29.551.69008-8.8524-2.632-27.889-18.134-33.669 21.667 3.7917 23.573 19.854 23.573 19.854zm-58.64-65.253-.77963-2.5147s-12.864-2.2844-30.16-1.055c-17.296 1.2294-34.759 7.2839-34.759 7.2839s35.732-8.991 65.698-3.7143"/></svg>
+© OffSec Services Limited 2026. All rights reserved.</div></div><div id=offsec-partnership><svg viewBox="0 0 504 180" class="astro-TVRURPNS w-44" style="enable-background:new 0 0 504 180" id="Layer_1"><style>.st0{fill:currentcolor}</style><switch class="astro-TVRURPNS"><g class="astro-TVRURPNS"><path d="M194.6 54.6c-21.7.0-37.5 15.5-37.5 36.9v.8c0 21.7 15.4 36.8 37.5 36.8s37.3-15.3 37.3-37.1v-.8c0-21.5-15.3-36.6-37.3-36.6zm-22.1 36.8c0-15.5 8.5-25.1 22.2-25.1s22.1 9.8 22.1 25v.8c0 15.3-8.6 25.2-21.9 25.2s-22.4-10.3-22.4-25.1v-.8zM299.9 51.8c-2.4-.8-4.3-1-7.3-1-11.7.0-18.4 6.7-18.4 18.2v5.7h-20.4v-6.3c0-5.9 3.5-7.1 6.5-7.1 2.3.0 4.1.6 5.3 1 .2.1.4.0.5-.1.2-.1.2-.3.2-.5v-9.4c0-.2-.2-.5-.4-.5-2.4-.7-4.3-1-7.2-1-11.9.0-18.4 6.5-18.4 18.2v58.6c0 .3.3.6.6.6h12.3c.3.0.6-.3.6-.6V85h20.4v42.6c0 .3.3.6.6.6h12.3c.3.0.6-.3.6-.6V85h11.6c.3.0.6-.3.6-.6v-9.1c0-.3-.3-.6-.6-.6h-11.6v-6.2c0-5.9 3.5-7.1 6.5-7.1 2.4.0 4.3.5 5.4.9.2.1.4.0.5-.1s.2-.3.2-.5v-9.4c.1-.2-.1-.4-.4-.5zm36.3 32.8c-12.5-1.8-14.6-4.5-14.6-9.9s4.5-8.8 12-8.8c8.2.0 12.2 3.1 13.5 10.2.0.3.3.5.6.5h12.4c.2.0.3-.1.4-.2.1-.1.2-.3.1-.4-1.4-13.9-10.8-21.2-27.1-21.2-15.3.0-25.9 8.7-25.9 21s7.3 19 26.2 21.4c12.6 2 14.7 4.9 14.7 10.4.0 6.2-5.3 10.4-13.2 10.4-12.3.0-14.8-6.1-15.6-12.7.0-.3-.3-.5-.6-.5h-13c-.2.0-.3.1-.4.2-.1.1-.2.3-.1.4.8 10.8 6.7 23.7 29.8 23.7 15.9.0 27.4-9.5 27.4-22.6-.1-15.3-10.2-19.7-26.6-21.9zM415.2 80c-4.5-4.1-10.7-6.3-17.9-6.3-15.9.0-27.1 11.3-27.1 27.5v.8c0 16.2 11.1 27.1 27.6 27.1 14.2.0 23.3-6.4 25-17.5.0-.2.0-.3-.1-.4-.1-.1-.3-.2-.4-.2h-11.9c-.3.0-.5.2-.6.5-.9 5-4.8 7.5-11.7 7.5-8.5.0-13.5-5.1-14.1-14.4h38.4c.3.0.6-.3.6-.6v-3.5c-.1-8.8-2.7-15.7-7.8-20.5zm-31 15.5c1.4-7.6 6.1-11.9 13-11.9 7.5.0 11.6 4 12.3 11.9h-25.3zm99.7 12.3c-.1-.1-.3-.2-.4-.2h-11.3c-.3.0-.5.2-.6.5-.6 6.5-5.4 10.7-12.3 10.7-9 0-14.2-6.1-14.2-16.8v-.8c0-10.1 5.5-16.6 13.9-16.6 6.8.0 10.8 3.2 11.7 9.4.0.3.3.5.6.5h11.9c.2.0.3-.1.4-.2.1-.1.2-.3.1-.4-1.3-12.8-10.3-20.1-24.9-20.1-15.9.0-27.5 11.6-27.5 27.6v.8c0 16.2 11 27 27.5 27 14.3.0 24.2-8.2 25.2-21 .1-.2.1-.3-.1-.4z" class="astro-TVRURPNS st0"/><linearGradient gradientUnits="userSpaceOnUse" id="SVGID_1_" x1="70.2755" x2="70.2755" y1="177.9512" y2="62.096" class="astro-TVRURPNS" gradientTransform="matrix(1 0 0 -1 0 210.0236)"><stop offset="0" class="astro-TVRURPNS" style="stop-color:#00bfcb"/><stop offset="1" class="astro-TVRURPNS" style="stop-color:#6619d0"/></linearGradient><path d="M74.1 85.7c0 12 .9 23.9 2.6 35.8l3.7 25.5c-3.3.6-6.7.9-10.1.9s-6.8-.3-10.1-.9l3.7-25.5c1.7-11.9 2.6-23.8 2.6-35.8V32.2c1.3-.1 2.6-.1 3.9-.1 1.3.0 2.6.1 3.9.1v53.5zm-38.9 50.4 15.1-29.3c1.1-2.2 1.7-4.7 1.7-7.2V35c-23 7.7-39.7 29.4-39.7 55 0 18.8 9 35.5 22.9 46.1zm53.3-36.5c0 2.5.6 4.9 1.7 7.2l15.1 29.3c13.9-10.6 22.9-27.3 22.9-46.1.0-25.6-16.6-47.3-39.7-55v64.6z" class="astro-TVRURPNS" style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_)"/><path d="m489.6 77.1-1.6-3.6h.6l1.1 2.7 1.1-2.7h.6l-1.6 3.6h-.2zm-1.7.0v-3.6h.6v3.6h-.6zm3.1.0v-3.6h.6v3.6h-.6zm-5.5.0v-3.3h.6v3.3h-.6zm-1.1-3v-.6h2.8v.6h-2.8z" class="astro-TVRURPNS st0"/></g></switch></svg><div>Kali Linux is part of OffSec's Community Projects<br><a href="https://www.offsec.com/community/?utm_source=kali&utm_medium=web&utm_campaign=www#projects" rel=noopener target=_blank>Learn more about OffSec's free, open-source penetration testing tools for cybersecurity professionals</a></div></div></footer><script src="../../script.min.js"></script></body></html>

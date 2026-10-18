@@ -1,0 +1,2909 @@
+﻿<!doctype html><html lang=en-us><head itemscope itemtype=https://www.kali.org/><meta charset=utf-8><meta name=viewport content="width=device-width"><title itemprop=name>lvm2 | Kali Linux Tools</title>
+<meta itemprop=name content="lvm2 | Kali Linux Tools"><meta name=application-name content="lvm2 | Kali Linux Tools"><meta name=twitter:title content="lvm2 | Kali Linux Tools"><meta property="og:site_name" content="Kali Linux"><meta property="og:title" content="lvm2 | Kali Linux Tools"><meta itemprop=description content><meta name=description content><meta name=twitter:description content><meta property="og:description" content><meta name=keywords content="kali,linux,kalilinux,Penetration,Testing,Penetration Testing,Distribution,Advanced"><meta name=apple-mobile-web-app-status-bar-style content="black-translucent"><meta name=msapplication-navbutton-color content="#367BF0"><meta name=theme-color content="#367BF0"><meta name=language content="English"><meta property="og:locale" content="en_US"><meta itemprop=image content="../../images/kali-logo.svg"><meta property="og:image" content="../../images/kali-logo.svg"><meta name=twitter:image content="../../images/kali-logo.svg"><meta name=twitter:image:src content="../../images/kali-logo.svg"><meta property="og:updated_time" content=2026-05-25T00:00:00Z><meta name=twitter:site content="@kalilinux"><meta name=twitter:creator content="@kalilinux"><link rel="alternate icon" class=js-site-favicon type=image/png href=../../images/favicon.png><link rel=icon class=js-site-favicon type=image/svg+xml href=../../images/favicon.svg><link rel=sitemap type=application/xml title=Sitemap href=https://www.kali.org/sitemap.xml><link href=https://www.kali.org/rss.xml type=application/rss+xml title="Kali Linux" rel=alternate><link href=https://www.kali.org/rss.xml type=application/rss+xml title="Kali Linux" rel=feed><link rel=canonical href="./index.html" itemprop=url><meta name=twitter:url content="https://www.kali.org/tools/lvm2/"><meta property="og:url" content="https://www.kali.org/tools/lvm2/"><meta name=url content="https://www.kali.org/tools/lvm2/"><link href="../../style.min.css" rel=stylesheet><style>:root{--primary-color:#367BF0;--body-color:light-dark(#f9f9f9, #010409);--text-color:light-dark(#636363, #eeeeec);--text-color-dark:light-dark(#242738, white);--white-color:light-dark(#ffffff, #16171d);--font-family:Noto Sans;--color-kali-blue:#2777ff;--color-kali-purple:#a400a4}</style><script>const $=document.querySelector.bind(document),$$=document.querySelectorAll.bind(document)</script></head><body><header><nav class=container><a id=logo href=https://www.kali.org/ style=background-image:url(../../images/kali-logo.svg)></a><ul id=navigation><li><a href="https://www.offsec.com/events/the-gauntlet/?utm_source=kali&utm_medium=web&utm_campaign=menu">Join Free CTF</a></li><li><a href=https://www.kali.org/get-kali/>Get Kali</a></li><li><a href=https://www.kali.org/blog/>Blog</a></li><li class=dropdown-menu><span>Documentation <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/docs/>Documentation Pages</a>
+<a href="../all-tools/index.html">Tools Documentation</a>
+<a href=https://www.kali.org/faq/>Frequently Asked Questions</a>
+<a href="https://bugs.kali.org/search.php?project_id=1&category_id[]=General%20Bug&category_id[]=Kali%20Package%20Bug&category_id[]=Kali%20Package%20Improvement&status[]=30&status[]=40&status[]=50&sticky=on&sort=id%2Clast_updated&dir=DESC%2CDESC&hide_status=-2&match_type=0">Known Issues</a></div></li><li class=dropdown-menu><span>Community <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/community/>Community Support</a>
+<a href=https://forums.kali.org/>Forums</a>
+<a href=https://discord.kali.org/>Discord</a>
+<a href=https://www.kali.org/newsletter/>Join Newsletter</a>
+<a href=https://http.kali.org/README?mirrorlist>Mirror Location</a>
+<a href=https://www.kali.org/docs/community/contribute/>Get Involved</a></div></li><li><a href="https://www.offsec.com/kali-training/courses/?utm_source=kali&utm_medium=web&utm_campaign=menu">Courses</a></li><li class=dropdown-menu><span>Developers <i class=ti-angle-down></i></span><div><a href=https://gitlab.com/kalilinux>Git Repositories</a>
+<a href=https://pkg.kali.org/>Packages</a>
+<a href=https://autopkgtest.kali.org/>Auto Package Test</a>
+<a href=https://bugs.kali.org/>Bug Tracker</a>
+<a href=https://nethunter.kali.org/>Kali NetHunter Stats</a></div></li><li class=dropdown-menu><span>About <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/features/>Kali Linux Overview</a>
+<a href=https://gitlab.com/kalilinux/documentation/press-pack/-/archive/main/press-pack-main.zip>Press Pack</a>
+<a href=https://www.kali.org/wallpapers/>Wallpapers</a>
+<a href=https://offsec.usa.dowlis.com/kali/view-all.html>Kali Swag Store</a>
+<a href=https://www.kali.org/about-us/>Meet The Kali Team</a>
+<a href=https://www.kali.org/partnerships/>Partnerships</a>
+<a href=https://www.kali.org/contact/>Contact Us</a></div></li></ul><button title="show menu"><div></div><div></div><div></div></button></nav></header><link href="../../tools.min.css" rel=stylesheet><main class=container><aside><a href="../all-tools/index.html" title="↤ Go back"></a><ul><li><a><h3>lvm2</h3></a></li></ul><img src=../../images/kali-tools-icon-missing.svg>
+<code>version: 2.03.31</code> <code>arch: linux-any all</code><hr><div id=package-links><a href=https://sourceware.org/lvm2/ target=_blank><i class=ti-world></i> lvm2 Homepage</a><span><span>|</span><a href=https://pkg.kali.org/pkg/lvm2 target=_blank><i class=ti-target></i> Package Tracker</a></span><span><span>|</span><a href=https://salsa.debian.org/lvm-team/lvm2 target=_blank><i class=ti-folder></i> Source Code Repository</a></span><br><a href=https://gitlab.com/-/ide/project/kalilinux/documentation/kali-tools/edit/main/-/lvm2/index.md rel=noopener target=_blank><i class=ti-pencil-alt></i> Edit this page</a></span></div><hr><div id=categories><h4><a href="../index.html">Categories <i class=ti-link></i></a></h4><ul class=table-of-contents><li><ul></ul></li></ul></div><hr><div id=metapackages><h4><a href=https://www.kali.org/docs/general-use/metapackages/>Metapackages <i class=ti-link></i></a></h4><ul class=table-of-contents><li><ul><li><a href="../kali-meta/index.html#kali-linux-default" title=kali-linux-default>default</a></li><li><a href="../kali-meta/index.html#kali-linux-everything" title=kali-linux-everything>everything</a></li><li><a href="../kali-meta/index.html#kali-linux-large" title=kali-linux-large>large</a></li></ul></li><li>Tools:<ul><li><a href="../kali-meta/index.html#kali-tools-forensics" title=kali-tools-forensics>forensics</a></li><li><a href="../kali-meta/index.html#kali-tools-protect" title=kali-tools-protect>protect</a></li><li><a href="../kali-meta/index.html#kali-tools-respond" title=kali-tools-respond>respond</a></li></ul></li></ul></div><hr><div id=binaries><h4><a href=#packages-and-binaries>Packages & Binaries <i class=ti-link></i></a></h4><ul class=table-of-contents><li><a href=#dmeventd title="dmeventd package"><i class=ti-package></i>
+dmeventd</a><ul><li><a href=#dmeventd-1 title="dmeventd command">dmeventd</a></li></ul></li><li><a href=#dmsetup title="dmsetup package"><i class=ti-package></i>
+dmsetup</a><ul><li><a href=#blkdeactivate title="blkdeactivate command">blkdeactivate</a></li><li><a href=#dmsetup-1 title="dmsetup command">dmsetup</a></li><li><a href=#dmstats title="dmstats command">dmstats</a></li></ul></li><li><a href=#dmsetup-udeb title="dmsetup-udeb package"><i class=ti-package></i>
+dmsetup-udeb</a></li><li><a href=#libdevmapper-dev title="libdevmapper-dev package"><i class=ti-package></i>
+libdevmapper-dev</a></li><li><a href=#libdevmapper-event1021 title="libdevmapper-event1.02.1 package"><i class=ti-package></i>
+libdevmapper-event1.02.1</a></li><li><a href=#libdevmapper1021 title="libdevmapper1.02.1 package"><i class=ti-package></i>
+libdevmapper1.02.1</a></li><li><a href=#libdevmapper1021-udeb title="libdevmapper1.02.1-udeb package"><i class=ti-package></i>
+libdevmapper1.02.1-udeb</a></li><li><a href=#liblvm2-dev title="liblvm2-dev package"><i class=ti-package></i>
+liblvm2-dev</a></li><li><a href=#liblvm2cmd203 title="liblvm2cmd2.03 package"><i class=ti-package></i>
+liblvm2cmd2.03</a></li><li><a href=#lvm2 title="lvm2 package"><i class=ti-package></i>
+lvm2</a><ul><li><a href=#fsadm title="fsadm command">fsadm</a></li><li><a href=#lvchange title="lvchange command">lvchange</a></li><li><a href=#lvconvert title="lvconvert command">lvconvert</a></li><li><a href=#lvcreate title="lvcreate command">lvcreate</a></li><li><a href=#lvdisplay title="lvdisplay command">lvdisplay</a></li><li><a href=#lvextend title="lvextend command">lvextend</a></li><li><a href=#lvm title="lvm command">lvm</a></li><li><a href=#lvmconfig title="lvmconfig command">lvmconfig</a></li><li><a href=#lvmdiskscan title="lvmdiskscan command">lvmdiskscan</a></li><li><a href=#lvmdump title="lvmdump command">lvmdump</a></li><li><a href=#lvmpolld title="lvmpolld command">lvmpolld</a></li><li><a href=#lvmsadc title="lvmsadc command">lvmsadc</a></li><li><a href=#lvmsar title="lvmsar command">lvmsar</a></li><li><a href=#lvreduce title="lvreduce command">lvreduce</a></li><li><a href=#lvremove title="lvremove command">lvremove</a></li><li><a href=#lvrename title="lvrename command">lvrename</a></li><li><a href=#lvresize title="lvresize command">lvresize</a></li><li><a href=#lvs title="lvs command">lvs</a></li><li><a href=#lvscan title="lvscan command">lvscan</a></li><li><a href=#pvchange title="pvchange command">pvchange</a></li><li><a href=#pvck title="pvck command">pvck</a></li><li><a href=#pvcreate title="pvcreate command">pvcreate</a></li><li><a href=#pvdisplay title="pvdisplay command">pvdisplay</a></li><li><a href=#pvmove title="pvmove command">pvmove</a></li><li><a href=#pvremove title="pvremove command">pvremove</a></li><li><a href=#pvresize title="pvresize command">pvresize</a></li><li><a href=#pvs title="pvs command">pvs</a></li><li><a href=#pvscan title="pvscan command">pvscan</a></li><li><a href=#vgcfgbackup title="vgcfgbackup command">vgcfgbackup</a></li><li><a href=#vgcfgrestore title="vgcfgrestore command">vgcfgrestore</a></li><li><a href=#vgchange title="vgchange command">vgchange</a></li><li><a href=#vgck title="vgck command">vgck</a></li><li><a href=#vgconvert title="vgconvert command">vgconvert</a></li><li><a href=#vgcreate title="vgcreate command">vgcreate</a></li><li><a href=#vgdisplay title="vgdisplay command">vgdisplay</a></li><li><a href=#vgexport title="vgexport command">vgexport</a></li><li><a href=#vgextend title="vgextend command">vgextend</a></li><li><a href=#vgimport title="vgimport command">vgimport</a></li><li><a href=#vgimportclone title="vgimportclone command">vgimportclone</a></li><li><a href=#vgmerge title="vgmerge command">vgmerge</a></li><li><a href=#vgmknodes title="vgmknodes command">vgmknodes</a></li><li><a href=#vgreduce title="vgreduce command">vgreduce</a></li><li><a href=#vgremove title="vgremove command">vgremove</a></li><li><a href=#vgrename title="vgrename command">vgrename</a></li><li><a href=#vgs title="vgs command">vgs</a></li><li><a href=#vgscan title="vgscan command">vgscan</a></li><li><a href=#vgsplit title="vgsplit command">vgsplit</a></li></ul></li><li><a href=#lvm2-dbusd title="lvm2-dbusd package"><i class=ti-package></i>
+lvm2-dbusd</a><ul><li><a href=#lvmdbusd title="lvmdbusd command">lvmdbusd</a></li></ul></li><li><a href=#lvm2-lockd title="lvm2-lockd package"><i class=ti-package></i>
+lvm2-lockd</a><ul><li><a href=#lvmlockctl title="lvmlockctl command">lvmlockctl</a></li><li><a href=#lvmlockd title="lvmlockd command">lvmlockd</a></li></ul></li><li><a href=#lvm2-udeb title="lvm2-udeb package"><i class=ti-package></i>
+lvm2-udeb</a></li></ul></div><hr><div class=darkmode-switch><span>LIGHT</span><label class=switch>
+<input type=checkbox name=toggle-darkmode><div></div></label><span>DARK</span></div></aside><section id=content><h1 id=packages-and-binaries>Packages and Binaries:</h1><div id=packages-info><h3 id=dmeventd>dmeventd</h3><p><strong>Linux Kernel Device Mapper event daemon</strong><br>The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+Team&rsquo;s implementation of a minimalistic kernel-space driver that handles
+volume management, while keeping knowledge of the underlying device layout
+in user-space. This makes it useful for not only LVM, but software raid,
+and other drivers that create &ldquo;virtual&rdquo; block devices.</p><p>This package contains a daemon to monitor events of devmapper devices.</p><p><strong>Installed size:</strong> <code>229 KB</code><br><strong>How to install:</strong> <code>sudo apt install dmeventd</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>libc6</li><li>libdevmapper-event1.02.1</li><li>libdevmapper1.02.1</li><li>liblvm2cmd2.03</li></ul></div></details><h5 id=dmeventd-1>dmeventd</h5><p>Device-mapper event daemon</p><pre><code>root@kali:~# dmeventd -h
+Usage:
+dmeventd [-d [-d [-d]]] [-e path] [-f] [-h] [i] [-l] [-R] [-V] [-?]
+
+   -d       Log debug messages to syslog (-d, -dd, -ddd)
+   -e       Select a file path checked on exit
+   -f       Don't fork, run in the foreground
+   -h       Show this help information
+   -i       Query running instance of dmeventd for info
+   -l       Log to stdout,stderr instead of syslog
+   -?       Show this help information on stderr
+   -R       Restart dmeventd
+   -V       Show version of dmeventd
+
+</code></pre><hr><h3 id=dmsetup>dmsetup</h3><p><strong>Linux Kernel Device Mapper userspace library</strong><br>The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+Team&rsquo;s implementation of a minimalistic kernel-space driver that handles
+volume management, while keeping knowledge of the underlying device layout
+in user-space. This makes it useful for not only LVM, but software raid,
+and other drivers that create &ldquo;virtual&rdquo; block devices.</p><p>This package contains a utility for modifying device mappings.</p><p><strong>Installed size:</strong> <code>247 KB</code><br><strong>How to install:</strong> <code>sudo apt install dmsetup</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>libc6</li><li>libdevmapper1.02.1</li></ul></div></details><h5 id=blkdeactivate>blkdeactivate</h5><p>Utility to deactivate block devices</p><pre><code>root@kali:~# blkdeactivate -h
+blkdeactivate: Utility to deactivate block devices
+
+  blkdeactivate [options] [device...]
+    - Deactivate block device tree.
+      If devices are specified, deactivate only supplied devices and their holders.
+
+  Options:
+    -e | --errors                       Show errors reported from tools
+    -h | --help                         Show this help message
+    -d | --dmoptions     DM_OPTIONS     Comma separated DM specific options
+    -l | --lvmoptions    LVM_OPTIONS    Comma separated LVM specific options
+    -m | --mpathoptions  MPATH_OPTIONS  Comma separated DM-multipath specific options
+    -r | --mdraidoptions MDRAID_OPTIONS Comma separated MD RAID specific options
+    -o | --vdooptions    VDO_OPTIONS    Comma separated VDO specific options
+    -u | --umount                       Unmount the device if mounted
+    -v | --verbose                      Verbose mode (also implies -e)
+
+  Device specific options:
+    DM_OPTIONS:
+      retry           retry removal several times in case of failure
+      force           force device removal
+    LVM_OPTIONS:
+      retry           retry removal several times in case of failure
+      wholevg         deactivate the whole VG when processing an LV
+    MDRAID_OPTIONS:
+      wait            wait for resync, recovery or reshape to complete first
+    MPATH_OPTIONS:
+      disablequeueing disable queueing on all DM-multipath devices first
+    VDO_OPTIONS:
+      configfile=file use specified VDO configuration file
+</code></pre><hr><h5 id=dmsetup-1>dmsetup</h5><p>Low level logical volume management</p><pre><code>root@kali:~# dmsetup -h
+Usage:
+
+dmsetup
+	[--version] [-h|--help [-c|-C|--columns]]
+	[-v|--verbose [-v|--verbose ...]] [-f|--force]
+	[--checks] [--manglename {none|hex|auto}]
+	[-r|--readonly] [--noopencount] [--noflush] [--nolockfs] [--inactive]
+	[--udevcookie &lt;cookie&gt;] [--noudevrules] [--noudevsync] [--verifyudev]
+	[-y|--yes] [--readahead {[+]&lt;sectors&gt;|auto|none}] [--retry]
+	[-c|-C|--columns] [-o &lt;fields&gt;] [-O|--sort &lt;sort_fields&gt;]
+	[-S|--select &lt;selection&gt;] [--nameprefixes]
+	[--noheadings|--headings none|abbrev|full|0|1|2]
+	[--separator &lt;separator&gt;]
+
+	help [-c|-C|--columns]
+	create &lt;dev_name&gt;
+	    [-j|--major &lt;major&gt; -m|--minor &lt;minor&gt;]
+	    [-U|--uid &lt;uid&gt;] [-G|--gid &lt;gid&gt;] [-M|--mode &lt;octal_mode&gt;]
+	    [-u|--uuid &lt;uuid&gt;] [--addnodeonresume|--addnodeoncreate]
+	    [--readahead {[+]&lt;sectors&gt;|auto|none}]
+	    [-n|--notable|--table {&lt;table&gt;|&lt;table_file&gt;}]
+	create --concise [&lt;concise_device_spec_list&gt;]
+	remove [--deferred] [-f|--force] [--retry] &lt;device&gt;...
+	remove_all [-f|--force]
+	suspend [--noflush] [--nolockfs] &lt;device&gt;...
+	resume [--noflush] [--nolockfs] &lt;device&gt;...
+	       [--addnodeonresume|--addnodeoncreate]
+	       [--readahead {[+]&lt;sectors&gt;|auto|none}]
+	load &lt;device&gt; [&lt;table&gt;|&lt;table_file&gt;]
+	clear &lt;device&gt;
+	reload &lt;device&gt; [&lt;table&gt;|&lt;table_file&gt;]
+	wipe_table [-f|--force] [--noflush] [--nolockfs] &lt;device&gt;...
+	rename &lt;device&gt; [--setuuid] &lt;new_name_or_uuid&gt;
+	measure [&lt;device&gt;...]
+	message &lt;device&gt; &lt;sector&gt; &lt;message&gt;
+	ls [--target &lt;target_type&gt;] [--exec &lt;command&gt;] [-o &lt;options&gt;] [--tree]
+	info [&lt;device&gt;...]
+	deps [-o &lt;options&gt;] [&lt;device&gt;...]
+	stats &lt;command&gt; [&lt;options&gt;] [&lt;device&gt;...]
+	status [&lt;device&gt;...] [--noflush] [--target &lt;target_type&gt;]
+	table [&lt;device&gt;...] [--concise] [--target &lt;target_type&gt;] [--showkeys]
+	wait &lt;device&gt; [&lt;event_nr&gt;] [--noflush]
+	mknodes [&lt;device&gt;...]
+	mangle [&lt;device&gt;...]
+	udevcreatecookie 
+	udevreleasecookie [&lt;cookie&gt;]
+	udevflags &lt;cookie&gt;
+	udevcomplete &lt;cookie&gt;
+	udevcomplete_all [&lt;age_in_minutes&gt;]
+	udevcookies 
+	target-version [&lt;target&gt;...]
+	targets 
+	version 
+	setgeometry &lt;device&gt; &lt;cyl&gt; &lt;head&gt; &lt;sect&gt; &lt;start&gt;
+	splitname &lt;device&gt; [&lt;subsystem&gt;]
+
+&lt;device&gt; may be device name or (if only one) -u &lt;uuid&gt; or -j &lt;major&gt; -m &lt;minor&gt;
+&lt;mangling_mode&gt; is one of 'none', 'auto' and 'hex'.
+&lt;fields&gt; are comma-separated.  Use 'help -c' for list.
+&lt;concise_device_specification&gt; has single-device entries separated by semi-colons:
+    &lt;name&gt;,&lt;uuid&gt;,&lt;minor&gt;,&lt;flags&gt;,&lt;table&gt;
+        where &lt;flags&gt; is 'ro' or 'rw' (the default) and any of &lt;uuid&gt;, &lt;minor&gt;
+        and &lt;flags&gt; may be empty. Separate extra table lines with commas.
+    E.g.: dev1,,,,0 100 linear 253:1 0,100 100 error;dev2,,,ro,0 1 error
+Table_file contents may be supplied on stdin.
+Options are: devno, devname, blkdevname.
+Tree specific options are: ascii, utf, vt100; compact, inverted, notrunc;
+                           blkdevname, [no]device, active, open, rw and uuid.
+
+</code></pre><hr><h5 id=dmstats>dmstats</h5><p>Device-mapper statistics management</p><pre><code>root@kali:~# dmstats -h
+Usage:
+
+dmstats
+	[-h|--help]
+	[-v|--verbose [-v|--verbose ...]]
+	[--areas &lt;nr_areas&gt;] [--areasize &lt;size&gt;]
+	[--userdata &lt;data&gt;] [--clear]
+	[--count &lt;count&gt;] [--interval &lt;seconds&gt;]
+	[-o &lt;fields&gt;] [-O|--sort &lt;sort_fields&gt;]
+	     [--programid &lt;id&gt;]
+	[--start &lt;start&gt;] [--length &lt;length&gt;]
+	[--segments] [--units &lt;units&gt;]
+
+	help 
+	clear [--allregions|--regionid id] [--alldevices|&lt;device&gt;...] 
+	create [--start &lt;start&gt; [--length &lt;len&gt;]
+	    [--areas &lt;nr_areas&gt;] [--areasize &lt;size&gt;] 
+	    [--programid &lt;id&gt;] [--userdata &lt;data&gt; ] 
+	    [--bounds histogram_boundaries] [--precise] 
+	    [--segments] [--alldevices|&lt;device&gt;...] 
+	create --filemap [--nogroup] [--nomonitor] [--follow mode]
+	    [--programid &lt;id&gt;] [--userdata &lt;data&gt; ] 
+	    [--bounds histogram_boundaries] [--precise] &lt;file_path&gt;
+	delete [--allprograms|--programid id] 
+	    [--allregions|--regionid id] 
+	    [--alldevices|&lt;device&gt;...] 
+	group [--alias NAME] --regions &lt;regions&gt;
+	    [--allprograms|--programid id] [--alldevices|&lt;device&gt;...] 
+	list [--allprograms|--programid id] [--allregions|--regionid id] 
+	print [--clear] [--allprograms|--programid id] 
+	    [--allregions|--regionid id] 
+	    [--alldevices|&lt;device&gt;...] 
+	report [--interval &lt;seconds&gt;] [--count &lt;cnt&gt;]
+	    [--units &lt;u&gt;] [--programid &lt;id&gt;] [--regionid &lt;id&gt;] 
+	    [-o &lt;fields&gt;] [-O|--sort &lt;sort_fields&gt;]
+	    [-S|--select &lt;selection&gt;] [--nameprefixes]
+	    [--noheadings] [--separator &lt;separator&gt;]
+	    [--allprograms|--programid id] [&lt;device&gt;...]
+	ungroup --groupid &lt;id&gt; [--allprograms|--programid id] 
+	    [--alldevices|&lt;device&gt;...] 
+	update_filemap --groupid &lt;id&gt; 
+	    [--nomonitor] [--follow mode] &lt;file_path&gt;
+	version 
+
+&lt;device&gt; may be device name or (if only one) -u &lt;uuid&gt; or -j &lt;major&gt; -m &lt;minor&gt;
+&lt;fields&gt; are comma-separated.  Use 'help -c' for list.
+
+</code></pre><hr><h3 id=dmsetup-udeb>dmsetup-udeb</h3><h3 id=libdevmapper-dev>libdevmapper-dev</h3><p><strong>Linux Kernel Device Mapper header files</strong><br>The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+Team&rsquo;s implementation of a minimalistic kernel-space driver that handles
+volume management, while keeping knowledge of the underlying device layout
+in user-space. This makes it useful for not only LVM, but software raid,
+and other drivers that create &ldquo;virtual&rdquo; block devices.</p><p>This package contains the (user-space) header files for accessing the
+device-mapper; it allow usage of the device-mapper through a clean,
+consistent interface (as opposed to through kernel ioctls).</p><p><strong>Installed size:</strong> <code>165 KB</code><br><strong>How to install:</strong> <code>sudo apt install libdevmapper-dev</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>libdevmapper-event1.02.1</li><li>libdevmapper1.02.1</li><li>libselinux1-dev</li><li>libudev-dev</li></ul></div></details><hr><h3 id=libdevmapper-event1021>libdevmapper-event1.02.1</h3><p><strong>Linux Kernel Device Mapper event support library</strong><br>The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+Team&rsquo;s implementation of a minimalistic kernel-space driver that handles
+volume management, while keeping knowledge of the underlying device layout
+in user-space. This makes it useful for not only LVM, but software raid,
+and other drivers that create &ldquo;virtual&rdquo; block devices.</p><p>This package contains the userspace library to help with event monitoring
+for devmapper devices, in conjunction with the dmevent daemon.</p><p><strong>Installed size:</strong> <code>53 KB</code><br><strong>How to install:</strong> <code>sudo apt install libdevmapper-event1.02.1</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>libc6</li><li>libdevmapper1.02.1</li></ul></div></details><hr><h3 id=libdevmapper1021>libdevmapper1.02.1</h3><p><strong>Linux Kernel Device Mapper userspace library</strong><br>The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+Team&rsquo;s implementation of a minimalistic kernel-space driver that handles
+volume management, while keeping knowledge of the underlying device layout
+in user-space. This makes it useful for not only LVM, but software raid,
+and other drivers that create &ldquo;virtual&rdquo; block devices.</p><p>This package contains the (user-space) shared library for accessing the
+device-mapper; it allows usage of the device-mapper through a clean,
+consistent interface (as opposed to through kernel ioctls).</p><p><strong>Installed size:</strong> <code>485 KB</code><br><strong>How to install:</strong> <code>sudo apt install libdevmapper1.02.1</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>dmsetup</li><li>libc6</li><li>libselinux1</li><li>libudev1</li></ul></div></details><hr><h3 id=libdevmapper1021-udeb>libdevmapper1.02.1-udeb</h3><h3 id=liblvm2-dev>liblvm2-dev</h3><p><strong>LVM2 libraries - development files</strong><br>This package contains files needed to develop applications that use the
+lvm2app library.</p><p><strong>Installed size:</strong> <code>20 KB</code><br><strong>How to install:</strong> <code>sudo apt install liblvm2-dev</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>libdevmapper-dev</li><li>liblvm2cmd2.03</li></ul></div></details><hr><h3 id=liblvm2cmd203>liblvm2cmd2.03</h3><p><strong>LVM2 command library</strong><br>This package contains the lvm2cmd shared library.</p><p><strong>Installed size:</strong> <code>2.99 MB</code><br><strong>How to install:</strong> <code>sudo apt install liblvm2cmd2.03</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>dmeventd</li><li>libaio1t64</li><li>libblkid1</li><li>libc6</li><li>libdevmapper-event1.02.1</li><li>libselinux1</li><li>libsystemd0</li><li>libudev1</li></ul></div></details><hr><h3 id=lvm2>lvm2</h3><p><strong>Linux Logical Volume Manager</strong><br>This is LVM2, the rewrite of The Linux Logical Volume Manager. LVM
+supports enterprise level volume management of disk and disk subsystems
+by grouping arbitrary disks into volume groups. The total capacity of
+volume groups can be allocated to logical volumes, which are accessed as
+regular block devices.</p><p><strong>Installed size:</strong> <code>3.96 MB</code><br><strong>How to install:</strong> <code>sudo apt install lvm2</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>dmeventd</li><li>dmsetup</li><li>libaio1t64</li><li>libblkid1</li><li>libc6</li><li>libdevmapper-event1.02.1</li><li>libedit2</li><li>libselinux1</li><li>libsystemd0</li><li>libudev1</li></ul></div></details><h5 id=fsadm>fsadm</h5><p>Utility to resize or check filesystem on a device</p><pre><code>root@kali:~# fsadm -h
+fsadm: Utility to resize or check the filesystem on a device
+
+  fsadm [options] check &lt;device&gt;
+    - Check the filesystem on device using fsck
+
+  fsadm [options] resize &lt;device&gt; [&lt;new_size&gt;[BKMGTPE]]
+    - Change the size of the filesystem on device to new_size
+
+  Options:
+    -h | --help         Show this help message
+    -v | --verbose      Be verbose
+    -e | --ext-offline  unmount filesystem before ext2/ext3/ext4 resize
+    -f | --force        Bypass sanity checks
+    -n | --dry-run      Print commands without running them
+    -l | --lvresize     Resize given device (if it is LVM device)
+    -c | --cryptresize  Resize given crypt device
+    -y | --yes          Answer &quot;yes&quot; at any prompts
+
+  new_size - Absolute number of filesystem blocks to be in the filesystem,
+             or an absolute size using a suffix (in powers of 1024).
+             If new_size is not supplied, the whole device is used.
+</code></pre><hr><h5 id=lvchange>lvchange</h5><p>Change the attributes of logical volume(s)</p><pre><code>root@kali:~# lvchange -h
+  lvchange - Change the attributes of logical volume(s)
+
+  Change a general LV attribute.
+  For options listed in parentheses, any one is
+  required, after which the others are optional.
+  lvchange
+	( -C|--contiguous y|n,
+	  -p|--permission rw|r,
+	  -r|--readahead auto|none|Number,
+	  -k|--setactivationskip y|n,
+	  -Z|--zero y|n,
+	  -M|--persistent n,
+	     --addtag Tag,
+	     --deltag Tag,
+	     --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit,
+	     --compression y|n,
+	     --deduplication y|n,
+	     --detachprofile,
+	     --metadataprofile String,
+	     --profile String,
+	     --setautoactivation y|n,
+	     --errorwhenfull y|n,
+	     --discards passdown|nopassdown|ignore,
+	     --cachemode writethrough|writeback|passthrough,
+	     --cachepolicy String,
+	     --cachesettings String,
+	     --minrecoveryrate Size[k|UNIT],
+	     --maxrecoveryrate Size[k|UNIT],
+	     --vdosettings String,
+	     --integritysettings String,
+	     --writebehind Number,
+	     --writemostly PV[:t|n|y] )
+	 VG|LV|Tag|Select ...
+	[ -a|--activate y|n|ay ]
+	[    --poll y|n ]
+	[    --monitor y|n ]
+	[ COMMON_OPTIONS ]
+
+  Resynchronize a mirror or raid LV.
+  Use to reset 'R' attribute on a not initially synchronized LV.
+  lvchange --resync VG|LV|Tag|Select ...
+	[ -a|--activate y|n|ay ]
+	[ COMMON_OPTIONS ]
+
+  Resynchronize or check a raid LV.
+  lvchange --syncaction check|repair VG|LV|Tag|Select ...
+	[ COMMON_OPTIONS ]
+
+  Reconstruct data on specific PVs of a raid LV.
+  lvchange --rebuild PV VG|LV|Tag|Select ...
+	[ COMMON_OPTIONS ]
+
+  Activate or deactivate an LV.
+  lvchange -a|--activate y|n|ay VG|LV|Tag|Select ...
+	[ -P|--partial ]
+	[ -K|--ignoreactivationskip ]
+	[    --activationmode partial|degraded|complete ]
+	[    --poll y|n ]
+	[    --monitor y|n ]
+	[    --ignorelockingfailure ]
+	[    --sysinit ]
+	[    --readonly ]
+	[ COMMON_OPTIONS ]
+
+  Reactivate an LV using the latest metadata.
+  lvchange --refresh VG|LV|Tag|Select ...
+	[ -P|--partial ]
+	[    --activationmode partial|degraded|complete ]
+	[    --poll y|n ]
+	[    --monitor y|n ]
+	[ COMMON_OPTIONS ]
+
+  Start or stop monitoring an LV from dmeventd.
+  lvchange --monitor y|n VG|LV|Tag|Select ...
+	[ COMMON_OPTIONS ]
+
+  Start or stop processing an LV conversion.
+  lvchange --poll y|n VG|LV|Tag|Select ...
+	[    --monitor y|n ]
+	[ COMMON_OPTIONS ]
+
+  Make the minor device number persistent for an LV.
+  lvchange -M|--persistent y --minor Number LV
+	[ -j|--major Number ]
+	[ -a|--activate y|n|ay ]
+	[    --poll y|n ]
+	[    --monitor y|n ]
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[ -S|--select String ]
+	[    --ignoremonitoring ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvconvert>lvconvert</h5><p>Change logical volume layout</p><pre><code>root@kali:~# lvconvert -h
+  lvconvert - Change logical volume layout
+
+  Convert LV to linear.
+  lvconvert --type linear LV
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert LV to striped.
+  lvconvert --type striped LV
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -R|--regionsize Size[m|UNIT] ]
+	[ -i|--interval Number ]
+	[    --stripes Number ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert LV to type mirror (also see type raid1),
+  lvconvert --type mirror LV
+	[ -m|--mirrors [+|-]Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -R|--regionsize Size[m|UNIT] ]
+	[ -i|--interval Number ]
+	[    --stripes Number ]
+	[    --mirrorlog core|disk ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert LV to raid or change raid layout
+  (a specific raid level must be used, e.g. raid1).
+  lvconvert --type raid LV
+	[ -m|--mirrors [+|-]Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -R|--regionsize Size[m|UNIT] ]
+	[ -i|--interval Number ]
+	[    --stripes Number ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert LV to raid1 or mirror, or change number of mirror images.
+  lvconvert -m|--mirrors [+|-]Number LV
+	[ -R|--regionsize Size[m|UNIT] ]
+	[ -i|--interval Number ]
+	[    --mirrorlog core|disk ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert raid LV to change number of stripe images.
+  lvconvert --stripes Number LV
+	[ -i|--interval Number ]
+	[ -R|--regionsize Size[m|UNIT] ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert raid LV to change the stripe size.
+  lvconvert -I|--stripesize Size[k|UNIT] LV
+	[ -i|--interval Number ]
+	[ -R|--regionsize Size[m|UNIT] ]
+	[ COMMON_OPTIONS ]
+
+  Split images from a raid1 or mirror LV and use them to create a new LV.
+  lvconvert --splitmirrors Number -n|--name LV_new LV
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Split images from a raid1 LV and track changes to origin for later merge.
+  lvconvert --splitmirrors Number --trackchanges LV
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Merge LV images that were split from a raid1 LV.
+  lvconvert --mergemirrors VG|LV|Tag ...
+	[ COMMON_OPTIONS ]
+
+  Convert LV to a thin LV, using the original LV as an external origin.
+  lvconvert --type thin --thinpool LV LV
+	[ -T|--thin ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[ -r|--readahead auto|none|Number ]
+	[ -W|--wipesignatures y|n ]
+	[ -Z|--zero y|n ]
+	[    --originname LV_new ]
+	[    --poolmetadata LV ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[    --poolmetadataspare y|n ]
+	[    --metadataprofile String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert LV to a thin LV, using LV as thin-pool data volume.
+  lvconvert --type thin LV
+	[ -T|--thin ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[ -r|--readahead auto|none|Number ]
+	[ -W|--wipesignatures y|n ]
+	[ -Z|--zero y|n ]
+	[    --poolmetadata LV ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[    --poolmetadataspare y|n ]
+	[    --metadataprofile String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Attach a cache pool to an LV, converts the LV to type cache.
+  lvconvert --type cache --cachepool LV LV
+	[ -H|--cache ]
+	[ -Z|--zero y|n ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[ -r|--readahead auto|none|Number ]
+	[ -W|--wipesignatures y|n ]
+	[    --cachemetadataformat auto|1|2 ]
+	[    --cachemode writethrough|writeback|passthrough ]
+	[    --cachepolicy String ]
+	[    --cachesettings String ]
+	[    --poolmetadata LV ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[    --poolmetadataspare y|n ]
+	[    --metadataprofile String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Attach a writecache to an LV, converts the LV to type writecache.
+  lvconvert --type writecache --cachevol LV LV
+	[    --cachesettings String ]
+	[ COMMON_OPTIONS ]
+
+  Attach a cache to an LV, converts the LV to type cache.
+  lvconvert --type cache --cachevol LV LV
+	[ -H|--cache ]
+	[ -Z|--zero y|n ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[    --cachemetadataformat auto|1|2 ]
+	[    --cachemode writethrough|writeback|passthrough ]
+	[    --cachepolicy String ]
+	[    --cachesettings String ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[ COMMON_OPTIONS ]
+
+  Add a writecache to an LV, using a specified cache device.
+  lvconvert --type writecache --cachedevice PV LV
+	[    --cachesize Size[m|UNIT] ]
+	[    --cachesettings String ]
+	[ COMMON_OPTIONS ]
+
+  Add a cache to an LV, using a specified cache device.
+  lvconvert --type cache --cachedevice PV LV
+	[ -c|--chunksize Size[k|UNIT] ]
+	[    --cachesize Size[m|UNIT] ]
+	[    --cachesettings String ]
+	[ COMMON_OPTIONS ]
+
+  Convert LV to type thin-pool.
+  lvconvert --type thin-pool LV
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[ -r|--readahead auto|none|Number ]
+	[ -W|--wipesignatures y|n ]
+	[ -Z|--zero y|n ]
+	[    --stripes Number ]
+	[    --discards passdown|nopassdown|ignore ]
+	[    --errorwhenfull y|n ]
+	[    --pooldatavdo y|n ]
+	[    --compression y|n ]
+	[    --deduplication y|n ]
+	[    --vdosettings String ]
+	[    --poolmetadata LV ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[    --poolmetadataspare y|n ]
+	[    --metadataprofile String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert LV to type cache-pool.
+  lvconvert --type cache-pool LV
+	[ -Z|--zero y|n ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[ -r|--readahead auto|none|Number ]
+	[ -W|--wipesignatures y|n ]
+	[    --cachemetadataformat auto|1|2 ]
+	[    --cachemode writethrough|writeback|passthrough ]
+	[    --cachepolicy String ]
+	[    --cachesettings String ]
+	[    --poolmetadata LV ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[    --poolmetadataspare y|n ]
+	[    --metadataprofile String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Convert LV to type vdopool.
+  lvconvert --type vdo-pool LV
+	[ -n|--name LV_new ]
+	[ -V|--virtualsize Size[m|UNIT] ]
+	[ -r|--readahead auto|none|Number ]
+	[ -W|--wipesignatures y|n ]
+	[ -Z|--zero y|n ]
+	[    --compression y|n ]
+	[    --deduplication y|n ]
+	[    --vdosettings String ]
+	[    --metadataprofile String ]
+	[ COMMON_OPTIONS ]
+
+  Detach a cache from an LV.
+  lvconvert --splitcache LV
+	[    --cachesettings String ]
+	[ COMMON_OPTIONS ]
+
+  Merge thin LV into its origin LV.
+  lvconvert --mergethin LV ...
+	[ COMMON_OPTIONS ]
+
+  Merge COW snapshot LV into its origin.
+  lvconvert --mergesnapshot LV ...
+	[ -i|--interval Number ]
+	[ COMMON_OPTIONS ]
+
+  Combine a former COW snapshot (second arg) with a former
+  origin LV (first arg) to reverse a splitsnapshot command.
+  lvconvert --type snapshot LV LV
+	[ -s|--snapshot ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[ -Z|--zero y|n ]
+	[ COMMON_OPTIONS ]
+
+  Replace failed PVs in a raid or mirror LV.
+  Repair a thin pool.
+  Repair a cache pool.
+  lvconvert --repair LV
+	[ -i|--interval Number ]
+	[ -k|--setactivationskip y|n ]
+	[    --usepolicies ]
+	[    --poolmetadataspare y|n ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Replace specific PV(s) in a raid LV with another PV.
+  lvconvert --replace PV LV
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Poll LV to continue conversion.
+  lvconvert --startpoll LV
+	[ COMMON_OPTIONS ]
+
+  Add or remove data integrity checksums to raid images.
+  lvconvert --raidintegrity y|n LV
+	[    --raidintegritymode String ]
+	[    --raidintegrityblocksize Number ]
+	[    --integritysettings String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Common options for command:
+	[ -b|--background ]
+	[ -f|--force ]
+	[    --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit ]
+	[    --noudevsync ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvcreate>lvcreate</h5><p>Create a logical volume</p><pre><code>root@kali:~# lvcreate -h
+  lvcreate - Create a logical volume
+
+  Create a linear LV.
+  lvcreate -L|--size Size[m|UNIT] VG
+	[ --type linear ] (implied)
+	[ -l|--extents Number[PERCENT] ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a striped LV.
+  lvcreate -i|--stripes Number -L|--size Size[m|UNIT] VG
+	[ --type striped ] (implied)
+	[ -l|--extents Number[PERCENT] ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a raid1 or mirror LV.
+  lvcreate -m|--mirrors Number -L|--size Size[m|UNIT] VG
+	[ --type raid1|mirror ] (implied)
+	[ -l|--extents Number[PERCENT] ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -R|--regionsize Size[m|UNIT] ]
+	[    --mirrorlog core|disk ]
+	[    --minrecoveryrate Size[k|UNIT] ]
+	[    --maxrecoveryrate Size[k|UNIT] ]
+	[    --raidintegrity y|n ]
+	[    --raidintegritymode String ]
+	[    --raidintegrityblocksize Number ]
+	[    --integritysettings String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a raid LV (a specific raid level must be used, e.g. raid1).
+  lvcreate --type raid -L|--size Size[m|UNIT] VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -m|--mirrors Number ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -R|--regionsize Size[m|UNIT] ]
+	[    --minrecoveryrate Size[k|UNIT] ]
+	[    --maxrecoveryrate Size[k|UNIT] ]
+	[    --raidintegrity y|n ]
+	[    --raidintegritymode String ]
+	[    --raidintegrityblocksize Number ]
+	[    --integritysettings String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a raid10 LV.
+  lvcreate -m|--mirrors Number -i|--stripes Number -L|--size Size[m|UNIT] VG
+	[ --type raid10 ] (implied)
+	[ -l|--extents Number[PERCENT] ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -R|--regionsize Size[m|UNIT] ]
+	[    --minrecoveryrate Size[k|UNIT] ]
+	[    --maxrecoveryrate Size[k|UNIT] ]
+	[    --raidintegrity y|n ]
+	[    --raidintegritymode String ]
+	[    --raidintegrityblocksize Number ]
+	[    --integritysettings String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a COW snapshot LV of an origin LV.
+  lvcreate -s|--snapshot -L|--size Size[m|UNIT] LV
+	[ --type snapshot ] (implied)
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a thin pool.
+  lvcreate --type thin-pool -L|--size Size[m|UNIT] VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -T|--thin ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[    --thinpool LV_new ]
+	[    --discards passdown|nopassdown|ignore ]
+	[    --errorwhenfull y|n ]
+	[    --pooldatavdo y|n ]
+	[    --compression y|n ]
+	[    --deduplication y|n ]
+	[    --vdosettings String ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[    --poolmetadataspare y|n ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a cache pool.
+  lvcreate --type cache-pool -L|--size Size[m|UNIT] VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -H|--cache ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[    --cachemode writethrough|writeback|passthrough ]
+	[    --cachepolicy String ]
+	[    --cachesettings String ]
+	[    --cachemetadataformat auto|1|2 ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[    --poolmetadataspare y|n ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a thin LV in a thin pool.
+  lvcreate -V|--virtualsize Size[m|UNIT] --thinpool LV VG
+	[ --type thin ] (implied)
+	[ -T|--thin ]
+	[ COMMON_OPTIONS ]
+
+  Create a thin LV that is a snapshot of an existing thin LV.
+  lvcreate -s|--snapshot LV
+	[ --type thin ] (implied)
+	[ COMMON_OPTIONS ]
+
+  Create a thin LV that is a snapshot of an external origin LV.
+  lvcreate --type thin --thinpool LV LV
+	[ -T|--thin ]
+	[ COMMON_OPTIONS ]
+
+  Create a LV that returns VDO when used.
+  lvcreate --type vdo -L|--size Size[m|UNIT] VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -V|--virtualsize Size[m|UNIT] ]
+	[    --vdo ]
+	[    --vdopool LV_new ]
+	[    --compression y|n ]
+	[    --deduplication y|n ]
+	[    --vdosettings String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a new LV, then attach the specified cachepool
+  which converts the new LV to type cache.
+  lvcreate --type cache -L|--size Size[m|UNIT] --cachepool LV VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -H|--cache ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[    --cachemode writethrough|writeback|passthrough ]
+	[    --cachepolicy String ]
+	[    --cachesettings String ]
+	[    --cachemetadataformat auto|1|2 ]
+	[    --poolmetadatasize Size[m|UNIT] ]
+	[    --poolmetadataspare y|n ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a new LV, then attach the specified cachevol
+  which converts the new LV to type cache.
+  lvcreate --type cache -L|--size Size[m|UNIT] --cachevol LV VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[    --cachemode writethrough|writeback|passthrough ]
+	[    --cachepolicy String ]
+	[    --cachesettings String ]
+	[    --cachemetadataformat auto|1|2 ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a new LV, then attach a cachevol created from
+  the specified cache device, which converts the
+  new LV to type cache.
+  lvcreate --type cache -L|--size Size[m|UNIT] --cachedevice PV VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -c|--chunksize Size[k|UNIT] ]
+	[    --cachesize Size[m|UNIT] ]
+	[    --cachemode writethrough|writeback|passthrough ]
+	[    --cachepolicy String ]
+	[    --cachesettings String ]
+	[    --cachemetadataformat auto|1|2 ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a new LV, then attach the specified cachevol
+  which converts the new LV to type writecache.
+  lvcreate --type writecache -L|--size Size[m|UNIT] --cachevol LV VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[    --cachesettings String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Create a new LV, then attach a cachevol created from
+  the specified cache device, which converts the
+  new LV to type writecache.
+  lvcreate --type writecache -L|--size Size[m|UNIT] --cachedevice PV VG
+	[ -l|--extents Number[PERCENT] ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[    --cachesize Size[m|UNIT] ]
+	[    --cachesettings String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Common options for command:
+	[ -a|--activate y|n|ay ]
+	[ -A|--autobackup y|n ]
+	[ -C|--contiguous y|n ]
+	[ -M|--persistent y|n ]
+	[ -j|--major Number ]
+	[ -k|--setactivationskip y|n ]
+	[ -K|--ignoreactivationskip ]
+	[ -n|--name String ]
+	[ -p|--permission rw|r ]
+	[ -r|--readahead auto|none|Number ]
+	[ -W|--wipesignatures y|n ]
+	[ -Z|--zero y|n ]
+	[    --addtag Tag ]
+	[    --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit ]
+	[    --setautoactivation y|n ]
+	[    --ignoremonitoring ]
+	[    --metadataprofile String ]
+	[    --minor Number ]
+	[    --monitor y|n ]
+	[    --nosync ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvdisplay>lvdisplay</h5><p>Display information about a logical volume</p><pre><code>root@kali:~# lvdisplay -h
+  lvdisplay - Display information about a logical volume
+
+  lvdisplay
+	[ -m|--maps ]
+	[ COMMON_OPTIONS ]
+	[ VG|LV|Tag ... ]
+
+  Display output in columns like lvs.
+  lvdisplay -C|--columns
+	[ -o|--options String ]
+	[ -O|--sort String ]
+	[    --aligned ]
+	[    --binary ]
+	[    --headings none|abbrev|full|0|1|2 ]
+	[    --nameprefixes ]
+	[    --noheadings ]
+	[    --nosuffix ]
+	[    --rows ]
+	[    --separator String ]
+	[    --unbuffered ]
+	[    --unquoted ]
+	[ COMMON_OPTIONS ]
+	[ VG|LV|Tag ... ]
+
+  Generate colon separated output.
+  lvdisplay -c|--colon
+	[ COMMON_OPTIONS ]
+	[ VG|LV|Tag ... ]
+
+  Common options for command:
+	[ -a|--all ]
+	[ -H|--history ]
+	[ -S|--select String ]
+	[    --configreport log|vg|lv|pv|pvseg|seg ]
+	[    --foreign ]
+	[    --ignorelockingfailure ]
+	[    --logonly ]
+	[    --readonly ]
+	[    --reportformat basic|json|json_std ]
+	[    --segments ]
+	[    --shared ]
+	[    --units [Number]r|R|h|H|b|B|s|S|k|K|m|M|g|G|t|T|p|P|e|E ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvextend>lvextend</h5><p>Add space to a logical volume</p><pre><code>root@kali:~# lvextend -h
+  lvextend - Add space to a logical volume
+
+  Extend an LV by a specified size.
+  lvextend -L|--size [+]Size[m|UNIT] LV
+	[ -l|--extents [+]Number[PERCENT] ]
+	[ -r|--resizefs ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[    --poolmetadatasize [+]Size[m|UNIT] ]
+	[    --fs String ]
+	[    --fsmode String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Extend an LV by specified PV extents.
+  lvextend LV PV ...
+	[ -r|--resizefs ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[    --fs String ]
+	[    --fsmode String ]
+	[ COMMON_OPTIONS ]
+
+  Extend a pool metadata SubLV by a specified size.
+  lvextend --poolmetadatasize [+]Size[m|UNIT] LV
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Extend an LV according to a predefined policy.
+  lvextend --usepolicies LV
+	[ -r|--resizefs ]
+	[    --fs String ]
+	[    --fsmode String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Common options for command:
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[ -m|--mirrors Number ]
+	[ -n|--nofsck ]
+	[    --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit ]
+	[    --nosync ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[    --type linear|striped|snapshot|raid|mirror|thin|thin-pool|vdo|vdo-pool|cache|cache-pool|writecache ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvm>lvm</h5><p>LVM tools</p><pre><code>root@kali:~# lvm -h
+  Available lvm commands:
+  Use 'lvm help &lt;command&gt;' for more information
+   
+  config          Display and manipulate configuration information
+  devtypes        Display recognised built-in block device types
+  dumpconfig      Display and manipulate configuration information
+  formats         List available metadata formats
+  fullreport      Display full report
+  help            Display help for commands
+  lastlog         Display last command's log report
+  lvchange        Change the attributes of logical volume(s)
+  lvconvert       Change logical volume layout
+  lvcreate        Create a logical volume
+  lvdisplay       Display information about a logical volume
+  lvextend        Add space to a logical volume
+  lvmchange       With the device mapper, this is obsolete and does nothing.
+  lvmconfig       Display and manipulate configuration information
+  lvmdevices      Manage the devices file
+  lvmdiskscan     List devices that may be used as physical volumes
+  lvmsadc         Collect activity data
+  lvmsar          Create activity report
+  lvpoll          Continue already initiated poll operation on a logical volume
+  lvreduce        Reduce the size of a logical volume
+  lvremove        Remove logical volume(s) from the system
+  lvrename        Rename a logical volume
+  lvresize        Resize a logical volume
+  lvs             Display information about logical volumes
+  lvscan          List all logical volumes in all volume groups
+  pvchange        Change attributes of physical volume(s)
+  pvck            Check metadata on physical volumes
+  pvcreate        Initialize physical volume(s) for use by LVM
+  pvdata          Display the on-disk metadata for physical volume(s)
+  pvdisplay       Display various attributes of physical volume(s)
+  pvmove          Move extents from one physical volume to another
+  pvremove        Remove LVM label(s) from physical volume(s)
+  pvresize        Resize physical volume(s)
+  pvs             Display information about physical volumes
+  pvscan          List all physical volumes
+  segtypes        List available segment types
+  systemid        Display the system ID, if any, currently set on this host
+  tags            List tags defined on this host
+  version         Display software and driver version information
+  vgcfgbackup     Backup volume group configuration(s)
+  vgcfgrestore    Restore volume group configuration
+  vgchange        Change volume group attributes
+  vgck            Check the consistency of volume group(s)
+  vgconvert       Change volume group metadata format
+  vgcreate        Create a volume group
+  vgdisplay       Display volume group information
+  vgexport        Unregister volume group(s) from the system
+  vgextend        Add physical volumes to a volume group
+  vgimport        Register exported volume group with system
+  vgimportclone   Import a VG from cloned PVs
+  vgimportdevices Add devices for a VG to the devices file.
+  vgmerge         Merge volume groups
+  vgmknodes       Create the special files for volume group devices in /dev
+  vgreduce        Remove physical volume(s) from a volume group
+  vgremove        Remove volume group(s)
+  vgrename        Rename a volume group
+  vgs             Display information about volume groups
+  vgscan          Search for all volume groups
+  vgsplit         Move physical volumes into a new or existing volume group
+</code></pre><hr><h5 id=lvmconfig>lvmconfig</h5><p>Display and manipulate configuration information</p><pre><code>root@kali:~# lvmconfig -h
+  lvmconfig - Display and manipulate configuration information
+
+  lvmconfig
+	[ -f|--file String ]
+	[ -l|--list ]
+	[    --atversion String ]
+	[    --typeconfig current|default|diff|full|list|missing|new|profilable|profilable-command|profilable-metadata ]
+	[    --ignoreadvanced ]
+	[    --ignoreunsupported ]
+	[    --ignorelocal ]
+	[    --mergedconfig ]
+	[    --metadataprofile String ]
+	[    --sinceversion String ]
+	[    --showdeprecated ]
+	[    --showunsupported ]
+	[    --validate ]
+	[    --valuesonly ]
+	[    --withsummary ]
+	[    --withcomments ]
+	[    --withgeneralpreamble ]
+	[    --withlocalpreamble ]
+	[    --withspaces ]
+	[    --unconfigured ]
+	[    --withversions ]
+	[ COMMON_OPTIONS ]
+	[ String ... ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvmdiskscan>lvmdiskscan</h5><p>List devices that may be used as physical volumes</p><pre><code>root@kali:~# lvmdiskscan -h
+  lvmdiskscan - List devices that may be used as physical volumes
+
+  lvmdiskscan
+	[ -l|--lvmpartition ]
+	[    --readonly ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvmdump>lvmdump</h5><p>Create lvm2 information dumps for diagnostic purposes</p><pre><code>root@kali:~# lvmdump --help
+/usr/sbin/lvmdump: unknown option -
+/usr/sbin/lvmdump [options]
+    -h print this message
+    -a advanced collection - warning: if lvm is already hung,
+       then this script may hang as well if -a is used
+    -c if running clvmd, gather cluster data as well
+    -d &lt;directory&gt; dump into a directory instead of tarball
+    -l gather lvmetad state if running
+    -p gather lvmpolld state if running
+    -m gather LVM metadata from the PVs
+    -s gather system info and context
+    -u gather udev info and context
+
+</code></pre><hr><h5 id=lvmpolld>lvmpolld</h5><p>LVM poll daemon</p><pre><code>root@kali:~# lvmpolld -h
+Usage:
+lvmpolld [-V] [-h] [-f] [-l {all|wire|debug}] [-s path] [-B path] [-p path] [-t secs]
+lvmpolld --dump [-s path]
+   -V|--version     Show version info
+   -h|--help        Show this help information
+   -f|--foreground  Don't fork, run in the foreground
+   --dump           Dump full lvmpolld state
+   -l|--log         Logging message level (-l {all|wire|debug})
+   -p|--pidfile     Set path to the pidfile
+   -s|--socket      Set path to the communication socket
+   -B|--binary      Path to lvm2 binary
+   -t|--timeout     Time to wait in seconds before shutdown on idle (missing or 0 = infinite)
+
+</code></pre><hr><h5 id=lvmsadc>lvmsadc</h5><p>LVM system activity data collector</p><pre><code>root@kali:~# lvmsadc -h
+  lvmsadc - Collect activity data
+
+  lvmsadc
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvmsar>lvmsar</h5><p>LVM system activity reporter</p><pre><code>root@kali:~# lvmsar -h
+  lvmsar - Create activity report
+
+  lvmsar
+	[ -f|--full ]
+	[ -s|--stdin ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvreduce>lvreduce</h5><p>Reduce the size of a logical volume</p><pre><code>root@kali:~# lvreduce -h
+  lvreduce - Reduce the size of a logical volume
+
+  lvreduce -L|--size [-]Size[m|UNIT] LV
+	[ -l|--extents [-]Number[PERCENT] ]
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[ -n|--nofsck ]
+	[ -r|--resizefs ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[    --fs String ]
+	[    --fsmode String ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvremove>lvremove</h5><p>Remove logical volume(s) from the system</p><pre><code>root@kali:~# lvremove -h
+  lvremove - Remove logical volume(s) from the system
+
+  lvremove VG|LV|Tag|Select ...
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[ -S|--select String ]
+	[    --nohistory ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvrename>lvrename</h5><p>Rename a logical volume</p><pre><code>root@kali:~# lvrename -h
+  lvrename - Rename a logical volume
+
+  lvrename VG LV LV_new
+	[ COMMON_OPTIONS ]
+
+  lvrename LV LV_new
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[ -A|--autobackup y|n ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvresize>lvresize</h5><p>Resize a logical volume</p><pre><code>root@kali:~# lvresize -h
+  lvresize - Resize a logical volume
+
+  Resize an LV by a specified size.
+  lvresize -L|--size [+|-]Size[m|UNIT] LV
+	[ -l|--extents [+|-]Number[PERCENT] ]
+	[ -r|--resizefs ]
+	[    --poolmetadatasize [+]Size[m|UNIT] ]
+	[    --fs String ]
+	[    --fsmode String ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Resize an LV by specified PV extents.
+  lvresize LV PV ...
+	[ -r|--resizefs ]
+	[    --fs String ]
+	[    --fsmode String ]
+	[ COMMON_OPTIONS ]
+
+  Resize a pool metadata SubLV by a specified size.
+  lvresize --poolmetadatasize [+]Size[m|UNIT] LV
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Common options for command:
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[ -i|--stripes Number ]
+	[ -I|--stripesize Size[k|UNIT] ]
+	[ -n|--nofsck ]
+	[    --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit ]
+	[    --nosync ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[    --type linear|striped|snapshot|raid|mirror|thin|thin-pool|vdo|vdo-pool|cache|cache-pool|writecache ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvs>lvs</h5><p>Display information about logical volumes</p><pre><code>root@kali:~# lvs -h
+  lvs - Display information about logical volumes
+
+  lvs
+	[ -H|--history ]
+	[ -S|--select String ]
+	[ -a|--all ]
+	[ -o|--options String ]
+	[ -O|--sort String ]
+	[    --segments ]
+	[    --configreport log|vg|lv|pv|pvseg|seg ]
+	[    --foreign ]
+	[    --ignorelockingfailure ]
+	[    --logonly ]
+	[    --readonly ]
+	[    --reportformat basic|json|json_std ]
+	[    --shared ]
+	[    --units [Number]r|R|h|H|b|B|s|S|k|K|m|M|g|G|t|T|p|P|e|E ]
+	[    --aligned ]
+	[    --binary ]
+	[    --headings none|abbrev|full|0|1|2 ]
+	[    --nameprefixes ]
+	[    --noheadings ]
+	[    --nosuffix ]
+	[    --rows ]
+	[    --separator String ]
+	[    --unbuffered ]
+	[    --unquoted ]
+	[ COMMON_OPTIONS ]
+	[ VG|LV|Tag ... ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=lvscan>lvscan</h5><p>List all logical volumes in all volume groups</p><pre><code>root@kali:~# lvscan -h
+  lvscan - List all logical volumes in all volume groups
+
+  lvscan
+	[ -a|--all ]
+	[ -b|--blockdevice ]
+	[    --ignorelockingfailure ]
+	[    --readonly ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvchange>pvchange</h5><p>Change attributes of physical volume(s)</p><pre><code>root@kali:~# pvchange -h
+  pvchange - Change attributes of physical volume(s)
+
+  Change properties of all PVs.
+  pvchange -a|--all
+	( -x|--allocatable y|n,
+	  -u|--uuid,
+	     --addtag Tag,
+	     --deltag Tag,
+	     --metadataignore y|n )
+
+	[ COMMON_OPTIONS ]
+
+  Change properties of specified PVs.
+  pvchange
+	( -x|--allocatable y|n,
+	  -u|--uuid,
+	     --addtag Tag,
+	     --deltag Tag,
+	     --metadataignore y|n )
+	 PV|Select ...
+	[ -S|--select String ]
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[ -u|--uuid ]
+	[    --reportformat basic|json|json_std ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvck>pvck</h5><p>Check metadata on physical volumes</p><pre><code>root@kali:~# pvck -h
+  pvck - Check metadata on physical volumes
+
+  Check for metadata on a device
+  pvck PV ...
+	[ COMMON_OPTIONS ]
+
+  Check and print LVM headers and metadata on a device
+  pvck --dump headers|metadata|metadata_all|metadata_search PV
+	[ -f|--file String ]
+	[    --settings String ]
+	[    --pvmetadatacopies 0|1|2 ]
+	[ COMMON_OPTIONS ]
+
+  Repair LVM headers or metadata on a device
+  pvck --repairtype pv_header|metadata|label_header PV
+	[ -f|--file String ]
+	[    --settings String ]
+	[ COMMON_OPTIONS ]
+
+  Repair LVM headers and metadata on a device
+  pvck --repair -f|--file String PV
+	[    --settings String ]
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[    --labelsector Number ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvcreate>pvcreate</h5><p>Initialize physical volume(s) for use by LVM</p><pre><code>root@kali:~# pvcreate -h
+  pvcreate - Initialize physical volume(s) for use by LVM
+
+  pvcreate PV ...
+	[ -f|--force ]
+	[ -M|--metadatatype lvm2 ]
+	[ -u|--uuid String ]
+	[ -Z|--zero y|n ]
+	[    --dataalignment Size[k|UNIT] ]
+	[    --dataalignmentoffset Size[k|UNIT] ]
+	[    --bootloaderareasize Size[m|UNIT] ]
+	[    --labelsector Number ]
+	[    --pvmetadatacopies 0|1|2 ]
+	[    --metadatasize Size[m|UNIT] ]
+	[    --metadataignore y|n ]
+	[    --norestorefile ]
+	[    --setphysicalvolumesize Size[m|UNIT] ]
+	[    --reportformat basic|json|json_std ]
+	[    --restorefile String ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvdisplay>pvdisplay</h5><p>Display various attributes of physical volume(s)</p><pre><code>root@kali:~# pvdisplay -h
+  pvdisplay - Display various attributes of physical volume(s)
+
+  pvdisplay
+	[ -m|--maps ]
+	[ -s|--short ]
+	[ COMMON_OPTIONS ]
+	[ PV|Tag ... ]
+
+  Display output in columns like pvs.
+  pvdisplay -C|--columns
+	[ -a|--all ]
+	[ -o|--options String ]
+	[ -O|--sort String ]
+	[    --aligned ]
+	[    --binary ]
+	[    --headings none|abbrev|full|0|1|2 ]
+	[    --nameprefixes ]
+	[    --noheadings ]
+	[    --nosuffix ]
+	[    --rows ]
+	[    --separator String ]
+	[    --unbuffered ]
+	[    --unquoted ]
+	[ COMMON_OPTIONS ]
+	[ PV|Tag ... ]
+
+  Generate colon separated output.
+  pvdisplay -c|--colon
+	[ COMMON_OPTIONS ]
+	[ PV|Tag ... ]
+
+  Common options for command:
+	[ -S|--select String ]
+	[    --configreport log|vg|lv|pv|pvseg|seg ]
+	[    --foreign ]
+	[    --ignorelockingfailure ]
+	[    --logonly ]
+	[    --readonly ]
+	[    --reportformat basic|json|json_std ]
+	[    --segments ]
+	[    --shared ]
+	[    --units [Number]r|R|h|H|b|B|s|S|k|K|m|M|g|G|t|T|p|P|e|E ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvmove>pvmove</h5><p>Move extents from one physical volume to another</p><pre><code>root@kali:~# pvmove -h
+  pvmove - Move extents from one physical volume to another
+
+  Move PV extents.
+  pvmove PV
+	[ -A|--autobackup y|n ]
+	[ -n|--name LV ]
+	[    --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit ]
+	[    --atomic ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ PV ... ]
+
+  Continue or abort existing pvmove operations.
+  pvmove
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[ -b|--background ]
+	[ -i|--interval Number ]
+	[    --abort ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvremove>pvremove</h5><p>Remove LVM label(s) from physical volume(s)</p><pre><code>root@kali:~# pvremove -h
+  pvremove - Remove LVM label(s) from physical volume(s)
+
+  pvremove PV ...
+	[ -f|--force ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvresize>pvresize</h5><p>Resize physical volume(s)</p><pre><code>root@kali:~# pvresize -h
+  pvresize - Resize physical volume(s)
+
+  pvresize PV ...
+	[    --setphysicalvolumesize Size[m|UNIT] ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvs>pvs</h5><p>Display information about physical volumes</p><pre><code>root@kali:~# pvs -h
+  pvs - Display information about physical volumes
+
+  pvs
+	[ -A|--allpvs ]
+	[ -S|--select String ]
+	[ -a|--all ]
+	[ -o|--options String ]
+	[ -O|--sort String ]
+	[    --segments ]
+	[    --configreport log|vg|lv|pv|pvseg|seg ]
+	[    --foreign ]
+	[    --ignorelockingfailure ]
+	[    --logonly ]
+	[    --readonly ]
+	[    --reportformat basic|json|json_std ]
+	[    --shared ]
+	[    --units [Number]r|R|h|H|b|B|s|S|k|K|m|M|g|G|t|T|p|P|e|E ]
+	[    --aligned ]
+	[    --binary ]
+	[    --headings none|abbrev|full|0|1|2 ]
+	[    --nameprefixes ]
+	[    --noheadings ]
+	[    --nosuffix ]
+	[    --rows ]
+	[    --separator String ]
+	[    --unbuffered ]
+	[    --unquoted ]
+	[ COMMON_OPTIONS ]
+	[ PV|Tag ... ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=pvscan>pvscan</h5><p>List all physical volumes</p><pre><code>root@kali:~# pvscan -h
+  pvscan - List all physical volumes
+
+  Display PV information.
+  pvscan
+	[ -e|--exported ]
+	[ -n|--novolumegroup ]
+	[ -s|--short ]
+	[ -u|--uuid ]
+	[ -A|--allpvs ]
+	[    --ignorelockingfailure ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+
+  Record that a PV is online or offline.
+  pvscan --cache
+	[ -j|--major Number ]
+	[    --ignorelockingfailure ]
+	[    --reportformat basic|json|json_std ]
+	[    --minor Number ]
+	[    --noudevsync ]
+	[ COMMON_OPTIONS ]
+	[ String|PV ... ]
+
+  Record that a PV is online and autoactivate the VG if complete.
+  pvscan --cache -a|--activate ay
+	[ -j|--major Number ]
+	[    --ignorelockingfailure ]
+	[    --reportformat basic|json|json_std ]
+	[    --minor Number ]
+	[    --noudevsync ]
+	[    --autoactivation String ]
+	[ COMMON_OPTIONS ]
+	[ String|PV ... ]
+
+  Record that a PV is online and list the VG using the PV.
+  pvscan --cache --listvg PV
+	[    --ignorelockingfailure ]
+	[    --checkcomplete ]
+	[    --vgonline ]
+	[    --udevoutput ]
+	[    --autoactivation String ]
+	[ COMMON_OPTIONS ]
+
+  Record that a PV is online and list LVs using the PV.
+  pvscan --cache --listlvs PV
+	[    --ignorelockingfailure ]
+	[    --checkcomplete ]
+	[    --vgonline ]
+	[ COMMON_OPTIONS ]
+
+  List LVs using the PV.
+  pvscan --listlvs PV
+	[ COMMON_OPTIONS ]
+
+  List the VG using the PV.
+  pvscan --listvg PV
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgcfgbackup>vgcfgbackup</h5><p>Backup volume group configuration(s)</p><pre><code>root@kali:~# vgcfgbackup -h
+  vgcfgbackup - Backup volume group configuration(s)
+
+  vgcfgbackup
+	[ -f|--file String ]
+	[    --foreign ]
+	[    --ignorelockingfailure ]
+	[    --readonly ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ VG ... ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgcfgrestore>vgcfgrestore</h5><p>Restore volume group configuration</p><pre><code>root@kali:~# vgcfgrestore -h
+  vgcfgrestore - Restore volume group configuration
+
+  Restore VG metadata from last backup.
+  vgcfgrestore VG
+	[ COMMON_OPTIONS ]
+
+  Restore VG metadata from specified file.
+  vgcfgrestore -f|--file String VG
+	[ COMMON_OPTIONS ]
+
+  List all VG metadata backups.
+  vgcfgrestore -l|--list VG
+	[ COMMON_OPTIONS ]
+
+  List one VG metadata backup file.
+  vgcfgrestore -l|--list -f|--file String
+	[ COMMON_OPTIONS ]
+	[ VG ]
+
+  Common options for command:
+	[ -M|--metadatatype lvm2 ]
+	[    --force ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgchange>vgchange</h5><p>Change volume group attributes</p><pre><code>root@kali:~# vgchange -h
+  vgchange - Change volume group attributes
+
+  Change a general VG attribute.
+  For options listed in parentheses, any one is
+  required, after which the others are optional.
+  vgchange
+	( -l|--logicalvolume Number,
+	  -p|--maxphysicalvolumes Number,
+	  -u|--uuid,
+	  -s|--physicalextentsize Size[m|UNIT],
+	  -x|--resizeable y|n,
+	     --addtag Tag,
+	     --deltag Tag,
+	     --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit,
+	     --pvmetadatacopies 0|1|2,
+	     --vgmetadatacopies all|unmanaged|Number,
+	     --profile String,
+	     --detachprofile,
+	     --metadataprofile String,
+	     --setautoactivation y|n )
+
+	[ -A|--autobackup y|n ]
+	[ -S|--select String ]
+	[ -f|--force ]
+	[    --poll y|n ]
+	[    --ignoremonitoring ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag|Select ... ]
+
+  Start or stop monitoring LVs from dmeventd.
+  vgchange --monitor y|n
+	[ -A|--autobackup y|n ]
+	[ -S|--select String ]
+	[ -f|--force ]
+	[    --sysinit ]
+	[    --ignorelockingfailure ]
+	[    --poll y|n ]
+	[    --ignoremonitoring ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag|Select ... ]
+
+  Start or stop processing LV conversions.
+  vgchange --poll y|n
+	[ -A|--autobackup y|n ]
+	[ -S|--select String ]
+	[ -f|--force ]
+	[    --ignorelockingfailure ]
+	[    --ignoremonitoring ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag|Select ... ]
+
+  Activate or deactivate LVs.
+  vgchange -a|--activate y|n|ay
+	[ -K|--ignoreactivationskip ]
+	[ -P|--partial ]
+	[ -A|--autobackup y|n ]
+	[ -S|--select String ]
+	[ -f|--force ]
+	[    --activationmode partial|degraded|complete ]
+	[    --sysinit ]
+	[    --readonly ]
+	[    --ignorelockingfailure ]
+	[    --monitor y|n ]
+	[    --poll y|n ]
+	[    --autoactivation String ]
+	[    --ignoremonitoring ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag|Select ... ]
+
+  Reactivate LVs using the latest metadata.
+  vgchange --refresh
+	[ -A|--autobackup y|n ]
+	[ -S|--select String ]
+	[ -f|--force ]
+	[    --sysinit ]
+	[    --ignorelockingfailure ]
+	[    --poll y|n ]
+	[    --ignoremonitoring ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag|Select ... ]
+
+  Change the system ID of a VG.
+  vgchange --systemid String VG|Tag|Select
+	[ -S|--select String ]
+	[    --majoritypvs ]
+	[ COMMON_OPTIONS ]
+
+  Start the lockspace of a shared VG in lvmlockd.
+  vgchange --lockstart
+	[ -S|--select String ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag|Select ... ]
+
+  Stop the lockspace of a shared VG in lvmlockd.
+  vgchange --lockstop
+	[ -S|--select String ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag|Select ... ]
+
+  Change the lock type for a shared VG.
+  vgchange --locktype sanlock|dlm|none VG
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgck>vgck</h5><p>Check the consistency of volume group(s)</p><pre><code>root@kali:~# vgck -h
+  vgck - Check the consistency of volume group(s)
+
+  Read and display information about a VG.
+  vgck
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag ... ]
+
+  Rewrite VG metadata to correct problems.
+  vgck --updatemetadata VG
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgconvert>vgconvert</h5><p>Change volume group metadata format</p><pre><code>root@kali:~# vgconvert -h
+  vgconvert - Change volume group metadata format
+
+  vgconvert VG ...
+	[ -f|--force ]
+	[ -M|--metadatatype lvm2 ]
+	[    --labelsector Number ]
+	[    --bootloaderareasize Size[m|UNIT] ]
+	[    --pvmetadatacopies 0|1|2 ]
+	[    --metadatasize Size[m|UNIT] ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgcreate>vgcreate</h5><p>Create a volume group</p><pre><code>root@kali:~# vgcreate -h
+  vgcreate - Create a volume group
+
+  vgcreate VG_new PV ...
+	[ -A|--autobackup y|n ]
+	[ -c|--clustered y|n ]
+	[ -l|--maxlogicalvolumes Number ]
+	[ -p|--maxphysicalvolumes Number ]
+	[ -M|--metadatatype lvm2 ]
+	[ -s|--physicalextentsize Size[m|UNIT] ]
+	[ -f|--force ]
+	[ -Z|--zero y|n ]
+	[    --addtag Tag ]
+	[    --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit ]
+	[    --metadataprofile String ]
+	[    --labelsector Number ]
+	[    --metadatasize Size[m|UNIT] ]
+	[    --pvmetadatacopies 0|1|2 ]
+	[    --vgmetadatacopies all|unmanaged|Number ]
+	[    --reportformat basic|json|json_std ]
+	[    --dataalignment Size[k|UNIT] ]
+	[    --dataalignmentoffset Size[k|UNIT] ]
+	[    --shared ]
+	[    --systemid String ]
+	[    --locktype sanlock|dlm|none ]
+	[    --setautoactivation y|n ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgdisplay>vgdisplay</h5><p>Display volume group information</p><pre><code>root@kali:~# vgdisplay -h
+  vgdisplay - Display volume group information
+
+  vgdisplay
+	[ -s|--short ]
+	[ -A|--activevolumegroups ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag ... ]
+
+  Display output in columns like vgs.
+  vgdisplay -C|--columns
+	[ -a|--all ]
+	[ -o|--options String ]
+	[ -O|--sort String ]
+	[    --aligned ]
+	[    --binary ]
+	[    --headings none|abbrev|full|0|1|2 ]
+	[    --nameprefixes ]
+	[    --noheadings ]
+	[    --nosuffix ]
+	[    --rows ]
+	[    --separator String ]
+	[    --unbuffered ]
+	[    --unquoted ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag ... ]
+
+  Generate colon separated output.
+  vgdisplay -c|--colon
+	[ -A|--activevolumegroups ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag ... ]
+
+  Common options for command:
+	[ -S|--select String ]
+	[    --configreport log|vg|lv|pv|pvseg|seg ]
+	[    --foreign ]
+	[    --ignorelockingfailure ]
+	[    --logonly ]
+	[    --readonly ]
+	[    --reportformat basic|json|json_std ]
+	[    --shared ]
+	[    --units [Number]r|R|h|H|b|B|s|S|k|K|m|M|g|G|t|T|p|P|e|E ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgexport>vgexport</h5><p>Unregister volume group(s) from the system</p><pre><code>root@kali:~# vgexport -h
+  vgexport - Unregister volume group(s) from the system
+
+  Export specified VGs.
+  vgexport VG|Tag|Select ...
+	[ -S|--select String ]
+	[ COMMON_OPTIONS ]
+
+  Export all VGs.
+  vgexport -a|--all
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[    --reportformat basic|json|json_std ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgextend>vgextend</h5><p>Add physical volumes to a volume group</p><pre><code>root@kali:~# vgextend -h
+  vgextend - Add physical volumes to a volume group
+
+  vgextend VG PV ...
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[ -Z|--zero y|n ]
+	[ -M|--metadatatype lvm2 ]
+	[    --labelsector Number ]
+	[    --metadatasize Size[m|UNIT] ]
+	[    --pvmetadatacopies 0|1|2 ]
+	[    --metadataignore y|n ]
+	[    --dataalignment Size[k|UNIT] ]
+	[    --dataalignmentoffset Size[k|UNIT] ]
+	[    --reportformat basic|json|json_std ]
+	[    --restoremissing ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgimport>vgimport</h5><p>Register exported volume group with system</p><pre><code>root@kali:~# vgimport -h
+  vgimport - Register exported volume group with system
+
+  Import specified VGs.
+  vgimport VG|Tag|Select ...
+	[ -S|--select String ]
+	[ COMMON_OPTIONS ]
+
+  Import all VGs.
+  vgimport -a|--all
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[ -f|--force ]
+	[    --reportformat basic|json|json_std ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgimportclone>vgimportclone</h5><p>Import a VG from cloned PVs</p><pre><code>root@kali:~# vgimportclone -h
+  vgimportclone - Import a VG from cloned PVs
+
+  vgimportclone PV ...
+	[ -n|--basevgname VG ]
+	[ -i|--import ]
+	[    --importdevices ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgmerge>vgmerge</h5><p>Merge volume groups</p><pre><code>root@kali:~# vgmerge -h
+  vgmerge - Merge volume groups
+
+  vgmerge VG VG
+	[ -A|--autobackup y|n ]
+	[ -l|--list ]
+	[    --poolmetadataspare y|n ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgmknodes>vgmknodes</h5><p>Create the special files for volume group devices in /dev</p><pre><code>root@kali:~# vgmknodes -h
+  vgmknodes - Create the special files for volume group devices in /dev
+
+  vgmknodes
+	[    --ignorelockingfailure ]
+	[    --refresh ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+	[ VG|LV|Tag ... ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgreduce>vgreduce</h5><p>Remove physical volume(s) from a volume group</p><pre><code>root@kali:~# vgreduce -h
+  vgreduce - Remove physical volume(s) from a volume group
+
+  Remove a PV from a VG.
+  vgreduce VG PV ...
+	[ COMMON_OPTIONS ]
+
+  Remove all unused PVs from a VG.
+  vgreduce -a|--all VG
+	[ COMMON_OPTIONS ]
+
+  Remove all missing PVs from a VG.
+  vgreduce --removemissing VG
+	[    --mirrorsonly ]
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[    --reportformat basic|json|json_std ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgremove>vgremove</h5><p>Remove volume group(s)</p><pre><code>root@kali:~# vgremove -h
+  vgremove - Remove volume group(s)
+
+  vgremove VG|Tag|Select ...
+	[ -f|--force ]
+	[ -S|--select String ]
+	[    --noudevsync ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgrename>vgrename</h5><p>Rename a volume group</p><pre><code>root@kali:~# vgrename -h
+  vgrename - Rename a volume group
+
+  Rename a VG.
+  vgrename VG VG_new
+	[ COMMON_OPTIONS ]
+
+  Rename a VG by specifying the VG UUID.
+  vgrename String VG_new
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[ -A|--autobackup y|n ]
+	[ -f|--force ]
+	[    --reportformat basic|json|json_std ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgs>vgs</h5><p>Display information about volume groups</p><pre><code>root@kali:~# vgs -h
+  vgs - Display information about volume groups
+
+  vgs
+	[ -S|--select String ]
+	[ -a|--all ]
+	[ -o|--options String ]
+	[ -O|--sort String ]
+	[    --configreport log|vg|lv|pv|pvseg|seg ]
+	[    --foreign ]
+	[    --ignorelockingfailure ]
+	[    --logonly ]
+	[    --readonly ]
+	[    --reportformat basic|json|json_std ]
+	[    --shared ]
+	[    --units [Number]r|R|h|H|b|B|s|S|k|K|m|M|g|G|t|T|p|P|e|E ]
+	[    --aligned ]
+	[    --binary ]
+	[    --headings none|abbrev|full|0|1|2 ]
+	[    --nameprefixes ]
+	[    --noheadings ]
+	[    --nosuffix ]
+	[    --rows ]
+	[    --separator String ]
+	[    --unbuffered ]
+	[    --unquoted ]
+	[ COMMON_OPTIONS ]
+	[ VG|Tag ... ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgscan>vgscan</h5><p>Search for all volume groups</p><pre><code>root@kali:~# vgscan -h
+  vgscan - Search for all volume groups
+
+  vgscan
+	[    --ignorelockingfailure ]
+	[    --mknodes ]
+	[    --notifydbus ]
+	[    --refresh ]
+	[    --reportformat basic|json|json_std ]
+	[ COMMON_OPTIONS ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h5 id=vgsplit>vgsplit</h5><p>Move physical volumes into a new or existing volume group</p><pre><code>root@kali:~# vgsplit -h
+  vgsplit - Move physical volumes into a new or existing volume group
+
+  Split a VG by specified PVs.
+  vgsplit VG VG PV ...
+	[ COMMON_OPTIONS ]
+
+  Split a VG by PVs in a specified LV.
+  vgsplit -n|--name LV VG VG
+	[ COMMON_OPTIONS ]
+
+  Common options for command:
+	[ -A|--autobackup y|n ]
+	[ -l|--maxlogicalvolumes Number ]
+	[ -M|--metadatatype lvm2 ]
+	[ -p|--maxphysicalvolumes Number ]
+	[    --alloc contiguous|cling|cling_by_tags|normal|anywhere|inherit ]
+	[    --poolmetadataspare y|n ]
+	[    --vgmetadatacopies all|unmanaged|Number ]
+
+  Common options for lvm:
+	[ -d|--debug ]
+	[ -h|--help ]
+	[ -q|--quiet ]
+	[ -v|--verbose ]
+	[ -y|--yes ]
+	[ -t|--test ]
+	[    --commandprofile String ]
+	[    --config String ]
+	[    --driverloaded y|n ]
+	[    --nolocking ]
+	[    --lockopt String ]
+	[    --longhelp ]
+	[    --profile String ]
+	[    --version ]
+	[    --devicesfile String ]
+	[    --devices PV ]
+	[    --nohints ]
+	[    --journal String ]
+
+  Use --longhelp to show all options and advanced commands.
+</code></pre><hr><h3 id=lvm2-dbusd>lvm2-dbusd</h3><p><strong>LVM2 D-Bus daemon</strong><br>This is LVM2, the rewrite of The Linux Logical Volume Manager. LVM
+supports enterprise level volume management of disk and disk subsystems
+by grouping arbitrary disks into volume groups. The total capacity of
+volume groups can be allocated to logical volumes, which are accessed as
+regular block devices.</p><p>This package includes the D-Bus daemon.</p><p><strong>Installed size:</strong> <code>244 KB</code><br><strong>How to install:</strong> <code>sudo apt install lvm2-dbusd</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>dbus</li><li>lvm2</li><li>python3</li><li>python3-dbus</li><li>python3-gi</li><li>python3-pyudev</li></ul></div></details><h5 id=lvmdbusd>lvmdbusd</h5><p>LVM D-Bus daemon</p><pre><code>root@kali:~# lvmdbusd -h
+usage: lvmdbusd [-h] [--udev] [--debug] [--nojson] [--lvmshell]
+                [--frsize FR_SIZE]
+
+options:
+  -h, --help        show this help message and exit
+  --udev            Use udev for updating state
+  --debug           Dump debug messages
+  --nojson          Do not use LVM JSON output (disables lvmshell)
+  --lvmshell        Use the lvm shell, not fork &amp; exec lvm
+  --frsize FR_SIZE  Size of the flight recorder (num. entries), 0 to disable
+                    (signal 12 to dump)
+</code></pre><hr><h3 id=lvm2-lockd>lvm2-lockd</h3><p><strong>LVM locking daemon</strong><br>This is LVM2, the rewrite of The Linux Logical Volume Manager. LVM
+supports enterprise level volume management of disk and disk subsystems
+by grouping arbitrary disks into volume groups. The total capacity of
+volume groups can be allocated to logical volumes, which are accessed as
+regular block devices.</p><p>LVM commands use lvmlockd to coordinate access to shared storage.</p><p><strong>Installed size:</strong> <code>572 KB</code><br><strong>How to install:</strong> <code>sudo apt install lvm2-lockd</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>libc6</li><li>libdlm3</li><li>libsanlock-client1</li><li>libselinux1</li><li>libsystemd0</li><li>libudev1</li><li>lvm2</li></ul></div></details><h5 id=lvmlockctl>lvmlockctl</h5><p>Control for lvmlockd</p><pre><code>root@kali:~# lvmlockctl -h
+lvmlockctl options
+Options:
+--help | -h
+      Show this help information.
+--quit | -q
+      Tell lvmlockd to quit.
+--info | -i
+      Print lock state information from lvmlockd.
+--dump | -d
+      Print log buffer from lvmlockd.
+--wait | -w 0|1
+      Wait option for other commands.
+--force | -f 0|1&gt;
+      Force option for other commands.
+--kill | -k &lt;vgname&gt;
+      Kill access to the VG locks are lost (see lvmlockctl_kill_command).
+--drop | -r &lt;vgname&gt;
+      Clear locks for the VG when it is unused after kill (-k).
+--gl-enable | -E &lt;vgname&gt;
+      Tell lvmlockd to enable the global lock in a sanlock VG.
+--gl-disable | -D &lt;vgname&gt;
+      Tell lvmlockd to disable the global lock in a sanlock VG.
+--stop-lockspaces | -S
+      Stop all lockspaces.
+--stderr | -e
+      Send kill and drop messages to stderr instead of syslog
+</code></pre><hr><h5 id=lvmlockd>lvmlockd</h5><p>LVM locking daemon</p><pre><code>root@kali:~# lvmlockd -h
+Usage:
+lvmlockd [options]
+
+  --help | -h
+        Show this help information.
+  --version | -V
+        Show version of lvmlockd.
+  --test | -T
+        Test mode, do not call lock manager.
+  --foreground | -f
+        Don't fork.
+  --daemon-debug | -D
+        Don't fork and print debugging to stdout.
+  --pid-file | -p &lt;path&gt;
+        Set path to the pid file. [/run/lvmlockd.pid]
+  --socket-path | -s &lt;path&gt;
+        Set path to the socket to listen on. [/run/lvm/lvmlockd.socket]
+  --adopt-file &lt;path&gt;
+        Set path to the adopt file. [/run/lvm/lvmlockd.adopt]
+  --syslog-priority | -S err|warning|debug
+        Write log messages from this level up to syslog. [warning]
+  --gl-type | -g &lt;str&gt;
+        Set global lock type to be dlm|sanlock.
+  --host-id | -i &lt;num&gt;
+        Set the local sanlock host id.
+  --host-id-file | -F &lt;path&gt;
+        A file containing the local sanlock host_id.
+  --sanlock-timeout | -o &lt;seconds&gt;
+        Set the sanlock lockspace I/O timeout.
+  --adopt | -A 0|1
+        Adopt locks from a previous instance of lvmlockd.
+</code></pre><hr><h3 id=lvm2-udeb>lvm2-udeb</h3></div><br><br><p id=post-meta>Updated on: 2026-May-25<br></p><hr><div id=pagination><div><a href=https://gitlab.com/-/ide/project/kalilinux/documentation/kali-tools/edit/main/-/lvm2/index.md rel=noopener target=_blank><i class=ti-pencil-alt></i> Edit this page</a></div><div><a href="../lsof/index.html"><i class=ti-arrow-left></i>
+<span>lsof</span>
+</a><a href="../mdbtools/index.html"><span>mdbtools</span>
+<i class=ti-arrow-right></i></a></div></div></section></main><script>$$("#packages-info pre > code").forEach(e=>e.classList.add("language-console"))</script><script src=https://www.kali.org/plugins/highlight/highlight.pack.js></script><script src="https://www.kali.org/highlighting.min.js?ver=0a73a6a2757f0224a67ef43d491edbe9"></script><footer><div class=darkmode-switch><span>LIGHT</span><label class=switch>
+<input type=checkbox name=toggle-darkmode><div></div></label><span>DARK</span></div><div class=container><div><h4>Links</h4><a href=https://www.kali.org/ rel=noopener target=_blank>Home</a>
+<a href=https://www.kali.org/get-kali/ rel=noopener target=_blank>Download / Get Kali</a>
+<a href=https://www.kali.org/blog/ rel=noopener target=_blank>Blog</a>
+<a href=https://www.kali.org/docs/ rel=noopener target=_blank>OS Documentation</a>
+<a href="../index.html" rel=noopener target=_blank>Tool Documentation</a>
+<a href=https://status.kali.org/ rel=noopener target=_blank>System Status</a>
+<a href=https://old.kali.org/ rel=noopener target=_blank>Archived Releases</a>
+<a href=https://www.kali.org/partnerships/ rel=noopener target=_blank>Partnerships</a></div><div><h4>Platforms</h4><a href=https://arm.kali.org/ rel=noopener target=_blank>ARM (SBC)</a>
+<a href=https://nethunter.kali.org/ rel=noopener target=_blank>NetHunter (Mobile)</a><br><a href=https://aws.amazon.com/marketplace/pp/B08LL91KKB title="Amazon AWS" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183.0.08-.048.16-.152.24l-.503.335a.383.383.0 01-.208.072c-.08.0-.16-.04-.239-.112a2.47 2.47.0 01-.287-.375 6.18 6.18.0 01-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67.0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533.0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272.0.551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28.0-.568.031-.863.103s-.583.16-.862.272a2.287 2.287.0 01-.28.104.488.488.0 01-.127.023c-.112.0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597.0 01.224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84.0 011.246-.151c.95.0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263.0.534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66.0 00-.735-.136 6.02 6.02.0 00-.75-.048c-.535.0-.926.104-1.19.32-.263.215-.39.518-.39.917.0.375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144.0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398.0 01-.072-.32c0-.128.064-.2.191-.2h.783c.151.0.255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549.0 01.32-.08h.638c.152.0.256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52.0 01.311-.08h.743c.127.0.2.065.2.2.0.04-.009.08-.017.128a1.137 1.137.0 01-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51.0 01-.303.08h-.687c-.151.0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415.0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563.0 01-.048-.224v-.407c0-.167.064-.247.183-.247.048.0.096.008.144.024s.12.048.2.08c.271.12.566.215.878.279.319.064.63.096.95.096.502.0.894-.088 1.165-.264a.86.86.0 00.415-.758.777.777.0 00-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902.0 01-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175.0.359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69.0 01.24.2.43.43.0 01.071.263v.375c0 .168-.064.256-.184.256a.83.83.0 01-.303-.096 3.652 3.652.0 00-1.532-.311c-.455.0-.815.071-1.062.223-.248.152-.375.383-.375.71.0.224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117.0.343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zm1.509 3.88c-2.626 1.94-6.442 2.969-9.722 2.969-4.598.0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914.0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zm1.094-1.246c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"/></svg>
+Amazon AWS
+</a><a href=https://hub.docker.com/u/kalilinux title=Docker rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M4.82 17.275c-.684.0-1.304-.56-1.304-1.24s.56-1.243 1.305-1.243c.748.0 1.31.56 1.31 1.242s-.622 1.24-1.305 1.24zm16.012-6.763c-.135-.992-.75-1.8-1.56-2.42l-.315-.25-.254.31c-.494.56-.69 1.553-.63 2.295.06.562.24 1.12.554 1.554-.254.13-.568.25-.81.377-.57.187-1.124.25-1.68.25H.097l-.06.37c-.12 1.182.06 2.42.562 3.54l.244.435v.06c1.5 2.483 4.17 3.6 7.078 3.6 5.594.0 10.182-2.42 12.357-7.633 1.425.062 2.864-.31 3.54-1.676l.18-.31-.3-.187c-.81-.494-1.92-.56-2.85-.31l-.018.002zm-8.008-.992h-2.428v2.42h2.43V9.518l-.002.003zm0-3.043h-2.428v2.42h2.43V6.48l-.002-.003zm0-3.104h-2.428v2.42h2.43v-2.42h-.002zm2.97 6.147H13.38v2.42h2.42V9.518l-.007.003zm-8.998.0H4.383v2.42h2.422V9.518l-.01.003zm3.03.0h-2.4v2.42H9.84V9.518l-.015.003zm-6.03.0H1.4v2.42h2.428V9.518l-.03.003zm6.03-3.043h-2.4v2.42H9.84V6.48l-.015-.003zm-3.045.0H4.387v2.42H6.8V6.48l-.016-.003z"/></svg>
+Docker
+</a><a href=https://www.linode.com/marketplace/apps/kali-linux/kali-linux/ title=Linode rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor"><path d="m9.7572 21.543c-.21543-1.3514-.38438-2.4903-.37538-2.5308.017008-.07597 3.1734-2.3103 3.2109-2.2727.02721.02645.30916 4.8132.29118 4.9432-.0087.06349-.4854.49368-1.3388 1.2082-.72884.61028-1.3412 1.1095-1.3607 1.1094-.01965-75e-6-.2118-1.1059-.42728-2.4573zM7.709 22.9686l-.98536-.75859-.45604-2.2603c-.25085-1.2432-.45143-2.2992-.44576-2.3467.00794-.06803.2406.07748 1.0868.68035l1.0764.76683.3651 2.2757c.20081 1.2516.36038 2.304.35463 2.3385-.00605.03779-.4286-.25928-.99579-.69577zm6.4796-2.708c-.05413-.67589-.26906-4.4802-.25391-4.4942.10443-.09487 3.0591-2.1356 3.0918-2.1356.02797.0.0359.36586.02041.97361-.01361.53548-.03742 1.5988-.05291 2.3628l-.02835 1.3892-1.3386 1.1211c-.73625.61659-1.3545 1.1273-1.3739 1.135-.01927.0076-.04845-.1508-.06456-.35187zM9.0927 17.425c-3515e-7-.034015-.18826-1.2359-.41764-2.6682s-.40025-2.622-.37965-2.6439c.020409-.02268.90006-.55283 1.9543-1.18 1.9099-1.1361 1.917-1.1398 1.9494-1.016.03174.1217.33124 5.1734.3078 5.1942-.02986.02645-3.1702 2.2195-3.2847 2.294-.099439.06463-.12918.06917-.1296.0189zm-2.5369-1.0543c-.60442-.42826-1.1149-.79355-1.1344-.81177-.038589-.037794-1.0281-4.9311-1.0087-4.9894.00983-.03024 2.4743 1.582 2.4757 1.6187 2306e-7.0076.17768 1.12.39428 2.4748.2166 1.3548.38895 2.4685.38298 2.4749-.00605.0076-.5054-.33902-1.1098-.76713zm11.833-.75753c.01587-.84522.03175-1.8651.03515-2.2665l.006-.72979 1.2935-.90538c.71142-.49795 1.2992-.89802 1.3061-.88902.0068.0076-.02267.97036-.06603 2.1363l-.07869 2.1199-.13655.1149c-1.0407.87496-2.347 1.955-2.3653 1.9556-.01285 529e-6-.01058-.69071.0056-1.5359zm-4.5751-1.7362c-.01512-.14854-.05178-.71082-.08168-1.2499l-.05439-.98011.10454-.07899c.05749-.04346.17522-.11679.26162-.16365l.15712-.08466 1.0817.51008c.59497.28044 1.0753.5303 1.0673.55502-.01474.04611-2.423 1.7557-2.4784 1.7594-.01701.0011-.04286-.11943-.05787-.26759zm2.8451-2.8867c-.54841-.26079-.99636-.48624-.99545-.5006 903e-6-.01512.56035-.34507 1.2433-.73519l1.2416-.70904 1.012.31219c.55657.17159 1.0159.32655 1.0207.34394.0091.034016-2.4539 1.7738-2.4996 1.767-.01398-.0021-.47414-.21732-1.0225-.47822zm-8.6457-.34923c-3515e-7-.018898-.19854-1.2719-.4405-2.7816-.24197-1.5097-.42648-2.7592-.41-2.7766.044863-.047622 4.6088-2.115 4.6269-2.096.017385.018897.30716 4.8457.3066 5.1095l-355e-6.1663-1.9301 1.1474c-2.195 1.305-2.1519 1.2803-2.1527 1.231zm-2.767-1.1814-1.2426-.83369-.52316-2.6237c-.28774-1.4431-.51787-2.6297-.51141-2.6371.013606-.015118 2.648 1.6215 2.7321 1.6978.048151.043842.85818 4.9077.85818 5.153.0.04573-.015874.08202-.03515.08013-.019276-.001585-.59437-.37815-1.2779-.83668zm-.30013-6.4717c-.81502-.50785-1.4767-.94016-1.4703-.96068.010961-.034016 4.0645-1.8972 4.379-2.0117.14128-.051402.19404-.022677 1.6328.87598.81774.51103 1.4699.94356 1.4493.96121-.020788.018898-.89265.41941-1.9378.8928-1.0452.47339-2.0513.92935-2.2358 1.0133l-.33547.15231z" style="stroke-width:3.7795"/></svg>
+Linode
+</a><a href=https://azuremarketplace.microsoft.com/en/marketplace/apps/kali-linux.kali title="Microsoft Azure" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M5.483 21.3H24L14.025 4.013l-3.038 8.347 5.836 6.938L5.483 21.3zM13.23 2.7 6.105 8.677.0 19.253h5.505v.014L13.23 2.7z"/></svg>
+Microsoft Azure
+</a><a href=https://www.microsoft.com/en-us/p/kali-linux/9pkr34tncv07 title="Microsoft Store" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6.0H12.6V0H24v11.4z"/></svg>
+Microsoft Store (WSL)
+</a><a href=https://portal.cloud.hashicorp.com/vagrant/discover/kalilinux title=Vagrant rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M5.672 6.774V4.917l3.164-1.822L3.56.005.397 1.852v2.263L7.52 21.41 12 23.995v-6.496l2.107-1.224-.024-.015 4.245-9.486V4.917l5.275-3.065L20.439.005l-5.272 3.087h-.003v2.11L12 12.584v2.467l-2.11 1.224zm3.164-3.66L8.814 3.1 5.672 4.917v1.857l4.218 9.501L12 15.234v-2.65L8.836 5.202zm9.492 1.803v1.857l-4.22 9.101L12 17.332v6.663l4.521-2.607L23.603 4.05V1.852z"/></svg>
+Vagrant</a></div><div><h4>Development</h4><a href=https://bugs.kali.org/ rel=noopener target=_blank>Bug Tracker</a>
+<a href=https://autopkgtest.kali.org/ rel=noopener target=_blank>Continuous Integration</a>
+<a href=https://http.kali.org/README?mirrorlist rel=noopener target=_blank>Network Mirror</a>
+<a href=https://pkg.kali.org/ rel=noopener target=_blank>Package Tracker</a>
+<a href=https://gitlab.com/kalilinux title=GitLab rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.423-.73-.423-.867.0L16.418 9.45H7.582L4.919 1.263C4.783.84 4.185.84 4.05 1.26L1.386 9.449.044 13.587c-.121.375.014.789.331 1.023L12 23.054l11.625-8.443c.318-.235.453-.647.33-1.024"/></svg>
+GitLab</a></div><div><h4>Community</h4><a href=https://discord.kali.org/ title=Discord rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M20.317 4.3698a19.7913 19.7913.0 00-4.8851-1.5152.0741.0741.0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868.0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077.0 00-.0785-.037 19.7363 19.7363.0 00-4.8852 1.515.0699.0699.0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824.0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777.0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076.0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077.0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743.0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614.0a.0739.0739.0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077.0 01-.0066.1276 12.2986 12.2986.0 01-1.873.8914.0766.0766.0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076.0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077.0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061.0 00-.0312-.0286zM8.02 15.3312c-1.1825.0-2.1569-1.0857-2.1569-2.419.0-1.3332.9555-2.4189 2.157-2.4189 1.2108.0 2.1757 1.0952 2.1568 2.419.0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748.0c-1.1825.0-2.1569-1.0857-2.1569-2.419.0-1.3332.9554-2.4189 2.1569-2.4189 1.2108.0 2.1757 1.0952 2.1568 2.419.0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+Discord
+</a><a href=https://forums.kali.org/ rel=noopener target=_blank>Support Forum</a><br><a href=https://video.infosec.exchange/c/kalilinux/videos title=PeerTube rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 6.545v10.91L20.727 12M3.273 12v12L12 17.455M3.273.0v12L12 6.545"/></svg>
+PeerTube</a></div><div><h4>Follow Us</h4><a href=https://bsky.app/profile/kalilinux.bsky.social title=Bluesky rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908.0 3.08.0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741.0 01-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478.0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+Bluesky
+</a><a href=https://www.facebook.com/KaliLinux title=Facebook rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M23.9981 11.9991C23.9981 5.37216 18.626.0 11.9991.0 5.37216.0.0 5.37216.0 11.9991c0 5.9891 4.38789 10.9531 10.1242 11.8533V15.4676H7.07758V11.9991H10.1242V9.35553c0-3.00727 1.7914-4.66839 4.5322-4.66839 1.3128.0 2.686.23435 2.686.23435v2.9529h-1.513C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991h3.3279l-.532 3.4685H13.8739v8.3848C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991z"/></svg>
+Facebook
+</a><a href=https://www.instagram.com/kalilinux/ title=Instagram rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 0C8.74.0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333.0 8.74.0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26.0 12 0zm0 2.16c3.203.0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211.0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844.0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405.0-6.162 2.76-6.162 6.162.0 3.405 2.76 6.162 6.162 6.162 3.405.0 6.162-2.76 6.162-6.162.0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21.0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795.0-1.44-.646-1.44-1.44.0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+Instagram
+</a><a rel=me href=https://infosec.exchange/@kalilinux title=Mastodon rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="m11.193 24c-1.434.0-2.928-.208-4.456-.621-5.772-1.565-5.752-8.642-5.736-14.326l.002-.916c0-5.302 3.417-6.927 3.563-6.993C7.83-.387 16.176-.39 19.443 1.147c.139.063 3.556 1.688 3.556 6.99.001.142.034 3.697-.455 6.243-.381 1.985-3.118 3.897-6.101 4.263l-.237.031c-1.188.156-4.176.551-7.768-.154.326 1.349 1.425 1.625 3.613 1.702 1.835.07 3.511-.466 3.527-.471.223-.073.465-.035.657.099s.311.349.321.581l.083 1.854c.013.286-.137.554-.388.691-.063.035-1.578.853-4.209 1-.28.016-.563.024-.849.024zm.809-22.504c-2.687.0-5.374.336-6.805 1.008-.111.054-2.694 1.336-2.694 5.633l-.002.92c-.015 5.442-.033 11.61 4.628 12.875 1.675.453 3.3.642 4.827.546 1.525-.085 2.611-.423 3.162-.637l-.018-.421c-.754.163-1.891.344-3.099.302-1.759-.062-4.699-.167-5.114-3.364-.034-.249-.05-.514-.05-.796.0-.231.106-.449.289-.591.182-.143.419-.19.644-.137 3.768.942 7.019.513 8.242.353l.25-.032c2.476-.304 4.582-1.864 4.811-3.058.46-2.399.428-5.917.428-5.952.0-4.305-2.582-5.588-2.692-5.64-1.433-.673-4.12-1.009-6.807-1.009z"/><path d="m18.725 15c-.414.0-.75-.336-.75-.75.0-1.065.008-1.976.015-2.759.033-3.665.017-4.298-.753-5.174-.511-.562-1.359-.876-2.21-.809-.448.035-1.281.215-1.817 1.029l-.567.94c-.136.225-.379.362-.642.362s-.506-.138-.642-.362l-.583-.966c-.521-.789-1.356-.97-1.806-1.004-.848-.064-1.699.25-2.217.82-.76.86-.776 1.497-.744 5.188.007.778.015 1.681.015 2.735.0.414-.336.75-.75.75s-.75-.336-.75-.75c0-1.05-.008-1.947-.015-2.723-.032-3.746-.042-4.877 1.128-6.201.831-.913 2.152-1.413 3.447-1.313 1.204.093 2.262.688 2.916 1.636.668-.957 1.717-1.543 2.91-1.636 1.296-.103 2.621.397 3.444 1.304 1.18 1.34 1.169 2.464 1.136 6.188-.007.779-.015 1.686-.015 2.745.0.414-.336.75-.75.75z"/><path d="m11.999 12.13c-.414.0-.75-.336-.75-.75V7.091c0-.414.336-.75.75-.75s.75.336.75.75v4.289c0 .414-.336.75-.75.75z"/></svg>
+Mastodon
+</a><a href=https://kalilinux.substack.com/ title=Substack rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="m22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812zm21.08-10.812H1.46v2.836h21.08z"/></svg>
+Substack
+</a><a href=https://x.com/kalilinux title=X rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zM17.61 20.644h2.039L6.486 3.24H4.298z"/></svg>
+X</a><br><a href=https://www.kali.org/newsletter/ title=Newsletter rel=noopener target=_blank><svg viewBox="0 0 32 32" fill="currentcolor" width="24" height="24"><path d="m0 0h32v32H0z" fill="none"/><path d="m0 4v24h32V4zm28.149 2-12.151 9.719L3.851 6zM2 25.999V7.081l13.998 11.197L29.999 7.081v18.918z"/></svg>
+Newsletter
+</a><a href=https://www.kali.org/rss.xml title=RSS rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M19.199 24C19.199 13.467 10.533 4.8.0 4.8V0c13.165.0 24 10.835 24 24h-4.801zM3.291 17.415c1.814.0 3.293 1.479 3.293 3.295.0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526.0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727.0 15.909 7.184 15.909 15.91z"/></svg>
+RSS</a></div><div><h4>Policies</h4><a href=https://www.kali.org/docs/policy/cookie/>Cookie Policy</a>
+<a href=https://www.kali.org/docs/policy/privacy/>Privacy Policy</a>
+<a href=https://www.kali.org/docs/policy/trademark/>Trademark Policy</a></div><div><svg id="footer-logo" viewBox="0 0 135.47 135.47"><path fill="currentcolor" d="m71.766 36.352s-10.212-.6795-27.602 4.7619c-17.722 5.5452-27.773 13.405-27.773 13.405s26.414-14.748 56.228-15.586zm38.09 16.035 1.3276-.08664s-7.6062-9.2286-22.165-13.724c8.1839 3.3267 15.307 7.7345 20.837 13.81zm2.1727 3.8344c.20411-.3539.86302 1.1243 1.3634 1.7453.0212.124.0564.19967-.23373.13998-.0244-.12747-.0665-.16444-.0665-.16444s-.70029-.41667-.91499-.71224c-.21487-.29556-.253-.81255-.14825-1.0086zm17.867 43.93s1.6147-18.538-27.511-22.812c-3.6915-.54163-8.3599-.9585-13.082-.97044-23.344.30865-24.195-26.924-6.6044-28.299 7.2901-.60152 15.995 3.3311 24.505 7.2941-.0316 1.0569.0121 1.9961.70646 2.864.69414.86762 3.3607 1.8142 4.2128 2.3031.85203.48907 3.5816 2.2245 5.2543 4.4017.36275-.67854 3.3921-2.6504 3.3921-2.6504s-.72571.01579-2.414-.61519c-1.6885-.63098-3.6921-2.5401-3.7395-2.6504-.0473-.11052-.0788-.28401.31578-.36295.2996-.25224-.37893-1.0727-.67874-1.3723-.2996-.2998-2.3036-3.7073-2.3508-3.7863-.0473-.07894-.0632-.1577-.20507-.25243-.4419-.1421-2.3826.20506-2.3826.20506s-2.9847-1.4659-4.0135-4.6264c.015.55358-.5118 1.158.0 2.4298-1.5562-.65832-2.8929-1.7811-3.9472-4.5557-.62751 1.5781.0 2.5815.0 2.5815s-3.6646-1.024-4.2509-4.4036c-.6435 1.5171.0 2.4296.0 2.4296s-5.9742-3.1172-15.901-3.1624c-6.646-.60961-8.0296-12.301-7.4139-14.269.0.0-9.586-5.0521-28.456-7.2841-18.87-2.2322-34.346-.33638-34.346-.33638s33.421-1.6039 60.195 9.2356c.91018 4.0709 3.6482 10.851 5.1229 14.11-4.2197 2.9175-8.9781 5.6609-9.7191 15.391-.74074 9.7297 7.6245 18.288 17.998 18.552 9.8502.52469 16.656.59921 24.905 4.8759 7.8739 4.3537 14.33 17.62 14.969 29.551.69008-8.8524-2.632-27.889-18.134-33.669 21.667 3.7917 23.573 19.854 23.573 19.854zm-58.64-65.253-.77963-2.5147s-12.864-2.2844-30.16-1.055c-17.296 1.2294-34.759 7.2839-34.759 7.2839s35.732-8.991 65.698-3.7143"/></svg>
+© OffSec Services Limited 2026. All rights reserved.</div></div><div id=offsec-partnership><svg viewBox="0 0 504 180" class="astro-TVRURPNS w-44" style="enable-background:new 0 0 504 180" id="Layer_1"><style>.st0{fill:currentcolor}</style><switch class="astro-TVRURPNS"><g class="astro-TVRURPNS"><path d="M194.6 54.6c-21.7.0-37.5 15.5-37.5 36.9v.8c0 21.7 15.4 36.8 37.5 36.8s37.3-15.3 37.3-37.1v-.8c0-21.5-15.3-36.6-37.3-36.6zm-22.1 36.8c0-15.5 8.5-25.1 22.2-25.1s22.1 9.8 22.1 25v.8c0 15.3-8.6 25.2-21.9 25.2s-22.4-10.3-22.4-25.1v-.8zM299.9 51.8c-2.4-.8-4.3-1-7.3-1-11.7.0-18.4 6.7-18.4 18.2v5.7h-20.4v-6.3c0-5.9 3.5-7.1 6.5-7.1 2.3.0 4.1.6 5.3 1 .2.1.4.0.5-.1.2-.1.2-.3.2-.5v-9.4c0-.2-.2-.5-.4-.5-2.4-.7-4.3-1-7.2-1-11.9.0-18.4 6.5-18.4 18.2v58.6c0 .3.3.6.6.6h12.3c.3.0.6-.3.6-.6V85h20.4v42.6c0 .3.3.6.6.6h12.3c.3.0.6-.3.6-.6V85h11.6c.3.0.6-.3.6-.6v-9.1c0-.3-.3-.6-.6-.6h-11.6v-6.2c0-5.9 3.5-7.1 6.5-7.1 2.4.0 4.3.5 5.4.9.2.1.4.0.5-.1s.2-.3.2-.5v-9.4c.1-.2-.1-.4-.4-.5zm36.3 32.8c-12.5-1.8-14.6-4.5-14.6-9.9s4.5-8.8 12-8.8c8.2.0 12.2 3.1 13.5 10.2.0.3.3.5.6.5h12.4c.2.0.3-.1.4-.2.1-.1.2-.3.1-.4-1.4-13.9-10.8-21.2-27.1-21.2-15.3.0-25.9 8.7-25.9 21s7.3 19 26.2 21.4c12.6 2 14.7 4.9 14.7 10.4.0 6.2-5.3 10.4-13.2 10.4-12.3.0-14.8-6.1-15.6-12.7.0-.3-.3-.5-.6-.5h-13c-.2.0-.3.1-.4.2-.1.1-.2.3-.1.4.8 10.8 6.7 23.7 29.8 23.7 15.9.0 27.4-9.5 27.4-22.6-.1-15.3-10.2-19.7-26.6-21.9zM415.2 80c-4.5-4.1-10.7-6.3-17.9-6.3-15.9.0-27.1 11.3-27.1 27.5v.8c0 16.2 11.1 27.1 27.6 27.1 14.2.0 23.3-6.4 25-17.5.0-.2.0-.3-.1-.4-.1-.1-.3-.2-.4-.2h-11.9c-.3.0-.5.2-.6.5-.9 5-4.8 7.5-11.7 7.5-8.5.0-13.5-5.1-14.1-14.4h38.4c.3.0.6-.3.6-.6v-3.5c-.1-8.8-2.7-15.7-7.8-20.5zm-31 15.5c1.4-7.6 6.1-11.9 13-11.9 7.5.0 11.6 4 12.3 11.9h-25.3zm99.7 12.3c-.1-.1-.3-.2-.4-.2h-11.3c-.3.0-.5.2-.6.5-.6 6.5-5.4 10.7-12.3 10.7-9 0-14.2-6.1-14.2-16.8v-.8c0-10.1 5.5-16.6 13.9-16.6 6.8.0 10.8 3.2 11.7 9.4.0.3.3.5.6.5h11.9c.2.0.3-.1.4-.2.1-.1.2-.3.1-.4-1.3-12.8-10.3-20.1-24.9-20.1-15.9.0-27.5 11.6-27.5 27.6v.8c0 16.2 11 27 27.5 27 14.3.0 24.2-8.2 25.2-21 .1-.2.1-.3-.1-.4z" class="astro-TVRURPNS st0"/><linearGradient gradientUnits="userSpaceOnUse" id="SVGID_1_" x1="70.2755" x2="70.2755" y1="177.9512" y2="62.096" class="astro-TVRURPNS" gradientTransform="matrix(1 0 0 -1 0 210.0236)"><stop offset="0" class="astro-TVRURPNS" style="stop-color:#00bfcb"/><stop offset="1" class="astro-TVRURPNS" style="stop-color:#6619d0"/></linearGradient><path d="M74.1 85.7c0 12 .9 23.9 2.6 35.8l3.7 25.5c-3.3.6-6.7.9-10.1.9s-6.8-.3-10.1-.9l3.7-25.5c1.7-11.9 2.6-23.8 2.6-35.8V32.2c1.3-.1 2.6-.1 3.9-.1 1.3.0 2.6.1 3.9.1v53.5zm-38.9 50.4 15.1-29.3c1.1-2.2 1.7-4.7 1.7-7.2V35c-23 7.7-39.7 29.4-39.7 55 0 18.8 9 35.5 22.9 46.1zm53.3-36.5c0 2.5.6 4.9 1.7 7.2l15.1 29.3c13.9-10.6 22.9-27.3 22.9-46.1.0-25.6-16.6-47.3-39.7-55v64.6z" class="astro-TVRURPNS" style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_)"/><path d="m489.6 77.1-1.6-3.6h.6l1.1 2.7 1.1-2.7h.6l-1.6 3.6h-.2zm-1.7.0v-3.6h.6v3.6h-.6zm3.1.0v-3.6h.6v3.6h-.6zm-5.5.0v-3.3h.6v3.3h-.6zm-1.1-3v-.6h2.8v.6h-2.8z" class="astro-TVRURPNS st0"/></g></switch></svg><div>Kali Linux is part of OffSec's Community Projects<br><a href="https://www.offsec.com/community/?utm_source=kali&utm_medium=web&utm_campaign=www#projects" rel=noopener target=_blank>Learn more about OffSec's free, open-source penetration testing tools for cybersecurity professionals</a></div></div></footer><script src="../../script.min.js"></script></body></html>

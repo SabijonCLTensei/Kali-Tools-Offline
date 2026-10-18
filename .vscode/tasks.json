@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Open All Kali Tools in Default Browser",
+      "type": "shell",
+      "command": "powershell -Command \"Start-Process (Resolve-Path 'www.kali.org/tools/all-tools/index.html')\"",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Start Offline Local Server (Python)",
+      "type": "shell",
+      "command": "python -m http.server 8080 --directory www.kali.org/tools",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,1811 @@
+﻿<!doctype html><html lang=en-us><head itemscope itemtype=https://www.kali.org/><meta charset=utf-8><meta name=viewport content="width=device-width"><title itemprop=name>swaks | Kali Linux Tools</title>
+<meta itemprop=name content="swaks | Kali Linux Tools"><meta name=application-name content="swaks | Kali Linux Tools"><meta name=twitter:title content="swaks | Kali Linux Tools"><meta property="og:site_name" content="Kali Linux"><meta property="og:title" content="swaks | Kali Linux Tools"><meta itemprop=description content><meta name=description content><meta name=twitter:description content><meta property="og:description" content><meta name=keywords content="kali,linux,kalilinux,Penetration,Testing,Penetration Testing,Distribution,Advanced"><meta name=apple-mobile-web-app-status-bar-style content="black-translucent"><meta name=msapplication-navbutton-color content="#367BF0"><meta name=theme-color content="#367BF0"><meta name=language content="English"><meta property="og:locale" content="en_US"><meta itemprop=image content="../../images/kali-logo.svg"><meta property="og:image" content="../../images/kali-logo.svg"><meta name=twitter:image content="../../images/kali-logo.svg"><meta name=twitter:image:src content="../../images/kali-logo.svg"><meta property="og:updated_time" content=2026-05-25T00:00:00Z><meta name=twitter:site content="@kalilinux"><meta name=twitter:creator content="@kalilinux"><link rel="alternate icon" class=js-site-favicon type=image/png href=../../images/favicon.png><link rel=icon class=js-site-favicon type=image/svg+xml href=../../images/favicon.svg><link rel=sitemap type=application/xml title=Sitemap href=https://www.kali.org/sitemap.xml><link href=https://www.kali.org/rss.xml type=application/rss+xml title="Kali Linux" rel=alternate><link href=https://www.kali.org/rss.xml type=application/rss+xml title="Kali Linux" rel=feed><link rel=canonical href="./index.html" itemprop=url><meta name=twitter:url content="https://www.kali.org/tools/swaks/"><meta property="og:url" content="https://www.kali.org/tools/swaks/"><meta name=url content="https://www.kali.org/tools/swaks/"><link href="../../style.min.css" rel=stylesheet><style>:root{--primary-color:#367BF0;--body-color:light-dark(#f9f9f9, #010409);--text-color:light-dark(#636363, #eeeeec);--text-color-dark:light-dark(#242738, white);--white-color:light-dark(#ffffff, #16171d);--font-family:Noto Sans;--color-kali-blue:#2777ff;--color-kali-purple:#a400a4}</style><script>const $=document.querySelector.bind(document),$$=document.querySelectorAll.bind(document)</script></head><body><header><nav class=container><a id=logo href=https://www.kali.org/ style=background-image:url(../../images/kali-logo.svg)></a><ul id=navigation><li><a href="https://www.offsec.com/events/the-gauntlet/?utm_source=kali&utm_medium=web&utm_campaign=menu">Join Free CTF</a></li><li><a href=https://www.kali.org/get-kali/>Get Kali</a></li><li><a href=https://www.kali.org/blog/>Blog</a></li><li class=dropdown-menu><span>Documentation <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/docs/>Documentation Pages</a>
+<a href="../all-tools/index.html">Tools Documentation</a>
+<a href=https://www.kali.org/faq/>Frequently Asked Questions</a>
+<a href="https://bugs.kali.org/search.php?project_id=1&category_id[]=General%20Bug&category_id[]=Kali%20Package%20Bug&category_id[]=Kali%20Package%20Improvement&status[]=30&status[]=40&status[]=50&sticky=on&sort=id%2Clast_updated&dir=DESC%2CDESC&hide_status=-2&match_type=0">Known Issues</a></div></li><li class=dropdown-menu><span>Community <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/community/>Community Support</a>
+<a href=https://forums.kali.org/>Forums</a>
+<a href=https://discord.kali.org/>Discord</a>
+<a href=https://www.kali.org/newsletter/>Join Newsletter</a>
+<a href=https://http.kali.org/README?mirrorlist>Mirror Location</a>
+<a href=https://www.kali.org/docs/community/contribute/>Get Involved</a></div></li><li><a href="https://www.offsec.com/kali-training/courses/?utm_source=kali&utm_medium=web&utm_campaign=menu">Courses</a></li><li class=dropdown-menu><span>Developers <i class=ti-angle-down></i></span><div><a href=https://gitlab.com/kalilinux>Git Repositories</a>
+<a href=https://pkg.kali.org/>Packages</a>
+<a href=https://autopkgtest.kali.org/>Auto Package Test</a>
+<a href=https://bugs.kali.org/>Bug Tracker</a>
+<a href=https://nethunter.kali.org/>Kali NetHunter Stats</a></div></li><li class=dropdown-menu><span>About <i class=ti-angle-down></i></span><div><a href=https://www.kali.org/features/>Kali Linux Overview</a>
+<a href=https://gitlab.com/kalilinux/documentation/press-pack/-/archive/main/press-pack-main.zip>Press Pack</a>
+<a href=https://www.kali.org/wallpapers/>Wallpapers</a>
+<a href=https://offsec.usa.dowlis.com/kali/view-all.html>Kali Swag Store</a>
+<a href=https://www.kali.org/about-us/>Meet The Kali Team</a>
+<a href=https://www.kali.org/partnerships/>Partnerships</a>
+<a href=https://www.kali.org/contact/>Contact Us</a></div></li></ul><button title="show menu"><div></div><div></div><div></div></button></nav></header><link href="../../tools.min.css" rel=stylesheet><main class=container><aside><a href="../all-tools/index.html" title="↤ Go back"></a><ul><li><a><h3>swaks</h3></a></li></ul><img src=images/swaks-logo.svg>
+<code>version: 20240103.0</code> <code>arch: all</code><hr><div id=package-links><a href=https://www.jetmore.org/john/code/swaks/ target=_blank><i class=ti-world></i> swaks Homepage</a><span><span>|</span><a href=https://pkg.kali.org/pkg/swaks target=_blank><i class=ti-target></i> Package Tracker</a></span><span><span>|</span><a href=https://salsa.debian.org/debian/swaks target=_blank><i class=ti-folder></i> Source Code Repository</a></span><br><a href=https://gitlab.com/-/ide/project/kalilinux/documentation/kali-tools/edit/main/-/swaks/index.md rel=noopener target=_blank><i class=ti-pencil-alt></i> Edit this page</a></span></div><hr><div id=categories><h4><a href="../index.html">Categories <i class=ti-link></i></a></h4><ul class=table-of-contents><li><ul><li><img src=../../images/categories/kali-smtp.svg>
+<a href="../index.html#smtp" title=SMTP>SMTP</a></li></ul></li></ul></div><hr><div id=metapackages><h4><a href=https://www.kali.org/docs/general-use/metapackages/>Metapackages <i class=ti-link></i></a></h4><ul class=table-of-contents><li><ul><li><a href="../kali-meta/index.html#kali-linux-default" title=kali-linux-default>default</a></li><li><a href="../kali-meta/index.html#kali-linux-everything" title=kali-linux-everything>everything</a></li><li><a href="../kali-meta/index.html#kali-linux-large" title=kali-linux-large>large</a></li></ul></li><li>Tools:<ul><li><a href="../kali-meta/index.html#kali-tools-information-gathering" title=kali-tools-information-gathering>information-gathering</a></li></ul></li></ul></div><hr><div id=binaries><h4><a href=#packages-and-binaries>Packages & Binaries <i class=ti-link></i></a></h4><ul class=table-of-contents><li><a href=#swaks title="swaks package"><i class=ti-package></i>
+swaks</a><ul><li><a href=#swaks-1 title="swaks command">swaks</a></ul></li></ul></div><hr><div class=darkmode-switch><span>LIGHT</span><label class=switch>
+<input type=checkbox name=toggle-darkmode><div></div></label><span>DARK</span></div></aside><section id=content><h1 id=packages-and-binaries>Packages and Binaries:</h1><div id=packages-info><h3 id=swaks>swaks</h3><p><strong>SMTP command-line test tool</strong><br>swaks (Swiss Army Knife SMTP) is a command-line tool written in Perl
+for testing SMTP setups; it supports STARTTLS and SMTP AUTH (PLAIN,
+LOGIN, CRAM-MD5, SPA, and DIGEST-MD5). swaks allows one to stop the
+SMTP dialog at any stage, e.g to check RCPT TO: without actually
+sending a mail.</p><p>If you are spending too much time iterating &ldquo;telnet foo.example 25&rdquo;
+swaks is for you.</p><p><strong>Installed size:</strong> <code>312 KB</code><br><strong>How to install:</strong> <code>sudo apt install swaks</code></p><details class=card id=dependencies><summary>Dependencies:</summary><div><ul><li>perl</li></ul></div></details><h5 id=swaks-1>swaks</h5><p>Swiss Army Knife SMTP, the all-purpose SMTP transaction tester</p><pre><code>root@kali:~# swaks --help
+SWAKS(1)                             SWAKS                             SWAKS(1)
+
+NAME
+     Swaks - Swiss Army Knife SMTP, the all-purpose SMTP transaction tester
+
+DESCRIPTION
+     Swaks'  primary  design goal is to be a flexible, scriptable, transaction-
+     oriented SMTP test tool.  It handles SMTP features and extensions such  as
+     TLS, authentication, and pipelining; multiple version of the SMTP protocol
+     including  SMTP, ESMTP, and LMTP; and multiple transport methods including
+     UNIX-domain  sockets,  internet-domain  sockets,  and  pipes  to   spawned
+     processes.   Options can be specified in environment variables, configura-
+     tion files, and the command line allowing maximum configurability and ease
+     of use for operators and scripters.
+
+QUICK START
+     Deliver  a  standard  test  email  to  <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f481879186b4918c9599849891da979b99">[email&#160;protected]</a>  on  port  25   of
+     test-server.example.net:
+
+      swaks --to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e0b0d1b0c3e1b061f130e121b501d1113">[email&#160;protected]</a> --server test-server.example.net
+
+     Deliver  a  standard test email, requiring CRAM-MD5 authentication as user
+     <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6bbb396b3aeb7bba6bab3f8b5b9bb">[email&#160;protected]</a>.  An &quot;X-Test&quot; header will be added to the email body.   The
+     authentication password will be prompted for if it cannot be obtained from
+     your .netrc file.
+
+      swaks --to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7b2b4a2b587a2bfa6aab7aba2e9a4a8aa">[email&#160;protected]</a> --from <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b767e5b7e637a766b777e35787476">[email&#160;protected]</a> --auth CRAM-MD5 --auth-user <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8de0e8cde8f5ece0fde1e8a3eee2e0">[email&#160;protected]</a> --header-X-Test &quot;test email&quot;
+
+     Test a virus scanner using EICAR in an attachment.  Don't show the message
+     DATA part.:
+
+      swaks -t <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5124223423113429303c213d347f323e3c">[email&#160;protected]</a> --attach - --server test-server.example.com --suppress-data &lt;/path/to/eicar.txt
+
+     Test a spam scanner using GTUBE in the body of an email, routed via the MX
+     records for example.com:
+
+      swaks --to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1c4c2d4c3f1d4c9d0dcc1ddd49fd2dedc">[email&#160;protected]</a> --body @/path/to/gtube/file
+
+     Deliver  a standard test email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f481879186b4918c9599849891da979b99">[email&#160;protected]</a> using the LMTP protocol
+     via a UNIX domain socket file
+
+      swaks --to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0c5c3d5c2f0d5c8d1ddc0dcd59ed3dfdd">[email&#160;protected]</a> --socket /var/lda.sock --protocol LMTP
+
+     Report all the recipients in a text file that are non-verifiable on a test
+     server:
+
+      for E in `cat /path/to/email/file`
+      do
+          swaks --to $E --server test-server.example.com --quit-after RCPT --hide-all
+          [ $? -ne 0 ] &amp;&amp; echo $E
+      done
+
+TERMS AND CONVENTIONS
+     This document tries to be consistent and specific in its use of  the  fol-
+     lowing terms to reduce confusion.
+
+     Target
+         The target of a transaction is the thing that Swaks connects to.  This
+         generic  term  is used throughout the documentation because most other
+         terms improperly imply something about the transport being used.
+
+     Transport
+         The transport is the underlying method used to connect to the target.
+
+     Transaction
+         A transaction is the opening of a connection over  a  transport  to  a
+         target and using a messaging protocol to attempt to deliver a message.
+
+     Protocol
+         The  protocol is the application language used to communicate with the
+         target.  This document uses SMTP to speak  generically  of  all  three
+         supported  protocols  unless it states that it is speaking of the spe-
+         cific 'SMTP' protocol and excluding the others.
+
+     Message
+         SMTP protocols exist to transfer  messages,  a  set  of  bytes  in  an
+         agreed-upon format that has a sender and a recipient.
+
+     Envelope
+         A message's envelope contains the &quot;true&quot; sender and receiver of a mes-
+         sage.   It  can also be referred to as its components, envelope-sender
+         and envelope-recipients.  It is important to note that a messages  en-
+         velope does not have to match its &quot;To:&quot; and &quot;From:&quot; headers.
+
+     DATAThe  DATA portion of an SMTP transaction is the actual message that is
+         being transported.  It consists of both the message's headers and  its
+         body.  DATA and body are sometimes used synonymously, but they are al-
+         ways two distinct things in this document.
+
+     Headers
+         A message's headers are defined as all the lines in the message's DATA
+         section  before  the first blank line.  They contain information about
+         the email that will be displayed  to  the  recipient  such  as  &quot;To:&quot;,
+         &quot;From:&quot;,  &quot;Subject:&quot;,  etc.   In  this document headers will always be
+         written with a capitalized first letter and a trailing colon.
+
+     BodyA message's body is the portion of  its  DATA  section  following  the
+         first blank line.
+
+     Option
+         An  option  is a flag which changes Swaks' behavior.  Always called an
+         option  regardless   of   how   it   is   provided.    For   instance,
+         &quot;--no-data-fixup&quot; is an option.
+
+     Argument
+         When  an option takes addition data beside the option itself, that ad-
+         ditional data is called an argument. In &quot;--quit-after  &lt;stop-point&gt;'&quot;,
+         &quot;&lt;stop-point&gt;&quot; is the argument to the &quot;--quit-after&quot; option.
+
+     &lt;literal-string&gt;
+         When used in the definition of an option, text that is inside of angle
+         brackets  (&quot;&lt;&gt;&quot;)  indicates  a  descriptive label for a value that the
+         user should provide.  For instance, &quot;--quit-after &lt;stop-point&gt;&quot;  indi-
+         cates  that  &quot;&lt;stop-point&gt;&quot; should be replaced with a valid stop-point
+         value.
+
+     [&lt;optional-value&gt;]
+         When used in the definition of an option, text inside of square brack-
+         ets ([]) indicates that the value is optional and can be omitted.  For
+         instance, &quot;--to [&lt;recipient&gt;]&quot; indicates that the &quot;--to&quot; option can be
+         used with or without a specified &quot;&lt;recipient&gt;&quot;.
+
+OPTION PROCESSING
+     To prevent potential confusion in this document a flag to Swaks is  always
+     referred to as an &quot;option&quot;.  If the option takes additional data, that ad-
+     ditional  data  is referred to as an argument to the option.  For example,
+     &quot;--from <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="482e3a2d2c082d30292538242d662b2725">[email&#160;protected]</a>&quot; might be provided to Swaks on the command  line,
+     with &quot;--from&quot; being the option and &quot;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="076175626347627f666a776b622964686a">[email&#160;protected]</a>&quot; being &quot;--from&quot;'s ar-
+     gument.
+
+     Options  and  arguments  are the only way to provide information to Swaks.
+     If Swaks finds data during option processing that is neither an option nor
+     an  option's  argument,  it  will  error  and  exit.   For  instance,   if
+     &quot;--no-data-fixup  1&quot;  were found on the command line, this would result in
+     an error because &quot;--no-data-fixup&quot; does not take an argument and therefore
+     Swaks would not know what to do with 1.
+
+     Options can be given to Swaks in three ways.  They can be specified  in  a
+     configuration  file,  in  environment  variables, and on the command line.
+     Depending on the specific option and whether an argument is given  to  it,
+     Swaks may prompt the user for the argument.
+
+     When  Swaks evaluates its options, it first looks for a configuration file
+     (either in a default location or  specified  with  &quot;--config&quot;).   Then  it
+     evaluates  any  options  in  environment variables.  Finally, it evaluates
+     command line options.  At each round of processing, any options  set  ear-
+     lier  will  be  overridden.  Additionally, any option can be prefixed with
+     &quot;no-&quot; to cause Swaks to forget that the variable had previously  been  set
+     (either in an earlier round, or earlier in the same round).  This capabil-
+     ity  is  necessary because many options treat defined-but-no-argument dif-
+     ferently than not-defined.
+
+     As a general rule, if the same option is given  multiple  time,  the  last
+     time  it  is given is the one that will be used.  This applies to both in-
+     tra-method (if  &quot;--from  <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d686e786f2c5d78657c706d7178337e7270">[email&#160;protected]</a>  --from  <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="215452445313614459404c514d440f424e4c">[email&#160;protected]</a>&quot;  is
+     given,  &quot;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f782849285c5b7928f969a879b92d994989a">[email&#160;protected]</a>&quot;  will  be  used)  and  inter-method  (if &quot;from
+     <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d1a4a2b4a3e091b4a9b0bca1bdb4ffb2bebc">[email&#160;protected]</a>&quot; is given in  a  config  file  and  &quot;--from  user2@exam-
+     ple.com&quot; is given on the command line, &quot;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94e1e7f1e6a6d4f1ecf5f9e4f8f1baf7fbf9">[email&#160;protected]</a>&quot; will be used)
+
+     Each  option  definition ends with a parenthetical synopsis of how the op-
+     tion behaves.  The following codes can be used
+
+     Arg-None, Arg-Optional, Arg-Required
+         These three codes are mutually exclusive and describe whether  or  not
+         the option takes an argument.  Note that this does not necessarily de-
+         scribe  whether the argument is required to be specified directly, but
+         rather whether an argument  is  required  eventually.   For  instance,
+         &quot;--to&quot;  is  labeled as Arg-Required, but it is legal to specify &quot;--to&quot;
+         on the command line without an argument.  This is  because  Swaks  can
+         prompt for the required argument if it is not directly provided.
+
+     From-Prompt
+         An  option labeled with From-Prompt will prompt the user interactively
+         for the argument if none is provided.
+
+     From-File
+         An option labeled with From-File will handle  arguments  as  files  in
+         certain situations.
+
+         If  the initial argument is &quot;-&quot;, the final argument is the contents of
+         &quot;STDIN&quot;.  Multiple options can all specify &quot;STDIN&quot;, but the same  con-
+         tent will be used for each of them.
+
+         If  the  initial  argument  is prefixed with &quot;@&quot;, the argument will be
+         treated as a path to a file.  The file will be opened and the contents
+         will be used as the final argument.  If the contents of the file can't
+         be read, Swaks will exit.  To specify a literal string value  starting
+         with  an &quot;@&quot;, use two &quot;@&quot; symbols.  The first will be stripped.  It is
+         not possible to include an unqualified file which starts with  an  &quot;@&quot;
+         sign  (like &quot;--attach @file.txt&quot; or &quot;--attach @@file.txt&quot;), but if you
+         include a path to the file which splits up the  two  &quot;@&quot;  signs,  that
+         will work (eg &quot;--attach @./@file.txt&quot; will include the contents of the
+         file @file.txt).
+
+     Sensitive
+         If an option marked Sensitive attempts to prompt the user for an argu-
+         ment  and  the &quot;--protect-prompt&quot; option is set, Swaks will attempt to
+         mask the user input from being echoed on the terminal.  Swaks tries to
+         mask the input in several ways, but if none of them work program  flow
+         will continue with unmasked input.
+
+     Deprecated
+         An  option  labeled Deprecated has been officially deprecated and will
+         be removed in a future release.  See  the  &quot;DEPRECATIONS&quot;  section  of
+         this documentation for details about the deprecations.
+
+     The  exact  mechanism and format for using each of the types is listed be-
+     low.
+
+     CONFIGURATION FILES
+         A configuration file can be used to set  commonly-used  or  abnormally
+         verbose   options.    By   default,   Swaks   looks   in   order   for
+         $SWAKS_HOME/.swaksrc, $HOME/.swaksrc, and $LOGDIR/.swaksrc.  If one of
+         those is found to exist (and &quot;--config&quot; has not been used)  that  file
+         is used as the configuration file.
+
+         Additionally,  a  configuration  file in a non-default location can be
+         specified using &quot;--config&quot;.  If this is set and not given an  argument
+         Swaks will not use any configuration file, including any default file.
+         If  &quot;--config&quot; points to a readable file, it is used as the configura-
+         tion file, overriding any default that may exist.  If it points  to  a
+         non-readable file an error will be shown and Swaks will exit.
+
+         A  set of &quot;portable&quot; defaults can also be created by adding options to
+         the end of the Swaks program file.  As distributed, the last  line  of
+         Swaks  should  be  &quot;__END__&quot;.  Any lines added after &quot;__END__&quot; will be
+         treated as the contents of a configuration file.  This allows a set of
+         user preferences to be automatically copied from server to server in a
+         single file.
+
+         If configuration files  have  not  been  explicitly  turned  off,  the
+         &quot;__END__&quot;  config  is  always read.  Only one other configuration file
+         will ever be used per single invocation of  Swaks,  even  if  multiple
+         configuration  files  are  specified.  If the &quot;__END__&quot; config and an-
+         other config are to be read, the &quot;__END__&quot; config  will  be  processed
+         first.   Specifying  the  &quot;--config&quot; option with no argument turns off
+         the processing of both the &quot;__END__&quot;  config  and  any  actual  config
+         files.
+
+         In a configuration file lines beginning with a hash (&quot;#&quot;) are ignored.
+         All other lines are assumed to be an option to Swaks, with the leading
+         dash  or  dashes  optional.   Everything  after an option line's first
+         space is assumed  to  be  the  option's  argument  and  is  not  shell
+         processed.   Therefore,  quoting  is  usually unneeded and will be in-
+         cluded literally in the argument.
+
+         There is a subtle difference between providing an option with no argu-
+         ment and providing an option with an empty  argument.   If  an  option
+         line  does  not  have a space, the entire line is treated as an option
+         and there is no argument.  If the line ends in a single space, it will
+         be processed as an option with an empty argument.  So, &quot;apt&quot;  will  be
+         treated as &quot;--apt&quot;, but &quot;apt &quot; will be treated as &quot;--apt ''&quot;.
+
+         Here is an example of the contents of a configuration file:
+
+             # always use this sender, no matter server or logged in user
+             --from <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e283c2b2a0e2b362f233e222b602d2123">[email&#160;protected]</a>
+             # I prefer my test emails have a pretty from header.  Note
+             # the lack of dashes on option and lack of quotes around
+             # entire argument.
+             h-From: &quot;Fred Example&quot; &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0c6d2c5c4e0c5d8c1cdd0ccc58ec3cfcd">[email&#160;protected]</a>&gt;
+
+         Options specific to configuration file:
+
+         --config [&lt;config-file&gt;]
+             This option provides a path to a specific configuration file to be
+             used.   If specified with no argument, no automatically-found con-
+             figuration file (via $HOME, etc, or &quot;__END__&quot;) will be  processed.
+             If  the  argument  is  a valid file, that file will be used as the
+             configuration file (after &quot;__END__&quot; config).  If argument is not a
+             valid, readable file, Swaks will error and exit.  This option  can
+             be  specified multiple times, but only the first time it is speci-
+             fied (in environment variable and the command line  search  order)
+             will be used. (Arg-Optional)
+
+     CONFIGURATION ENVIRONMENT VARIABLES
+         Options  can be supplied via environment variables.  The variables are
+         in the form $SWAKS_OPT_name, where &quot;name&quot; is the name  of  the  option
+         that  would  be  specified on the command line.  Because dashes aren't
+         allowed in environment variable names  in  most  UNIX-ish  shells,  no
+         leading  dashes should be used and any dashes inside the option's name
+         should be replaced with underscores.  The following would  create  the
+         same options shown in the configuration file example:
+
+             $ SWAKS_OPT_from='<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a6c786f6e4a6f726b677a666f24696567">[email&#160;protected]</a>'
+             $ SWAKS_OPT_h_From='&quot;Fred Example&quot; &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ef899d8a8baf8a978e829f838ac18c8082">[email&#160;protected]</a>&gt;'
+
+         Setting  a  variable to an empty value is the same as specifying it on
+         the  command  line  with   no   argument.    For   instance,   setting
+         &lt;SWAKS_OPT_server=&quot;&quot;&gt;  would  cause  Swaks  to prompt the user for the
+         server to which to connect at each invocation.  On Windows, it is  not
+         possible to set empty environment variables.  The behavior can be sim-
+         ulated by setting the environment variable to &quot;&lt;&gt;&quot; instead.  Addition-
+         ally,  embedding  the header name in the header option via environment
+         variable is not allowed on Windows (eg &quot;SWAKS_OPT_header_Foo=bar&quot; will
+         result in an error, but &quot;SWAKS_OPT_header=&quot;Foo: bar&quot;&quot; will work.)
+
+         Because there is no inherent order in options provided by setting  en-
+         vironment  variables,  the  options are sorted before being processed.
+         This is not a great solution, but it at least  defines  the  behavior,
+         which   would   be  otherwise  undefined.   As  an  example,  if  both
+         $SWAKS_OPT_from  and   $SWAKS_OPT_f   were   set,   the   value   from
+         $SWAKS_OPT_from  would  be  used, because it sorts after $SWAKS_OPT_f.
+         Also as a result of not having an inherent order in  environment  pro-
+         cessing,  unsetting  options  with the &quot;no-&quot; prefix is unreliable.  It
+         works if the option being turned off sorts before &quot;no-&quot;, but fails  if
+         it  sorts  after.  Because &quot;no-&quot; is primarily meant to operate between
+         config types (for instance, unsetting from the command line an  option
+         that was set in a config file), this is not likely to be a problem.
+
+         In  addition  to  setting  the  equivalent  of  command  line options,
+         $SWAKS_HOME can be set to a directory containing the default  .swaksrc
+         to be used.
+
+     COMMAND LINE OPTIONS
+         The  final  method  of  supplying  options to Swaks is via the command
+         line.  The options behave in a manner consistent  with  most  UNIX-ish
+         command  line  programs.  Many options have both a short and long form
+         (for instance &quot;-s&quot; and &quot;--server&quot;).  By convention short  options  are
+         specified  with  a  single  dash and long options are specified with a
+         double-dash.  This is only a convention and either  prefix  will  work
+         with either type.
+
+         The following demonstrates the example shown in the configuration file
+         and environment variable sections:
+
+             $ swaks --from <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c4a5e49486c49544d415c4049024f4341">[email&#160;protected]</a> --h-From: '&quot;Fred Example&quot; &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87e1f5e2e3c7e2ffe6eaf7ebe2a9e4e8ea">[email&#160;protected]</a>&gt;'
+
+TRANSPORTS
+     Swaks  can connect to a target via UNIX pipes (&quot;pipes&quot;), UNIX domain sock-
+     ets (&quot;UNIX sockets&quot;), or  internet  domain  sockets  (&quot;network  sockets&quot;).
+     Connecting  via  network  sockets is the default behavior.  Because of the
+     singular nature of the transport used, each set of options in the  follow-
+     ing   section   is  mutually  exclusive.   Specifying  more  than  one  of
+     &quot;--server&quot;, &quot;--pipe&quot;, or &quot;--socket&quot; will result in an error.  Mixing other
+     options between transport types will only result in the irrelevant options
+     being ignored.  Below is a brief description of each type of transport and
+     the options that are specific to that transport type.
+
+     NETWORK SOCKETS
+         This transport attempts to deliver a message via TCP/IP, the  standard
+         method  for delivering SMTP.  This is the default transport for Swaks.
+         If none of &quot;--server&quot;, &quot;--pipe&quot;, or &quot;--socket&quot;  are  given  then  this
+         transport is used and the target server is determined from the recipi-
+         ent's domain (see &quot;--server&quot; below for more details).
+
+         This  transport  requires  the IO::Socket::IP module for both IPv4 and
+         IPv6 sockets.  If this module is not loadable, Swaks will  attempt  to
+         use  the  IO::Socket  library  for IPv4 and IO::Socket::INET6 for IPv6
+         support.  Attempting to use this transport  with  none  of  those  li-
+         braries available will result in an error and program termination.
+
+         The  fall  back  to IO::Socket and IO::Socket::INET6 is deprecated and
+         will be removed in a future release.  See DEPRECATIONS below
+
+         -s, --server [&lt;target-server&gt;[:&lt;port&gt;]]
+             Explicitly tell Swaks to use network sockets and specify the host-
+             name or IP address to which to connect, or prompt if  no  argument
+             is  given.  If this option is not given and no other transport op-
+             tion is given, the target mail server is determined from  the  ap-
+             propriate  DNS  records  for the domain of the recipient email ad-
+             dress using the Net::DNS module.  If  Net::DNS  is  not  available
+             Swaks will attempt to connect to localhost to deliver.  The target
+             port  can  optionally be set here.  Supported formats for this in-
+             clude  SERVER:PORT  (supporting   names   and   IPv4   addresses);
+             [SERVER]:PORT and SERVER/PORT (supporting names, IPv4 and IPv6 ad-
+             dresses).   A  port  set  via this option will only be used if the
+             &quot;--port&quot; option is not used.  See also &quot;--copy-routing&quot;.  (Arg-Re-
+             quired, From-Prompt)
+
+         -p, --port [&lt;port&gt;]
+             Specify  which  TCP port on the target is to be used, or prompt if
+             no argument is listed.  The argument can be a service name (as re-
+             trieved by getservbyname(3)) or a port number.  The  default  port
+             is smtp/25 unless influenced by the &quot;--protocol&quot; or &quot;--tls-on-con-
+             nect&quot; options. (Arg-Required, From-Prompt)
+
+         -li, --local-interface [&lt;local-interface&gt;[:&lt;port&gt;]]
+             Use  argument as the local interface for the outgoing SMTP connec-
+             tion, or prompt user if no argument given.  Argument can be an  IP
+             address  or  a  hostname.   Default action is to let the operating
+             system choose the local interface.  See &quot;--server&quot; for  additional
+             comments  on :&lt;port&gt; format.  A port set via this option will only
+             be used if the &quot;--port&quot; option is not used.  (Arg-Required,  From-
+             Prompt)
+
+         -lp, --local-port, --lport [&lt;port&gt;]
+             Specify the outgoing port from which to originate the transaction.
+             The  argument  can  be  a service name (as retrieved by getservby-
+             name(3)) or a port number.  If this option is  not  specified  the
+             system  will pick an ephemeral port.  Note that regular users can-
+             not specify some ports. (Arg-Required, From-Prompt)
+
+         --copy-routing &lt;domain&gt;
+             The argument is interpreted as the domain part of an email address
+             and it is used to find the target server using the same logic that
+             would be used to look up the target server for a  recipient  email
+             address.   See &quot;--to&quot; option for more details on how the target is
+             determined from the email domain. (Arg-Required)
+
+         -4, -6
+             Force IPv4 or IPv6. (Arg-None)
+
+     UNIX SOCKETS
+         This transport method attempts to deliver messages via  a  UNIX-domain
+         socket  file.   This  is  useful  for  testing MTA/MDAs that listen on
+         socket files (for instance, testing LMTP  delivery  to  Cyrus).   This
+         transport  requires  the  IO::Socket::UNIX module which is part of the
+         standard Perl distribution.  If this module is not loadable,  attempt-
+         ing to use this transport will result in an error and program termina-
+         tion.
+
+         --socket [&lt;socket-file&gt;]
+             This  option  takes as its argument a UNIX-domain socket file.  If
+             Swaks is unable to open this socket it will display an  error  and
+             exit. (Arg-Required, From-Prompt)
+
+     PIPES
+         This transport attempts to spawn a process and communicate with it via
+         pipes.   The  spawned  program  must  be  prepared to behave as a mail
+         server over  &quot;STDIN&quot;/&quot;STDOUT&quot;.   Any  MTA  designed  to  operate  from
+         inet/xinet  should support this.  In addition, some MTAs provide test-
+         ing modes that can be communicated with  via  &quot;STDIN&quot;/&quot;STDOUT&quot;.   This
+         transport  can  be used to automate that testing.  For example, if you
+         implemented DNSBL checking with Exim and you wanted to  make  sure  it
+         was  working, you could run &quot;swaks --pipe &quot;exim -bh 127.0.0.2&quot;&quot;.  Ide-
+         ally, the process you are talking to should  behave  exactly  like  an
+         SMTP  server on &quot;STDIN&quot; and &quot;STDOUT&quot;.  Any debugging should be sent to
+         &quot;STDERR&quot;, which will be directed to your terminal.  In practice, Swaks
+         can generally handle some debug on the child's &quot;STDOUT&quot;, but there are
+         no guarantees on how much it can handle.
+
+         This transport requires the IPC::Open2 module which  is  part  of  the
+         standard  Perl distribution.  If this module is not loadable, attempt-
+         ing to use this transport will result in an error and program termina-
+         tion.
+
+         --pipe [&lt;command-and-arguments&gt;]
+             Provide a process name and arguments to the process.   Swaks  will
+             attempt  to  spawn  the process and communicate with it via pipes.
+             If the argument is not an executable Swaks will display  an  error
+             and exit. (Arg-Required, From-Prompt)
+
+PROTOCOL OPTIONS
+     These options are related to the protocol layer.
+
+     -t, --to [&lt;email-address&gt;[,&lt;email-address&gt;[,...]]]
+     --cc [&lt;email-address&gt;[,&lt;email-address&gt;[,...]]]
+     --bcc [&lt;email-address&gt;[,&lt;email-address&gt;[,...]]]
+         These  options  all tell Swaks to use the argument(s) as the envelope-
+         recipient for the email.  There are subtle differences  between  these
+         three options, detailed below.  If any option is specified but with no
+         arguments, Swaks will prompt the user for an argument.
+
+         &quot;--to&quot;  is  special  in  that it is the only option required by Swaks.
+         There is no default value for this option.  If no recipients are  pro-
+         vided  via  any  means,  user will be prompted to provide one interac-
+         tively.  The only exception to this is if a  &quot;--quit-after&quot;  value  is
+         provided which will cause the SMTP transaction to be terminated before
+         the  recipient is needed.  If multiple recipients are provided and the
+         recipient domain is needed to determine routing,  the  domain  of  the
+         last recipient in the &quot;--to&quot; argument list is used.
+
+         The  primary  distinction between these options is how their arguments
+         are treated when generating the DATA portion of the email.  They  each
+         have their own replacement tokens (&quot;%TO_ADDRESS%&quot;, &quot;%CC_ADDRESS%&quot;, and
+         &quot;%BCC_ADDRESS%&quot;  respectively)  which can be used by anyone crafting a
+         custom DATA.  In Swaks' default message, &quot;%TO_ADDRESS%&quot; will  be  used
+         for the To: header and, if it is populated, &quot;%CC_HEADER%&quot; will be used
+         for  a  Cc:  header.  &quot;%BCC_ADDRESS%&quot; is not used in the default DATA.
+         (Arg-Required, From-Prompt)
+
+     -f, --from [&lt;email-address&gt;]
+         Use argument as envelope-sender for email, or prompt user if no  argu-
+         ment  specified.   The  string  &quot;&lt;&gt;&quot;  can be supplied to mean the null
+         sender.  If user does not specify a sender address a default value  is
+         used.   The  domain-part  of the default sender is a best guess at the
+         fully-qualified domain name of the local host.  The method  of  deter-
+         mining the local-part varies.  If the $LOGNAME environment variable is
+         set,  it  will  be  used  as the local-part.  Otherwise the value from
+         Win32::LoginName() will be used on Windows and getpwuid(3) on UNIX-ish
+         platforms.  See also &quot;--force-getpwuid&quot;.  If Swaks cannot determine  a
+         local  hostname  and the sender address is needed for the transaction,
+         Swaks will error and exit.  In this case, a valid string must be  pro-
+         vided via this option. (Arg-Required, From-Prompt)
+
+     --ehlo, --lhlo, -h, --helo [&lt;helo-string&gt;]
+         String to use as argument to HELO/EHLO/LHLO command, or prompt user if
+         no  argument is specified.  If this option is not used a best guess at
+         the fully-qualified domain name of the local host is used.   If  Swaks
+         cannot  determine  a  local hostname and the helo string is needed for
+         the transaction, Swaks will error and exit.  In  this  case,  a  valid
+         string must be provided via this option. (Arg-Required, From-Prompt)
+
+     -q, --quit, --quit-after &lt;stop-point&gt;
+         Point  at which the transaction should be stopped.  When the requested
+         stopping point is reached in the transaction, and provided that  Swaks
+         has  not  errored out prior to reaching it, Swaks will send &quot;QUIT&quot; and
+         attempt to close the connection cleanly.  These are  the  valid  argu-
+         ments and notes about their meaning. (Arg-Required)
+
+         PROXY
+             Quit  after  the server sends a response to a PROXY request.  Note
+             that if there is not an error negotiating proxy, this will be syn-
+             onymous with CONNECT.
+
+         CONNECT, BANNER
+             Terminate the session after receiving the greeting banner from the
+             target.
+
+         FIRST-HELO, FIRST-EHLO, FIRST-LHLO
+             In a STARTTLS (but  not  tls-on-connect)  session,  terminate  the
+             transaction  after  the  first  of  two  HELOs.  In a non-STARTTLS
+             transaction, behaves the same as HELO (see below).
+
+         XCLIENT
+             Quit after XCLIENT is negotiation. This  always  quits  after  the
+             point  where  XCLIENT  would  have  been negotiated, regardless of
+             whether it was attempted.
+
+         XCLIENT-HELO
+             Quit after the HELO that XCLIENT negotiation triggers.  This  dif-
+             fers from HELO and FIRST-HELO because XCLIENT negotiation can hap-
+             pen  at multiple points in the SMTP transaction and it is impossi-
+             ble to specifically refer to the XCLIENT-triggered HELO using  the
+             HELO  or FIRST-HELO stop-points. This always quits after the point
+             where the XCLIENT-triggered HELO would have  occurred,  regardless
+             of whether it was attempted.
+
+         STARTTLS, TLS
+             Quit  the transaction immediately following TLS negotiation.  Note
+             that this happens in different places depending on whether  START-
+             TLS or tls-on-connect are used.  This always quits after the point
+             where TLS would have been negotiated, regardless of whether it was
+             attempted.
+
+         HELO, EHLO, LHLO
+             In  a  STARTTLS  or  XCLIENT  session, quit after the second HELO.
+             Otherwise quit after the first and only HELO.
+
+         AUTHQuit after authentication.  This  always  quits  after  the  point
+             where  authentication  would  have  been negotiated, regardless of
+             whether it was attempted.
+
+         MAIL, FROM
+             Quit after MAIL FROM: is sent.
+
+         RCPT, TO
+             Quit after RCPT TO: is sent.
+
+     --da, --drop-after &lt;stop-point&gt;
+         The option is similar to &quot;--quit-after&quot;,  but  instead  of  trying  to
+         cleanly  shut down the session it simply terminates the session.  This
+         option accepts the same stop-points as &quot;--quit-after&quot; and additionally
+         accepts DATA and DOT, detailed below. (Arg-Required)
+
+         DATADrop the connection after DATA is sent by server.
+
+         DOT Drop the connection after the final '.' of the message is sent  by
+             server.
+
+     --das, --drop-after-send &lt;stop-point&gt;
+         This  option is similar to &quot;--drop-after&quot;, but instead of dropping the
+         connection after reading a response to the stop-point,  it  drops  the
+         connection  immediately after sending stop-point.  It accepts the same
+         stop-points as &quot;--drop-after&quot;. If the stop-point is  for  an  optional
+         part  of  the  transaction  which  is  not actually sent (for instance
+         STARTTLS or AUTH), this option will behave identically to  &quot;--drop-af-
+         ter&quot;. See below for specific details. (Arg-Required)
+
+         CONNECT
+             Connect to the server and then drops the connection before receiv-
+             ing the server's banner.
+
+         STARTTLS, TLS
+             Behaves identically to &quot;--drop-after&quot;.
+
+         HELO, EHLO, LHLO
+             Doesn't  necessarily  work as expected.  If it appears to read the
+             HELO response incorrectly, use FIRST-HELO instead.
+
+     --timeout [&lt;time&gt;]
+         Use argument as the SMTP transaction timeout, or prompt user if no ar-
+         gument given.  Argument can either be a pure digit, which will be  in-
+         terpreted  as seconds, or can have a specifier s, m, or h (5s = 5 sec-
+         onds, 3m = 180 seconds, 1h = 3600 seconds).   As  a  special  case,  0
+         means  don't timeout the transactions.  Default value is 30s. (Arg-Re-
+         quired, From-Prompt)
+
+     --protocol &lt;protocol&gt;
+         Specify which protocol to use in the transaction.  Valid  options  are
+         shown  in  the  table below.  Currently the 'core' protocols are SMTP,
+         ESMTP, and LMTP.  By using variations of these protocol types one  can
+         tersely  specify  default  ports, whether authentication should be at-
+         tempted, and the type of TLS connection that should be attempted.  The
+         default protocol is  ESMTP.   The  following  table  demonstrates  the
+         available  arguments  to  &quot;--protocol&quot;  and the options each sets as a
+         side effect.  (Arg-Required)
+
+         SMTPHELO, &quot;-p 25&quot;
+
+         SSMTP
+             EHLO-&gt;HELO, &quot;-tlsc -p 465&quot;
+
+         SSMTPA
+             EHLO-&gt;HELO, &quot;-a -tlsc -p 465&quot;
+
+         SMTPS
+             HELO, &quot;-tlsc -p 465&quot;
+
+         ESMTP
+             EHLO-&gt;HELO, &quot;-p 25&quot;
+
+         ESMTPA
+             EHLO-&gt;HELO, &quot;-a -p 25&quot;
+
+         ESMTPS
+             EHLO-&gt;HELO, &quot;-tls -p 25&quot;
+
+         ESMTPSA
+             EHLO-&gt;HELO, &quot;-a -tls -p 25&quot;
+
+         LMTPLHLO, &quot;-p 24&quot;
+
+         LMTPA
+             LHLO, &quot;-a -p 24&quot;
+
+         LMTPS
+             LHLO, &quot;-tls -p 24&quot;
+
+         LMTPSA
+             LHLO, &quot;-a -tls -p 24&quot;
+
+     --pipeline
+         If the remote server supports it, attempt SMTP PIPELINING (RFC  2920).
+         (Arg-None)
+
+     --prdr
+         If  the server supports it, attempt Per-Recipient Data Response (PRDR)
+         (&lt;https://tools.ietf.org/html/draft-hall-prdr-00.txt&gt;).  PRDR  is  not
+         yet standardized, but MTAs have begun implementing the proposal. (Arg-
+         None)
+
+     --force-getpwuid
+         Tell Swaks to use the system-default method of determining the current
+         user's  username  for  the default sender local-part instead of trying
+         $LOGNAME first.  Despite the UNIX-ish-specific option name,  this  op-
+         tion also works on Windows. (Arg-None)
+
+TLS / ENCRYPTION
+     These  are options related to encrypting the transaction.  These have been
+     tested and confirmed to  work  with  all  three  transport  methods.   The
+     Net::SSLeay module is used to perform encryption when it is requested.  If
+     this  module  is  not loadable Swaks will either ignore the TLS request or
+     error out, depending on whether the request was optional.  STARTTLS is de-
+     fined as an extension in the ESMTP protocol and  will  be  unavailable  if
+     &quot;--protocol&quot;  is  set to a variation of plain SMTP.  Because it is not de-
+     fined in the protocol itself, &quot;--tls-on-connect&quot; is available for any pro-
+     tocol type if the target supports it.
+
+     A local certificate is not required for a TLS connection to be negotiated.
+     However, some servers use client certificate checking to verify  that  the
+     client  is  allowed to connect.  Swaks can be told to use a specific local
+     certificate using the &quot;--tls-cert&quot; and &quot;--tls-key&quot; options, and optionally
+     to use a certificate chain using the &quot;--tls-chain&quot; option.
+
+     -tlsRequire connection to use STARTTLS.  Exit if TLS not available for any
+         reason (not advertised, negotiations failed, etc). (Arg-None)
+
+     -tlso, --tls-optional
+         Attempt to use STARTTLS if available, continue with normal transaction
+         if TLS was unable to be negotiated for any reason.  Note that this  is
+         a semi-useless option as currently implemented because after a negoti-
+         ation  failure the state of the connection is unknown.  In some cases,
+         like a version mismatch, the connection should be left  as  plaintext.
+         In others, like a verification failure, the server-side may think that
+         it  should  continue speaking TLS while the client thinks it is plain-
+         text.  There may be an attempt to add more granular state detection in
+         the future, but for now just be aware that odd things may happen  with
+         this option if the TLS negotiation is attempted and fails. (Arg-None)
+
+     -tlsos, --tls-optional-strict
+         Attempt to use STARTTLS if available.  Proceed with transaction if TLS
+         is negotiated successfully or STARTTLS not advertised.  If STARTTLS is
+         advertised  but  TLS  negotiations  fail,  treat as an error and abort
+         transaction.  Due to the caveat noted above, this is a much saner  op-
+         tion than &quot;--tls-optional&quot;. (Arg-None)
+
+     -tlsc, --tls-on-connect
+         Initiate a TLS connection immediately on connection.  Following common
+         convention,  if this option is specified the default port changes from
+         25 to 465, though this can still be overridden with the --port option.
+         (Arg-None)
+
+     -tlsp, --tls-protocol &lt;tls-version-specification&gt;
+         Specify which protocols to use (or not use) when negotiating TLS.   At
+         the  time  of  this writing, the available protocols are sslv2, sslv3,
+         tlsv1, tlsv1_1, tlsv1_2, and tlsv1_3.  The availability of these  pro-
+         tocols  is dependent on your underlying OpenSSL library, so not all of
+         these may be available.  The list of available protocols is  shown  in
+         the output of &quot;--dump&quot; (assuming TLS is available at all).
+
+         The  specification  string is a comma-delimited list of protocols that
+         can be used or not used.  For instance 'tlsv1,tlsv1_1' will only  suc-
+         ceed if one of those two protocols is available on both the client and
+         the server.  Conversely, 'no_sslv2,no_sslv3' will attempt to negotiate
+         any  protocol  except sslv2 and sslv3.  The two forms of specification
+         cannot be mixed. (Arg-Required)
+
+     --tls-cipher &lt;cipher-string&gt;
+         The argument to this option is passed to the  underlying  OpenSSL  li-
+         brary  to  set  the  list of acceptable ciphers to the be used for the
+         connection.  The format of this string is opaque to Swaks and  is  de-
+         fined    in   &lt;https://www.openssl.org/docs/manmaster/man1/openssl-ci-
+         phers.html#CIPHER-LIST-FORMAT&gt;.  A brief example would  be  &quot;--tls-ci-
+         pher '3DES:+RSA'&quot;. (Arg-Required)
+
+     --tls-verify
+         Tell Swaks to attempt to verify the server's certificate.  This option
+         is  identical to specifying both the &quot;--tls-verify-ca&quot; and &quot;--tls-ver-
+         ify-host&quot; options.  See those options for detailed descriptions of how
+         to fine-tune each type of verification.
+
+         By default, TLS verification is not required.  If TLS verification  is
+         required  by &quot;--tls-verify&quot;, &quot;--tls-verify-ca&quot;, or &quot;--tls-verify-host&quot;
+         and the requested type of verification fails, TLS negotiation will not
+         succeed. (Arg-None)
+
+     --tls-verify-ca
+         Require that the server's certificate be signed by a known certificate
+         authority and not be expired.  By default the list of known  CAs  will
+         be  whatever is available via the client Swaks is running on.  To pro-
+         vide a custom CA, see &quot;--tls-ca-path&quot;. (Arg-None)
+
+     --tls-verify-host
+         Require that the target of the current connection  be  listed  in  the
+         server certificate's Subject Alternative Name (SAN) or Subject Common-
+         Name (CN).
+
+         The  target  that  Swaks uses for verification will vary.  It can be a
+         hostname, either provided directly via the &quot;--server&quot; option or looked
+         up via MX records.  In this case, verification performs  as  expected.
+         If  the  target is an IP, the IP will be looked up in the certificate,
+         which is possible but  unusual.   If  the  transport  is  &quot;--pipe&quot;  or
+         &quot;--socket&quot;,  there  will  not  be a meaningful target to verify in the
+         certificate and verification will fail.  In this situation it's better
+         to use only &quot;--tls-verify-ca&quot; or to override the target used for veri-
+         fication with the &quot;--tls-verify-target&quot; option. (Arg-None)
+
+     --tls-verify-target &lt;verification-string&gt;
+         When set, the argument to this option will be used as the host  to  be
+         verified  for  &quot;--tls-verify-host&quot;.   This  is  necessary  when  using
+         &quot;--tls-verify-host&quot; with either the &quot;--pipe&quot; or &quot;--socket&quot; transports,
+         which do not have a verifiable target by default.  It can also be used
+         to override the default target lookup when using the &quot;--server&quot; trans-
+         port.  For instance, it can be used to verify that the certificate  of
+         a server explicitly connect to via IP contains a specific certificate.
+         (Arg-Required)
+
+     --tls-ca-path &lt;ca-location&gt;
+         Specify  an alternate location for CA information for verifying server
+         certificates.  The argument can point to a file or directory.  The de-
+         fault behavior is to use the underlying OpenSSL library's default  in-
+         formation. (Arg-Required)
+
+     --tls-cert &lt;cert-file&gt;
+         Provide a path to a file containing the local certificate Swaks should
+         use  if  TLS  is  negotiated.  If a certificate chain needs to be pro-
+         vided, it can be provided via this file or via a  separate  file  with
+         &quot;--tls-chain&quot;.   The file path argument is required.  As currently im-
+         plemented the certificate in the file must be in PEM format.   Contact
+         the  author  if there's a compelling need for ASN1.  If this option is
+         set, &quot;--tls-key&quot; is also required. (Arg-Required)
+
+     --tls-key &lt;key-file&gt;
+         Provide a path to a file containing the local private key Swaks should
+         use if TLS is negotiated.  The file path  argument  is  required.   As
+         currently  implemented the certificate in the file must be in PEM for-
+         mat.  Contact the author if there's a compelling need  for  ASN1.   If
+         this option is set, &quot;--tls-cert&quot; is also required. (Arg-Required)
+
+     --tls-chain &lt;chain-file&gt;
+         Provide  a path to a file containing the local certificate chain Swaks
+         should use if TLS is negotiated.  The file path argument is  required.
+         As  currently  implemented  the certificate in the file must be in PEM
+         format.  Contact the author if there's a compelling need for ASN1.  If
+         this option is set, &quot;--tls-cert&quot; and &quot;--tls-key&quot;  are  also  required.
+         (Arg-Required)
+
+     --tls-get-peer-cert [&lt;output-file&gt;]
+         Get a copy of the TLS peer's certificate.  If no argument is given, it
+         will  be displayed to &quot;STDOUT&quot;.  If an argument is given it is assumed
+         to be a filesystem path specifying where  the  certificate  should  be
+         written.   The  saved  certificate can then be examined using standard
+         tools such as the openssl command.  If a file is  specified  its  con-
+         tents will be overwritten.  This option will only ever return one cer-
+         tificate.   In  order to get every certificate sent by the server, see
+         &quot;--tls-get-peer-chain&quot;. (Arg-Optional)
+
+     --tls-get-peer-chain [&lt;output-file&gt;]
+         Get a copy of the TLS certificate chain sent by the server.  If no ar-
+         gument is given, it will be displayed to &quot;STDOUT&quot;.  If an argument  is
+         given  it is assumed to be a filesystem path specifying where the cer-
+         tificate should be written.  The saved chain can then be examined  us-
+         ing  standard  tools such as the openssl command.  If a file is speci-
+         fied its contents will be overwritten. See also &quot;--tls-get-peer-cert&quot;.
+         (Arg-Optional)
+
+     --tls-sni &lt;sni-string&gt;
+         Specify the Server Name Indication field to send when the TLS  connec-
+         tion is initiated. (Arg-Required)
+
+AUTHENTICATION
+     Swaks will attempt to authenticate to the target mail server if instructed
+     to  do  so.  This section details available authentication types, require-
+     ments, options and their interactions, and other fine points in  authenti-
+     cation  usage.   Because  authentication is defined as an extension in the
+     ESMTP protocol it will be unavailable if &quot;--protocol&quot; is set to  a  varia-
+     tion of SMTP.
+
+     All  authentication  methods require base64 encoding.  If the MIME::Base64
+     Perl module is loadable Swaks attempts to use it to perform  these  encod-
+     ings.   If  MIME::Base64  is  not available Swaks will use its own onboard
+     base64 routines.  These are slower than the MIME::Base64 routines and less
+     reviewed, though they have been tested thoroughly.  Using the MIME::Base64
+     module is encouraged.
+
+     If authentication is required (see options below for when it is and  isn't
+     required)  and  the  requirements  aren't  met for the authentication type
+     available, Swaks displays an error and exits.  Two ways  this  can  happen
+     include  forcing  Swaks  to  use a specific authentication type that Swaks
+     can't use due to missing requirements, or allowing Swaks to  use  any  au-
+     thentication  type,  but the server only advertises types Swaks can't sup-
+     port.  In the former case Swaks errors out at option processing time since
+     it knows up front it won't be able to authenticate.  In  the  latter  case
+     Swaks  will  error out at the authentication stage of the SMTP transaction
+     since Swaks will not be aware that it will not be able to authenticate un-
+     til that point.
+
+     Following are the supported authentication types including any  individual
+     notes and requirements.
+
+     The  following options affect Swaks' use of authentication.  These options
+     are all inter-related.  For  instance,  specifying  &quot;--auth-user&quot;  implies
+     &quot;--auth&quot;  and  &quot;--auth-password&quot;.   Specifying  &quot;--auth-optional&quot;  implies
+     &quot;--auth-user&quot; and &quot;--auth-password&quot;, etc.
+
+     -a, --auth [&lt;auth-type&gt;[,&lt;auth-type&gt;[,...]]]
+         Require Swaks to authenticate.  If no argument is given, any supported
+         auth-types advertised by the server are tried until  one  succeeds  or
+         all  fail.   If  one  or more auth-types are specified as an argument,
+         each that the server also supports is tried in order  until  one  suc-
+         ceeds  or all fail.  This option requires Swaks to authenticate, so if
+         no common auth-types are found or no credentials succeed,  Swaks  dis-
+         plays an error and exits. (Arg-Optional)
+
+         The following tables lists the valid auth-types
+
+         LOGIN, PLAIN
+             These  basic  authentication  types are fully supported and tested
+             and have no additional requirements
+
+         CRAM-MD5
+             The CRAM-MD5 authenticator requires the Digest::MD5 module.  It is
+             fully tested and believed to work against any server  that  imple-
+             ments it.
+
+         DIGEST-MD5
+             The  DIGEST-MD5  authenticator (RFC2831) requires the Authen::SASL
+             module.  Version 20100211.0  and  earlier  used  Authen::DigestMD5
+             which had some protocol level errors which prevented it from work-
+             ing with some servers.  Authen::SASL's DIGEST-MD5 handling is much
+             more robust.
+
+             The  DIGEST-MD5  implementation  in  Swaks is fairly immature.  It
+             currently supports only the &quot;auth&quot; qop type, for instance.  If you
+             have DIGEST-MD5 experience and would like to  help  Swaks  support
+             DIGEST-MD5 better, please get in touch with me.
+
+             The  DIGEST-MD5  protocol's  &quot;realm&quot;  value  can  be set using the
+             &quot;--auth-extra&quot; &quot;realm&quot; keyword.  If no realm is given,  a  reason-
+             able default will be used.
+
+             The DIGEST-MD5 protocol's &quot;digest-uri&quot; values can be set using the
+             &quot;--auth-extra&quot; option.  For instance, you could create the digest-
+             uri-value  of  &quot;lmtp/mail.example.com/example.com&quot; with the option
+             &quot;--auth-extra             dmd5-serv-type=lmtp,dmd5-host=mail.exam-
+             ple.com,dmd5-serv-name=example.com&quot;.     The    &quot;digest-uri-value&quot;
+             string and its components is defined in RFC2831.  If none of these
+             values are given, reasonable defaults will be used.
+
+         CRAM-SHA1
+             The CRAM-SHA1 authenticator requires the Digest::SHA module.  This
+             type has only been tested against a non-standard implementation on
+             an Exim server and may therefore have  some  implementation  defi-
+             ciencies.
+
+         NTLM/SPA/MSN
+             These  authenticators  require the Authen::NTLM module.  This type
+             has been tested against Exim, Communigate, and Exchange 2007.
+
+             In addition to the standard username and password, this  authenti-
+             cation  type can also recognize a &quot;domain&quot;.  The domain can be set
+             using the &quot;--auth-extra&quot; &quot;domain&quot; keyword.   Note  that  this  has
+             never been tested with a mail server that doesn't ignore DOMAIN so
+             this may be implemented incorrectly.
+
+     -ao, --auth-optional [&lt;auth-type&gt;[,&lt;auth-type&gt;[,...]]]
+         This  option  behaves  identically to &quot;--auth&quot; except that it requests
+         authentication rather than requiring it.  If no common auth-types  are
+         found  or  no credentials succeed, Swaks proceeds as if authentication
+         had not been requested. (Arg-Optional)
+
+     -aos, --auth-optional-strict [&lt;auth-type&gt;[,&lt;auth-type&gt;[,...]]]
+         This option is a compromise between  &quot;--auth&quot;  and  &quot;--auth-optional&quot;.
+         If authentication is never attempted (server doesn't advertise authen-
+         tication or no common authentication types are found), it behaves like
+         &quot;--auth-optional&quot;  and the smtp transaction continues.  If authentica-
+         tion is attempted but fails, it behaves like &quot;--auth&quot; and  exits  with
+         an error. (Arg-Optional)
+
+     -au, --auth-user [&lt;username&gt;]
+         Provide the username to be used for authentication.  If no username is
+         provided,  indicate that Swaks should attempt to find the username via
+         .netrc (requires the Net::Netrc module).  If no username  is  provided
+         and  cannot be found via .netrc,  the user will be prompted to provide
+         one.  The string &quot;&lt;&gt;&quot; can be supplied to mean an empty username. (Arg-
+         Required, From-Prompt)
+
+     -ap, --auth-password [&lt;password&gt;]
+         Provide the password to be used for authentication. If no password  is
+         provided,  indicate that Swaks should attempt to find the password via
+         .netrc (requires the Net::Netrc module).  If no password  is  provided
+         and  cannot be found via .netrc,  the user will be prompted to provide
+         one.  The string &quot;&lt;&gt;&quot; can be supplied to mean an empty password. (Arg-
+         Required, From-Prompt, Sensitive)
+
+     -ae, --auth-extra &lt;key-value-pair&gt;[,&lt;key-value-pair&gt;[,...]]
+         Some of the authentication types allow extra  information  to  be  in-
+         cluded  in  the  authentication process.  Rather than add a new option
+         for every nook and cranny of each  authenticator,  the  &quot;--auth-extra&quot;
+         option  allows  this  information  to  be  supplied.   The  format for
+         &lt;key-value-pair&gt; is KEYWORD=VALUE. (Arg-Required)
+
+         The following table lists the currently recognized  keywords  and  the
+         authenticators that use them
+
+         realm, domain
+             The  realm  and domain keywords are synonymous.  Using either will
+             set the &quot;domain&quot; option in NTLM/MSN/SPA and the &quot;realm&quot; option  in
+             DIGEST-MD5
+
+         dmd5-serv-type
+             The dmd5-serv-type keyword is used by the DIGEST-MD5 authenticator
+             and  is  used,  in part, to build the digest-uri-value string (see
+             RFC2831)
+
+         dmd5-host
+             The dmd5-host keyword is used by the DIGEST-MD5 authenticator  and
+             is  used,  in  part,  to  build  the  digest-uri-value string (see
+             RFC2831)
+
+         dmd5-serv-name
+             The dmd5-serv-name keyword is used by the DIGEST-MD5 authenticator
+             and is used, in part, to build the  digest-uri-value  string  (see
+             RFC2831)
+
+     -am, --auth-map &lt;key-value-pair&gt;[,&lt;key-value-pair&gt;[,...]]
+         Provides  a way to map alternate names onto base authentication types.
+         Useful for any sites that use alternate names for common  types.   The
+         format for &lt;key-value-pair&gt; is AUTH-ALIAS=AUTH-TYPE.  This functional-
+         ity is actually used internally to map types SPA and MSN onto the base
+         type  NTLM.   The  command  line  argument  to  simulate this would be
+         &quot;--auth-map SPA=NTLM,MSN=NTLM&quot;.  All of the  auth-types  listed  above
+         are valid targets for mapping except SPA and MSN. (Arg-Required)
+
+     -apt, --auth-plaintext
+         Instead  of  showing AUTH strings base64 encoded as they are transmit-
+         ted, translate them to plaintext before printing on screen. (Arg-None)
+
+     -ahp, --auth-hide-password [&lt;replacement-string&gt;]
+         If this option is specified, any time a  readable  password  would  be
+         printed  to  the terminal (specifically AUTH PLAIN and AUTH LOGIN) the
+         password is replaced with the string  'PROVIDED_BUT_REMOVED'  (or  the
+         contents  of  &lt;replacement-string&gt; if provided).  The dummy string may
+         or may not be base64 encoded, contingent on the &quot;--auth-plaintext&quot; op-
+         tion.
+
+         Note that &quot;--auth-hide-password&quot; is similar, but not identical, to the
+         &quot;--protect-prompt&quot; option.  The former protects passwords  from  being
+         displayed  in the SMTP transaction regardless of how they are entered.
+         The latter protects sensitive strings when the user types them at  the
+         terminal, regardless of how the string would be used. (Arg-Optional)
+
+XCLIENT OPTIONS
+     XCLIENT  is  an SMTP extension introduced by the Postfix project.  XCLIENT
+     allows a (properly-authorized) client to tell a server  to  use  alternate
+     information,  such as IP address or hostname, for the client.  This allows
+     much easier paths for testing mail server configurations.  Full details on
+     the      protocol      are      available       at       &lt;http://www.post-
+     fix.org/XCLIENT_README.html&gt;.
+
+     The  XCLIENT verb can be passed to the server multiple times per SMTP ses-
+     sion with different attributes.  For instance, HELO  and  PROTO  might  be
+     passed in one call and NAME and ADDR passed in a second. Because it can be
+     useful for testing, Swaks exposes some control over how the attributes are
+     grouped and in what order they are passed to the server. The different op-
+     tions  attempt to expose simplicity for those using Swaks as a client, and
+     complexity for those using Swaks to test installs.
+
+     --xclient-addr [&lt;string&gt;]
+     --xclient-name [&lt;string&gt;]
+     --xclient-port [&lt;string&gt;]
+     --xclient-proto [&lt;string&gt;]
+     --xclient-destaddr [&lt;string&gt;]
+     --xclient-destport [&lt;string&gt;]
+     --xclient-helo [&lt;string&gt;]
+     --xclient-login [&lt;string&gt;]
+     --xclient-reverse-name [&lt;string&gt;]
+         These options specify XCLIENT attributes that should be  sent  to  the
+         target  server.   If  &lt;string&gt;  is not provided, Swaks will prompt and
+         read    the    value    on     &quot;STDIN&quot;.      See     &lt;http://www.post-
+         fix.org/XCLIENT_README.html&gt;  for  official documentation for what the
+         attributes mean and their possible values, including the special &quot;[UN-
+         AVAILABLE]&quot; and &quot;[TEMPUNAVAIL]&quot; values.
+
+         By way of  simple  example,  setting  &quot;--xclient-name  foo.example.com
+         --xclient-addr  192.168.1.1&quot; will cause Swaks to send the SMTP command
+         &quot;XCLIENT NAME=foo.example.com ADDR=192.168.1.1&quot;.
+
+         Note that the &quot;REVERSE_NAME&quot; attribute doesn't seem to appear  in  the
+         official documentation.  There is a mailing list thread that documents
+         it,     viewable     at    &lt;http://comments.gmane.org/gmane.mail.post-
+         fix.user/192623&gt;.
+
+         These options can all be mixed with each other, and can be mixed  with
+         the  &quot;--xclient&quot; option (see below). By default all attributes will be
+         combined into one XCLIENT call, but  see  &quot;--xclient-delim&quot;.  (Arg-Re-
+         quired, From-Prompt)
+
+     --xclient-delim
+         When this option is specified, it indicates a break in XCLIENT attrib-
+         utes  to be sent.  For instance, setting &quot;--xclient-helo 'helo string'
+         --xclient-delim    --xclient-name    foo.example.com    --xclient-addr
+         192.168.1.1&quot;  will  cause  Swaks  to  send two XCLIENT calls, &quot;XCLIENT
+         HELO=helo+20string&quot;      and       &quot;XCLIENT       NAME=foo.example.com
+         ADDR=192.168.1.1&quot;.  This option is ignored where it doesn't make sense
+         (at  the  start  or  end of XCLIENT options, by itself, consecutively,
+         etc). (Arg-None)
+
+     --xclient [&lt;string&gt;]
+         This is the &quot;free form&quot; XCLIENT option.  Whatever  value  is  provided
+         for &lt;string&gt; will be sent verbatim as the argument to the XCLIENT SMTP
+         command.  For example, if &quot;--xclient 'NAME= ADDR=192.168.1.1 FOO=bar'&quot;
+         is   used,   Swaks   will   send   the  SMTP  command  &quot;XCLIENT  NAME=
+         ADDR=192.168.1.1 FOO=bar&quot;.  If no argument is passed on command  line,
+         Swaks will prompt and read the value on STDIN.
+
+         The  primary advantage to this over the more specific options above is
+         that there is no XCLIENT syntax validation here.  This allows  you  to
+         send  invalid XCLIENT to the target server for testing.  Additionally,
+         at least one MTA (Message Systems' Momentum, formerly  ecelerity)  im-
+         plements   XCLIENT  without  advertising  supported  attributes.   The
+         &quot;--xclient&quot; option allows you to skip the &quot;supported attributes&quot; check
+         when  communicating  with  this  type  of   MTA   (though   see   also
+         &quot;--xclient-no-verify&quot;).
+
+         The  &quot;--xclient&quot; option can be mixed freely with the &quot;--xclient-*&quot; op-
+         tions above.  The argument to &quot;--xclient&quot; will be sent in its own com-
+         mand   group.    For   instance,   if   &quot;--xclient-addr    192.168.0.1
+         --xclient-port  26  --xclient  'FOO=bar NAME=wind'&quot; is given to Swaks,
+         &quot;XCLIENT ADDR=192.168.0.1 PORT=26&quot;  and  &quot;XCLIENT  FOO=bar  NAME=wind&quot;
+         will both be sent to the target server. (Arg-Required, From-Prompt)
+
+     --xclient-no-verify
+         Do  not  enforce the requirement that an XCLIENT attribute must be ad-
+         vertised by the server in order for Swaks to send  it  in  an  XCLIENT
+         command.  This is to support servers which don't advertise the attrib-
+         utes but still support them. (Arg-None)
+
+     --xclient-before-starttls
+         If  Swaks  is configured to attempt both XCLIENT and STARTTLS, it will
+         do STARTTLS first.  If  this  option  is  specified  it  will  attempt
+         XCLIENT first. (Arg-None)
+
+     --xclient-optional
+     --xclient-optional-strict
+         In  normal operation, setting one of the &quot;--xclient*&quot; options will re-
+         quire a successful XCLIENT transaction to take place in order to  pro-
+         ceed  (that is, XCLIENT needs to be advertised, all the user-requested
+         attributes need to have been advertised, and the server needs to  have
+         accepted Swaks' XCLIENT request).  These options change that behavior.
+         &quot;--xclient-optional&quot;  tells  Swaks to proceed unconditionally past the
+         XCLIENT stage of the SMTP transaction, regardless of  whether  it  was
+         successful.  &quot;--xclient-optional-strict&quot; is similar but more granular.
+         The  strict  version  will continue to XCLIENT was not advertised, but
+         will fail if XCLIENT was attempted but did not succeed. (Arg-None)
+
+PROXY OPTIONS
+     Swaks    implements    the    Proxy     protocol     as     defined     in
+     &lt;http://www.haproxy.org/download/1.5/doc/proxy-protocol.txt&gt;.   Proxy  al-
+     lows an application load balancer, such as HAProxy, to be used in front of
+     an MTA while still allowing the MTA access to the originating host  infor-
+     mation.  Proxy support in Swaks allows direct testing of an MTA configured
+     to  expect  requests from a proxy, bypassing the proxy itself during test-
+     ing.
+
+     Swaks makes no effort to ensure that the Proxy options used are internally
+     consistent.  For instance, &quot;--proxy-family&quot; (in version 1) is expected  to
+     be  one  of  &quot;TCP4&quot; or &quot;TCP6&quot;.  While it will likely not make sense to the
+     target server, Swaks makes no attempt to ensure that &quot;--proxy-source&quot;  and
+     &quot;--proxy-dest&quot; are in the same protocol family as &quot;--proxy-family&quot; or each
+     other.
+
+     The  &quot;--proxy&quot; option is mutually exclusive with all other &quot;--proxy-*&quot; op-
+     tions except &quot;--proxy-version&quot;.
+
+     When &quot;--proxy&quot; is not used,  all  of  &quot;--proxy-family&quot;,  &quot;--proxy-source&quot;,
+     &quot;--proxy-source-port&quot;,  &quot;--proxy-dest&quot;,  and  &quot;--proxy-dest-port&quot;  are re-
+     quired.  Additionally, when &quot;--proxy-version&quot; is 2, &quot;--proxy-protocol&quot; and
+     &quot;--proxy-command&quot; are optional.
+
+     --proxy-version [ 1 | 2 ]
+         Whether to use version 1 (human readable) or version 2 (binary) of the
+         Proxy protocol.  Version 1 is the default.  Version 2 is  only  imple-
+         mented through the &quot;address block&quot;, and is roughly on par with the in-
+         formation provided in version 1. (Arg-Required, From-Prompt)
+
+     --proxy [&lt;string&gt;]
+         This  option  provides  the raw proxy string which will be sent to the
+         server.  The protocol prefix (&quot;PROXY &quot; for version 1, the 12-byte pro-
+         tocol header for version 2) can be present or  not  in  the  argument.
+         This  option allows sending incomplete or malformed Proxy strings to a
+         target server for testing.  This option is mutually exclusive with all
+         other &quot;--proxy-*&quot; options which provide granular proxy information.
+
+         Because version 2 of the Proxy protocol is a  binary  protocol,  there
+         are  multiple ways to provide the argument to this option.  If the ar-
+         gument starts with &quot;base64:&quot;, that prefix is stripped and the rest  of
+         the  string is base64 decoded before use.  If the argument starts with
+         &quot;@&quot; it will be treated as a filename and the proxy value will be  read
+         from the file.  Any other value is assumed to be the literal value for
+         the proxy string. (Arg-Required, From-Prompt, From-File)
+
+     --proxy-family [&lt;string&gt;]
+         For  version 1, specifies both the address family and transport proto-
+         col.  The protocol defines TCP4 and TCP6.
+
+         For version 2, specifies only the address family.   The  protocol  de-
+         fines  AF_UNSPEC, AF_INET, AF_INET6, and AF_UNIX. (Arg-Required, From-
+         Prompt)
+
+     --proxy-protocol [&lt;string&gt;]
+         For version 2, specifies the transport protocol.  The protocol defines
+         UNSPEC, STREAM, and DGRAM.  The default is STREAM.  This option is un-
+         used in version 1. (Arg-Required, From-Prompt)
+
+     --proxy-command [&lt;string&gt;]
+         For version 2, specifies the transport protocol.  The protocol defines
+         LOCAL and PROXY.  The default is PROXY.  This option is unused in ver-
+         sion 1. (Arg-Required, From-Prompt)
+
+     --proxy-source [&lt;string&gt;]
+         Specify the source address of the proxied  connection.  (Arg-Required,
+         From-Prompt)
+
+     --proxy-source-port [&lt;string&gt;]
+         Specify  the  source  port  of  the proxied connection. (Arg-Required,
+         From-Prompt)
+
+     --proxy-dest [&lt;string&gt;]
+         Specify the destination address of the  proxied  connection.  (Arg-Re-
+         quired, From-Prompt)
+
+     --proxy-dest-port [&lt;string&gt;]
+         Specify the destination port of the proxied connection. (Arg-Required,
+         From-Prompt)
+
+DATA OPTIONS
+     These  options  pertain  to  the contents for the DATA portion of the SMTP
+     transaction.  By default a very simple message is sent.  If the &quot;--attach&quot;
+     or &quot;--attach-body&quot; options are used, Swaks attempts to upgrade to  a  MIME
+     message.
+
+     -d, --data [&lt;data-portion&gt;]
+         Use argument as the entire contents of DATA.
+
+         If no argument is provided, user will be prompted to supply value.
+
+         If  the  argument  &quot;-&quot;  is provided the data will be read from &quot;STDIN&quot;
+         with no prompt.
+
+         If the argument starts with &quot;@&quot; it will be treated as a filename.   If
+         you would like to pass in an argument that starts with &quot;@&quot; and isn't a
+         filename,  prefix  the  argument with an additional &quot;@&quot;.  For example,
+         &quot;@file.txt&quot; will force processing of file.txt.  @@data  will  use  the
+         string '@data'.
+
+         If  the argument does not contain any literal (0x0a) or representative
+         (0x5c, 0x6e or %NEWLINE%) newline characters, it will be treated as  a
+         filename.   If the file is open-able, the contents of the file will be
+         used as the data portion.  If the file cannot be  opened,  Swaks  will
+         error  and  exit.   The entire behavior described in this paragraph is
+         deprecated and will be removed in a future  release.   Instead  use  a
+         leading &quot;@&quot; to explicitly set that the argument is a filename.
+
+         Any other argument will be used as the DATA contents.
+
+         The value can be on one single line, with &quot;\n&quot; (ASCII 0x5c, 0x6e) rep-
+         resenting  where  line  breaks should be placed.  Leading dots will be
+         quoted.  Closing dot is not required  but  is  allowed.   The  default
+         %FROM_ADDRESS%\nSubject:     test      %DATE%\nMessage-Id:      &lt;%MES-
+         SAGEID%&gt;\nX-Mailer:         swaks         v%SWAKS_VERSION%        jet-
+         more.org/john/code/swaks/\n%NEW_HEADERS%\n%BODY%\n&quot;.
+
+         Very basic token parsing is performed on the DATA portion.   The  fol-
+         lowing table shows the recognized tokens and their replacement values.
+         (Arg-Required, From-Prompt, From-File)
+
+         %FROM_ADDRESS%, ..FROM_ADDRESS..
+             Replaced with the envelope-sender.
+
+         %TO_ADDRESS%, ..TO_ADDRESS..
+             Replaced with the envelope-recipient(s) set by the &quot;--to&quot; option.
+
+         %CC_ADDRESS%, ..CC_ADDRESS..
+             Replaced with the envelope-recipient(s) set by the &quot;--cc&quot; option.
+
+         %BCC_ADDRESS%, ..BCC_ADDRESS..
+             Replaced with the envelope-recipient(s) set by the &quot;--bcc&quot; option.
+
+         %DATE%, ..DATE..
+             Replaced  with the current time in a format suitable for inclusion
+             ule  POSIX  for timezone calculations.  If this module is unavail-
+             able or the current environment doesn't support  the  %z  strftime
+             format token (as on Windows) the date string will be in GMT.
+
+         %MESSAGEID%, ..MESSAGEID..
+             Replaced with a message ID string suitable for use in a Message-Id
+             header.   The  value for this token will remain consistent for the
+             life of the process.
+
+         %SWAKS_VERSION%, ..SWAKS_VERSION..
+             Replaced with the version of the currently-running Swaks process.
+
+         %NEW_HEADERS%, ..NEW_HEADERS..
+             Replaced with the  contents  of  the  &quot;--add-header&quot;  option.   If
+             &quot;--add-header&quot; is not specified this token is simply removed.
+
+         %BODY%, ..BODY..
+             Replaced  with  the  value  specified by the &quot;--body&quot; option.  See
+             &quot;--body&quot; for default.
+
+         %NEWLINE%, ..BODY..
+             Replaced with carriage return,  newline  (0x0d,  0x0a).   This  is
+             identical  to using &quot;\n&quot; (0x5c, 0x6e), but doesn't have the escap-
+             ing concerns that the backslash can cause on the newline.
+
+     -dab, --dump-as-body [&lt;section&gt;[,&lt;section&gt;[,...]]]
+         If &quot;--dump-as-body&quot; is used and no other option is used to change  the
+         default  body of the message, the body is replaced with output similar
+         to the output of what is provided  by  &quot;--dump&quot;.   &quot;--dump&quot;'s  initial
+         program  capability stanza is not displayed, and the &quot;data&quot; section is
+         not included.  Additionally, &quot;--dump&quot; always includes  passwords.   By
+         default  &quot;--dump-as-body&quot;  does not include passwords, though this can
+         be  changed  with  &quot;--dump-as-body-shows-password&quot;.   &quot;--dump-as-body&quot;
+         takes the same arguments as &quot;--dump&quot; except the SUPPORT and DATA argu-
+         ments are not supported. (Arg-Optional)
+
+     -dabsp, --dump-as-body-shows-password
+         Cause &quot;--dump-as-body&quot; to include plaintext passwords.  This option is
+         not recommended.  This option implies &quot;--dump-as-body&quot;. (Arg-None)
+
+     --body [&lt;body-specification&gt;]
+         Specify  the  body of the email.  The default is &quot;This is a test mail-
+         ing&quot;.  If no argument to &quot;--body&quot; is given, prompt to supply  one  in-
+         teractively.   If &quot;-&quot; is supplied, the body will be read from standard
+         input.  Arguments beginning with &quot;@&quot; will be treated as filenames con-
+         taining the body data to use (see &quot;--data&quot; for more detail).
+
+         If, after the above processing, the argument represents  an  open-able
+         file,  the  content  of that file is used as the body.  This is depre-
+         cated behavior and will be removed in a future release.  Instead use a
+         leading &quot;@&quot; to explicitly set that the argument is a filename.
+
+         If the message is forced to MIME format (see &quot;--attach&quot;) &quot;--body 'body
+         text'&quot; is the same as &quot;--attach-type  text/plain  --attach-body  'body
+         text'&quot;.   See  &quot;--attach-body&quot; for details on creating a multipart/al-
+         ternative body. (Arg-Required, From-Prompt, From-File)
+
+     --attach [&lt;attachment-specification&gt;]
+         When one or more &quot;--attach&quot; option is supplied, the message is changed
+         into a multipart/mixed MIME message.  The arguments to &quot;--attach&quot;  are
+         processed the same as &quot;--body&quot; with respect to &quot;STDIN&quot;, file contents,
+         etc.  &quot;--attach&quot; can be supplied multiple times to create multiple at-
+         tachments.   By  default,  each  attachment is attached as an applica-
+         tion/octet-stream file.  See &quot;--attach-type&quot; for changing this  behav-
+         ior.
+
+         If  the  contents  of the attachment are provided via a file name, the
+         MIME encoding will include that file name.   See  &quot;--attach-name&quot;  for
+         more detail on file naming.
+
+         It  is legal for &quot;-&quot; (&quot;STDIN&quot;) to be specified as an argument multiple
+         times (once for &quot;--body&quot; and multiple times for &quot;--attach&quot;).  In  this
+         case,  the  same  content  will be attached each time it is specified.
+         This is useful for attaching  the  same  content  with  multiple  MIME
+         types. (Arg-Required, From-File)
+
+     --attach-body [&lt;body-specification&gt;]
+         This  is  a  variation on &quot;--attach&quot; that is specifically for the body
+         part of the email.  It behaves identically to &quot;--attach&quot;  in  that  it
+         takes  the  same  arguments and forces the creation of a MIME message.
+         However, it is different in that the argument will always be the first
+         MIME part in the message, no matter where in option  processing  order
+         it is encountered.  Additionally, &quot;--attach-body&quot; options stack to al-
+         low  creation  of  multipart/alternative  bodies.  For example, &quot;--at-
+         tach-type text/plain --attach-body  'plain  text  body'  --attach-type
+         text/html --attach-body 'html body'&quot; would create a multipart/alterna-
+         tive message body. (Arg-Required, From-File)
+
+     --attach-type &lt;mime-type&gt;
+         By  default,  content  that  gets  MIME attached to a message with the
+         &quot;--attach&quot; option is encoded as application/octet-stream  (except  for
+         the  body,  which  is text/plain by default).  &quot;--attach-type&quot; changes
+         the mime type for every &quot;--attach&quot; option which follows it.  It can be
+         specified multiple times.  The current MIME type gets reset to  appli-
+         cation/octet-stream  between  processing  body  parts and other parts.
+         (Arg-Required)
+
+     --attach-name [&lt;name&gt;]
+         This option sets the filename that will be included in the  MIME  part
+         created  for  the  next  &quot;--attach&quot; option.  If no argument is set for
+         this option, it causes no filename information to be included for  the
+         next  MIME  part,  even if Swaks could generate it from the local file
+         name. (Arg-Optional)
+
+     -ah, --add-header &lt;header&gt;
+         This option allows headers to be added to the  DATA.   If  &quot;%NEW_HEAD-
+         ERS%&quot;  is present in the DATA it is replaced with the argument to this
+         option.  If &quot;%NEW_HEADERS%&quot; is not present, the argument  is  inserted
+         between the first two consecutive newlines in the DATA (that is, it is
+         inserted at the end of the existing headers).
+
+         The  option  can  either  be specified multiple times or a single time
+         with multiple  headers  separated  by  a  literal  &quot;\n&quot;  string.   So,
+         &quot;--add-header  'Foo:  bar'  --add-header 'Baz: foo'&quot; and &quot;--add-header
+         'Foo: bar\nBaz: foo'&quot; end up adding the  same  two  headers.  (Arg-Re-
+         quired)
+
+     --header &lt;header-and-data&gt;, --h-&lt;header&gt; &lt;data&gt;
+         These  options allow a way to change headers that already exist in the
+         DATA.  &quot;--header 'Subject: foo'&quot; and &quot;--h-Subject foo&quot; are equivalent.
+         If the header does not already exist in the data  then  this  argument
+         behaves identically to &quot;--add-header&quot;.  However, if the header already
+         exists it is replaced with the one specified.  Negating the version of
+         this  option  with the header name in the option (eg &quot;--no-header-Sub-
+         ject&quot;) will remove all previously processed  &quot;--header&quot;  options,  not
+         just the ones used for 'Subject'. Embedding the header name in the op-
+         tion via environment variable is not supported on Windows and will re-
+         sult in an error. (Arg-Required)
+
+     -g  This  option is a direct alias to &quot;--data -&quot; (read DATA from &quot;STDIN&quot;).
+         It is totally secondary to &quot;--data&quot;.  Any occurrence of &quot;--data&quot;  will
+         cause  &quot;-g&quot;  to  be  ignored.   This option cannot be negated with the
+         &quot;no-&quot; prefix.  This option is deprecated and will be removed in a  fu-
+         ture version of Swaks. (Arg-None, Deprecated)
+
+     --no-data-fixup, -ndf
+         This option forces Swaks to do no massaging of the DATA portion of the
+         email.  This includes token replacement, From_ stripping, trailing-dot
+         addition,  &quot;--body&quot;/attachment  inclusion,  and  any header additions.
+         This option is only useful when used with &quot;--data&quot;, since the internal
+         default DATA portion uses tokens. (Arg-None)
+
+     --no-strip-from, -nsf
+         Don't strip the From_ line from the DATA portion,  if  present.  (Arg-
+         None)
+
+OUTPUT OPTIONS
+     Swaks  provides  a  transcript  of  its  transactions to its caller (&quot;STD-
+     OUT&quot;/&quot;STDERR&quot;) by default.  This transcript aims to be as faithful a  rep-
+     resentation as possible of the transaction though it does modify this out-
+     put  by  adding informational prefixes to lines and by providing plaintext
+     versions of TLS transactions
+
+     The &quot;informational prefixes&quot; are referred to as transaction hints.   These
+     hints  are  initially  composed  of those marking lines that are output of
+     Swaks itself, either informational or error messages, and those that indi-
+     cate a line of data actually sent or received in a transaction.  This  ta-
+     ble indicates the hints and their meanings:
+
+     &quot;===&quot;
+         Indicates an informational line generated by Swaks.
+
+     &quot;***&quot;
+         Indicates an error generated within Swaks.
+
+     &quot; -&gt;&quot;
+         Indicates an expected line sent by Swaks to target server.
+
+     &quot; ~&gt;&quot;
+         Indicates  a  TLS-encrypted,  expected  line  sent  by Swaks to target
+         server.
+
+     &quot;**&gt;&quot;
+         Indicates an unexpected line sent by Swaks to the target server.
+
+     &quot;*~&gt;&quot;
+         Indicates a TLS-encrypted, unexpected line sent  by  Swaks  to  target
+         server.
+
+     &quot;  &gt;&quot;
+         Indicates  a  raw  chunk of text sent by Swaks to a target server (see
+         &quot;--show-raw-text&quot;).  There is no concept of &quot;expected&quot; or &quot;unexpected&quot;
+         at this level.
+
+     &quot;&lt;- &quot;
+         Indicates an expected line sent by target server to Swaks.
+
+     &quot;&lt;~ &quot;
+         Indicates a TLS-encrypted, expected line  sent  by  target  server  to
+         Swaks.
+
+     &quot;&lt;**&quot;
+         Indicates an unexpected line sent by target server to Swaks.
+
+     &quot;&lt;~*&quot;
+         Indicates  a  TLS-encrypted,  unexpected line sent by target server to
+         Swaks.
+
+     &quot;&lt;  &quot;
+         Indicates a raw chunk of text received by Swaks from a  target  server
+         (see  &quot;--show-raw-text&quot;).  There is no concept of &quot;expected&quot; or &quot;unex-
+         pected&quot; at this level.
+
+     The following options control what and how  output  is  displayed  to  the
+     caller.
+
+     -n, --suppress-data
+         Summarizes  the DATA portion of the SMTP transaction instead of print-
+         ing every line.  This option is very helpful, bordering  on  required,
+         when  using  Swaks  to  send certain test emails.  Emails with attach-
+         ments, for instance, will quickly overwhelm a terminal if the DATA  is
+         not suppressed. (Arg-None)
+
+     -stl, --show-time-lapse [i]
+         Display  time  lapse  between send/receive pairs.  This option is most
+         useful when Time::HiRes is available, in which  case  the  time  lapse
+         will  be  displayed in thousandths of a second.  If Time::HiRes is un-
+         available or &quot;i&quot; is given as an argument the lapse will  be  displayed
+         in integer seconds only. (Arg-Optional)
+
+         Don't  display  the  transaction  hint for informational transactions.
+         This is most useful when needing to copy some portion of the  informa-
+         tional    lines,    for   instance   the   certificate   output   from
+         &quot;--tls-get-peer-cert&quot;. (Arg-None)
+
+     -nih, --no-info-hints
+     -nsh, --no-send-hints
+     -nrh, --no-receive-hints
+     -nth, --no-hints
+         &quot;--no-info-hints&quot;, &quot;--no-send-hints&quot;,  and  &quot;--no-receive-hints&quot;  sup-
+         press  the  transaction  hints from info, send, and receive lines, re-
+         spectively.  This is often useful when copying  some  portion  of  the
+         transaction   for   use   elsewhere  (for  instance,  &quot;--no-send-hints
+         --hide-receive --hide-informational&quot; is a useful way to get  only  the
+         client-side  commands  for  a  given  transaction and &quot;--no-info-hints
+         --tls-get-peer-cert&quot; for copying the peer certificate).   &quot;--no-hints&quot;
+         is  identical  to specifying &quot;--no-info-hints --no-send-hints --no-re-
+         ceive-hints&quot;. (Arg-None)
+
+     -raw, --show-raw-text
+         This option will print a hex dump of raw data  sent  and  received  by
+         Swaks.  Each hex dump is the contents of a single read or write on the
+         network.   This should be identical to what is already being displayed
+         (with the exception of the &quot;\r&quot; characters being removed).   This  op-
+         tion is useful in seeing details when servers are sending lots of data
+         in single packets, or breaking up individual lines into multiple pack-
+         ets.   If  you really need to go in depth in that area you're probably
+         better with a packet sniffer, but this option is a good first step  to
+         seeing odd connection issues. (Arg-None)
+
+     --output, --output-file &lt;file-path&gt;
+     --output-file-stdout &lt;file-path&gt;
+     --output-file-stderr &lt;file-path&gt;
+         These  options allow the user to send output to files instead of &quot;STD-
+         OUT&quot;/&quot;STDERR&quot;.  The first option sends both to the same file.  The ar-
+         guments of &amp;STDOUT and &amp;STDERR are treated specially, referring to the
+         &quot;normal&quot; file handles, so &quot;--output-file-stderr '&amp;STDOUT'&quot; would redi-
+         rect &quot;STDERR&quot; to &quot;STDOUT&quot;.  These options are honored for  all  output
+         except &quot;--help&quot; and &quot;--version&quot;. (Arg-Required)
+
+     -pp, --protect-prompt
+         Don't echo user input on prompts that are potentially sensitive (right
+         now  only  authentication  password).   Very  specifically, any option
+         which is marked 'Sensitive' and eventually  prompts  for  an  argument
+         will  do  its  best to mask that argument from being echoed.  See also
+         &quot;--auth-hide-password&quot;. (Arg-None)
+
+     -hr, --hide-receive
+         Don't display lines sent from the  remote  server  being  received  by
+         Swaks. (Arg-None)
+
+     -hs, --hide-send
+         Don't  display  lines  being sent by Swaks to the remote server. (Arg-
+         None)
+
+     -hi, --hide-informational
+         Don't display non-error informational lines from Swaks  itself.  (Arg-
+         None)
+
+     -ha, --hide-all
+         Do not display any content to the terminal. (Arg-None)
+
+     -S, --silent [ 1 | 2 | 3 ]
+         Cause  Swaks  to be silent.  If no argument is given or if an argument
+         of &quot;1&quot; is given, print no output unless/until an error  occurs,  after
+         which all output is shown.  If an argument of &quot;2&quot; is given, only print
+         errors.   If  &quot;3&quot;  is  given, show no output ever.  &quot;--silent&quot; affects
+         most  output  but  not  all.   For  instance,  &quot;--help&quot;,  &quot;--version&quot;,
+         &quot;--dump&quot;, and &quot;--dump-mail&quot; are not affected.  For historical reasons,
+         -S   is   not  settable  via  environment  variable  on  Windows,  use
+         SWAKS_OPT_silent instead. (Arg-Optional)
+
+     --support
+         Print capabilities and exit.  Certain  features  require  non-standard
+         Perl modules.  This option evaluates whether these modules are present
+         and  displays  which  functionality  is available and which isn't, and
+         which modules would need to be added to gain the  missing  functional-
+         ity. (Arg-None)
+
+     --dump-mail
+         Cause  Swaks  to  process all options to generate the message it would
+         send, then print that message to &quot;STDOUT&quot; instead of sending it.  This
+         output is identical to the &quot;data&quot; section of &quot;--dump&quot;, except  without
+         the trailing dot. (Arg-None)
+
+     --dump [&lt;section&gt;[,&lt;section&gt;[,...]]]
+         This  option  causes  Swaks to print the results of option processing,
+         immediately before mail would have been sent.  No mail  will  be  sent
+         when  &quot;--dump&quot;  is  used.  Note that &quot;--dump&quot; is a pure self-diagnosis
+         tool and no effort is made or will ever be made to mask  passwords  in
+         the  &quot;--dump&quot;  output. If a section is provided as an argument to this
+         option, only the requested section will be shown.  Currently supported
+         arguments are SUPPORT,  APP,  OUTPUT,  TRANSPORT,  PROTOCOL,  XCLIENT,
+         PROXY, TLS, AUTH, DATA, and ALL.  If no argument is provided, all sec-
+         tions are displayed (Arg-Optional)
+
+     --help
+         Display this help information and exit. (Arg-None)
+
+     --version
+         Display version information and exit. (Arg-None)
+
+DEPRECATIONS
+     The following features are deprecated and will be removed in a future ver-
+     sion of Swaks
+
+     use of IO::Socket and IO::Socket::INET6 modules
+         Will be removed no sooner than (February 1, 2025).
+
+         The  primary  method  of  sending over IPv4 and IPv6 sockets is imple-
+         mented with the IO::Socket::IP module.  For the time  being  there  is
+         still  legacy  support of the IO::Socket and IO::Socket::INET6 modules
+         which were previously used.  Please ensure IO::Socket::IP is installed
+         to ensure future functionality.
+
+PORTABILITY
+     OPERATING SYSTEMS
+         This program was primarily intended for  use  on  UNIX-like  operating
+         systems, and it should work on any reasonable version thereof.  It has
+         been  developed and tested on Solaris, Linux, and Mac OS X and is fea-
+         ture complete on all of these.
+
+         This program is known to demonstrate basic  functionality  on  Windows
+         using  Strawberry Perl.  In all documentation, unless otherwise noted,
+         &quot;Windows&quot; refers to running Swaks via CMD.exe, not WSL or cygwin.   It
+         has  not been fully tested, but known to work are basic SMTP function-
+         ality and the LOGIN, PLAIN, and CRAM-MD5 auth types.  Unknown  is  any
+         TLS  functionality  and  the NTLM/SPA and DIGEST-MD5 auth types.  Some
+         functionality is known to be limited on Windows,  including  inability
+         to  embed header name in environment variables (see &quot;CONFIGURATION EN-
+         VIRONMENT VARIABLES&quot; and &quot;--header&quot;), inability to generate  a  local-
+         timezone date string (see &quot;%DATE%&quot; token under &quot;--data&quot;), inability to
+         use  &quot;-S&quot;  option as an environment variable (see &quot;--silent&quot;), and in-
+         ability to have a &quot;set but empty&quot; value  in  an  environment  variable
+         (see &quot;CONFIGURATION ENVIRONMENT VARIABLES&quot; for workaround).
+
+         Because this program should work anywhere Perl works, I would appreci-
+         ate  knowing  about  any  new operating systems you've thoroughly used
+         Swaks on as well as any problems encountered on a new OS.
+
+     MAIL SERVERS
+         This program  was  almost  exclusively  developed  against  Exim  mail
+         servers.   It  has  been used casually by the author, though not thor-
+         oughly tested, with Sendmail, Smail,  Exchange,  Oracle  Collaboration
+         Suite,  qpsmtpd,  and Communigate.  Because all functionality in Swaks
+         is based on known standards it should work with any fairly modern mail
+         server.  If a problem is found, please alert the author at the address
+         below.
+
+ENVIRONMENT VARIABLES
+     LOGNAME
+         If Swaks must create a sender address, $LOGNAME is used as the message
+         local-part if it is set, and unless &quot;--force-getpwuid&quot; is used.
+
+     SWAKS_HOME
+         Used when searching for a .swaksrc  configuration  file.   See  OPTION
+         PROCESSING -&gt; &quot;CONFIGURATION FILES&quot; above.
+
+     SWAKS_OPT_*
+         Environment  variable  prefix used to specify Swaks options from envi-
+         ronment variables.  See OPTION PROCESSING -&gt;  &quot;CONFIGURATION  ENVIRON-
+         MENT VARIABLES&quot; above.
+
+EXIT CODES
+     0   no errors occurred
+
+     1   error parsing command line options
+
+     2   error connecting to remote server
+
+     3   unknown connection type
+
+     4   while running with connection type of &quot;pipe&quot;, fatal problem writing to
+         or reading from the child process
+
+     5   while running with connection type of &quot;pipe&quot;, child process died unex-
+         pectedly.   This  can  mean  that  the program specified with &quot;--pipe&quot;
+         doesn't exist.
+
+     6   Connection closed unexpectedly.  If the close is detected in  response
+         to  the 'QUIT' Swaks sends following an unexpected response, the error
+         code for that unexpected response is used instead.  For instance, if a
+         mail server returns a 550 response to a MAIL FROM:  and  then  immedi-
+         ately  closes  the  connection,  Swaks  detects that the connection is
+         closed, but uses the more specific exit code 23 to detail  the  nature
+         of  the failure.  If instead the server return a 250 code and then im-
+         mediately closes the connection, Swaks will use the exit  code  6  be-
+         cause there is not a more specific exit code.
+
+     10  error in prerequisites (needed module not available)
+
+     21  error reading initial banner from server
+
+     22  error in HELO transaction
+
+     23  error in MAIL transaction
+
+     24  no RCPTs accepted
+
+     25  server returned error to DATA request
+
+     26  server did not accept mail following data
+
+     27  server returned error after normal-session quit request
+
+     28  error in AUTH transaction
+
+     29  error in TLS transaction
+
+     30  PRDR requested/required but not advertised
+
+     32  error in EHLO following TLS negotiation
+
+     33  error in XCLIENT transaction
+
+     34  error in EHLO following XCLIENT
+
+     35  error in PROXY option processing
+
+     36  error sending PROXY banner
+
+ABOUT THE NAME
+     The  name  &quot;Swaks&quot; is a (sort-of) acronym for &quot;SWiss Army Knife SMTP&quot;.  It
+     was chosen to be fairly distinct  and  pronounceable.   While  &quot;Swaks&quot;  is
+     unique  as the name of a software package, it has some other, non-software
+     meanings.  Please send in other uses of &quot;swak&quot; or &quot;swaks&quot; for inclusion.
+
+     &quot;Sealed With A Kiss&quot;
+         SWAK/SWAKs turns up occasionally on  the  internet  with  the  meaning
+         &quot;with love&quot;.
+
+     bad / poor / ill (Afrikaans)
+         Seen  in the headline &quot;SA se bes en swaks gekledes in 2011&quot;, which was
+         translated as &quot;best and worst dressed&quot;  by  native  speakers.   Google
+         Translate  doesn't like &quot;swaks gekledes&quot;, but it will translate &quot;swak&quot;
+         as &quot;poor&quot; and &quot;swak geklede&quot; as &quot;ill-dressed&quot;.
+
+LICENSE
+     This program is free software; you can redistribute it  and/or  modify  it
+     under the terms of the GNU General Public License as published by the Free
+     Software  Foundation; either version 2 of the License, or (at your option)
+     any later version.
+
+     This program is distributed in the hope that it will be useful, but  WITH-
+     OUT  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+     FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  for
+     more details.
+
+     You  should  have  received a copy of the GNU General Public License along
+     with this program; if not, write to the Free Software Foundation, Inc., 51
+     Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+
+CONTACT INFORMATION
+     General contact, questions,  patches,  requests,  etc  to  proj-swaks@jet-
+     more.net.
+
+     Change   logs,   this   help,   and   the  latest  version  are  found  at
+     &lt;http://www.jetmore.org/john/code/swaks/&gt;.
+
+     Swaks is crafted with love by John Jetmore from the cornfields of Indiana,
+     United States of America.
+
+NOTIFICATIONS
+     Email
+         <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="71040115100514025c0206101a02311b14051c1e03145f1f1405">[email&#160;protected]</a>
+
+         If you would like to be put on a list to receive notifications when  a
+         new  version  of  Swaks  is released, please send an email to this ad-
+         dress.  There will not be a response to your email.
+
+     Website
+         &lt;http://www.jetmore.org/john/blog/c/swaks/&gt;
+
+     RSS Feed
+         &lt;http://www.jetmore.org/john/blog/c/swaks/feed/&gt;
+
+     Twitter
+         &lt;http://twitter.com/SwaksSMTP&gt;
+
+perl v5.40.0                       2024-12-07                          SWAKS(1)
+</code></pre><hr></div><br><br><p id=post-meta>Updated on: 2026-May-25<br></p><hr><div id=pagination><div><a href=https://gitlab.com/-/ide/project/kalilinux/documentation/kali-tools/edit/main/-/swaks/index.md rel=noopener target=_blank><i class=ti-pencil-alt></i> Edit this page</a></div><div><a href="../sqlitebrowser/index.html"><i class=ti-arrow-left></i>
+<span>sqlitebrowser</span>
+</a><a href="../tetragon/index.html"><span>tetragon</span>
+<i class=ti-arrow-right></i></a></div></div></section></main><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>$$("#packages-info pre > code").forEach(e=>e.classList.add("language-console"))</script><script src=https://www.kali.org/plugins/highlight/highlight.pack.js></script><script src="https://www.kali.org/highlighting.min.js?ver=0a73a6a2757f0224a67ef43d491edbe9"></script><footer><div class=darkmode-switch><span>LIGHT</span><label class=switch>
+<input type=checkbox name=toggle-darkmode><div></div></label><span>DARK</span></div><div class=container><div><h4>Links</h4><a href=https://www.kali.org/ rel=noopener target=_blank>Home</a>
+<a href=https://www.kali.org/get-kali/ rel=noopener target=_blank>Download / Get Kali</a>
+<a href=https://www.kali.org/blog/ rel=noopener target=_blank>Blog</a>
+<a href=https://www.kali.org/docs/ rel=noopener target=_blank>OS Documentation</a>
+<a href="../index.html" rel=noopener target=_blank>Tool Documentation</a>
+<a href=https://status.kali.org/ rel=noopener target=_blank>System Status</a>
+<a href=https://old.kali.org/ rel=noopener target=_blank>Archived Releases</a>
+<a href=https://www.kali.org/partnerships/ rel=noopener target=_blank>Partnerships</a></div><div><h4>Platforms</h4><a href=https://arm.kali.org/ rel=noopener target=_blank>ARM (SBC)</a>
+<a href=https://nethunter.kali.org/ rel=noopener target=_blank>NetHunter (Mobile)</a><br><a href=https://aws.amazon.com/marketplace/pp/B08LL91KKB title="Amazon AWS" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183.0.08-.048.16-.152.24l-.503.335a.383.383.0 01-.208.072c-.08.0-.16-.04-.239-.112a2.47 2.47.0 01-.287-.375 6.18 6.18.0 01-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67.0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533.0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272.0.551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28.0-.568.031-.863.103s-.583.16-.862.272a2.287 2.287.0 01-.28.104.488.488.0 01-.127.023c-.112.0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597.0 01.224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84.0 011.246-.151c.95.0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263.0.534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66.0 00-.735-.136 6.02 6.02.0 00-.75-.048c-.535.0-.926.104-1.19.32-.263.215-.39.518-.39.917.0.375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144.0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398.0 01-.072-.32c0-.128.064-.2.191-.2h.783c.151.0.255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549.0 01.32-.08h.638c.152.0.256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52.0 01.311-.08h.743c.127.0.2.065.2.2.0.04-.009.08-.017.128a1.137 1.137.0 01-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51.0 01-.303.08h-.687c-.151.0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415.0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563.0 01-.048-.224v-.407c0-.167.064-.247.183-.247.048.0.096.008.144.024s.12.048.2.08c.271.12.566.215.878.279.319.064.63.096.95.096.502.0.894-.088 1.165-.264a.86.86.0 00.415-.758.777.777.0 00-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902.0 01-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175.0.359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69.0 01.24.2.43.43.0 01.071.263v.375c0 .168-.064.256-.184.256a.83.83.0 01-.303-.096 3.652 3.652.0 00-1.532-.311c-.455.0-.815.071-1.062.223-.248.152-.375.383-.375.71.0.224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117.0.343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zm1.509 3.88c-2.626 1.94-6.442 2.969-9.722 2.969-4.598.0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914.0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zm1.094-1.246c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"/></svg>
+Amazon AWS
+</a><a href=https://hub.docker.com/u/kalilinux title=Docker rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M4.82 17.275c-.684.0-1.304-.56-1.304-1.24s.56-1.243 1.305-1.243c.748.0 1.31.56 1.31 1.242s-.622 1.24-1.305 1.24zm16.012-6.763c-.135-.992-.75-1.8-1.56-2.42l-.315-.25-.254.31c-.494.56-.69 1.553-.63 2.295.06.562.24 1.12.554 1.554-.254.13-.568.25-.81.377-.57.187-1.124.25-1.68.25H.097l-.06.37c-.12 1.182.06 2.42.562 3.54l.244.435v.06c1.5 2.483 4.17 3.6 7.078 3.6 5.594.0 10.182-2.42 12.357-7.633 1.425.062 2.864-.31 3.54-1.676l.18-.31-.3-.187c-.81-.494-1.92-.56-2.85-.31l-.018.002zm-8.008-.992h-2.428v2.42h2.43V9.518l-.002.003zm0-3.043h-2.428v2.42h2.43V6.48l-.002-.003zm0-3.104h-2.428v2.42h2.43v-2.42h-.002zm2.97 6.147H13.38v2.42h2.42V9.518l-.007.003zm-8.998.0H4.383v2.42h2.422V9.518l-.01.003zm3.03.0h-2.4v2.42H9.84V9.518l-.015.003zm-6.03.0H1.4v2.42h2.428V9.518l-.03.003zm6.03-3.043h-2.4v2.42H9.84V6.48l-.015-.003zm-3.045.0H4.387v2.42H6.8V6.48l-.016-.003z"/></svg>
+Docker
+</a><a href=https://www.linode.com/marketplace/apps/kali-linux/kali-linux/ title=Linode rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor"><path d="m9.7572 21.543c-.21543-1.3514-.38438-2.4903-.37538-2.5308.017008-.07597 3.1734-2.3103 3.2109-2.2727.02721.02645.30916 4.8132.29118 4.9432-.0087.06349-.4854.49368-1.3388 1.2082-.72884.61028-1.3412 1.1095-1.3607 1.1094-.01965-75e-6-.2118-1.1059-.42728-2.4573zM7.709 22.9686l-.98536-.75859-.45604-2.2603c-.25085-1.2432-.45143-2.2992-.44576-2.3467.00794-.06803.2406.07748 1.0868.68035l1.0764.76683.3651 2.2757c.20081 1.2516.36038 2.304.35463 2.3385-.00605.03779-.4286-.25928-.99579-.69577zm6.4796-2.708c-.05413-.67589-.26906-4.4802-.25391-4.4942.10443-.09487 3.0591-2.1356 3.0918-2.1356.02797.0.0359.36586.02041.97361-.01361.53548-.03742 1.5988-.05291 2.3628l-.02835 1.3892-1.3386 1.1211c-.73625.61659-1.3545 1.1273-1.3739 1.135-.01927.0076-.04845-.1508-.06456-.35187zM9.0927 17.425c-3515e-7-.034015-.18826-1.2359-.41764-2.6682s-.40025-2.622-.37965-2.6439c.020409-.02268.90006-.55283 1.9543-1.18 1.9099-1.1361 1.917-1.1398 1.9494-1.016.03174.1217.33124 5.1734.3078 5.1942-.02986.02645-3.1702 2.2195-3.2847 2.294-.099439.06463-.12918.06917-.1296.0189zm-2.5369-1.0543c-.60442-.42826-1.1149-.79355-1.1344-.81177-.038589-.037794-1.0281-4.9311-1.0087-4.9894.00983-.03024 2.4743 1.582 2.4757 1.6187 2306e-7.0076.17768 1.12.39428 2.4748.2166 1.3548.38895 2.4685.38298 2.4749-.00605.0076-.5054-.33902-1.1098-.76713zm11.833-.75753c.01587-.84522.03175-1.8651.03515-2.2665l.006-.72979 1.2935-.90538c.71142-.49795 1.2992-.89802 1.3061-.88902.0068.0076-.02267.97036-.06603 2.1363l-.07869 2.1199-.13655.1149c-1.0407.87496-2.347 1.955-2.3653 1.9556-.01285 529e-6-.01058-.69071.0056-1.5359zm-4.5751-1.7362c-.01512-.14854-.05178-.71082-.08168-1.2499l-.05439-.98011.10454-.07899c.05749-.04346.17522-.11679.26162-.16365l.15712-.08466 1.0817.51008c.59497.28044 1.0753.5303 1.0673.55502-.01474.04611-2.423 1.7557-2.4784 1.7594-.01701.0011-.04286-.11943-.05787-.26759zm2.8451-2.8867c-.54841-.26079-.99636-.48624-.99545-.5006 903e-6-.01512.56035-.34507 1.2433-.73519l1.2416-.70904 1.012.31219c.55657.17159 1.0159.32655 1.0207.34394.0091.034016-2.4539 1.7738-2.4996 1.767-.01398-.0021-.47414-.21732-1.0225-.47822zm-8.6457-.34923c-3515e-7-.018898-.19854-1.2719-.4405-2.7816-.24197-1.5097-.42648-2.7592-.41-2.7766.044863-.047622 4.6088-2.115 4.6269-2.096.017385.018897.30716 4.8457.3066 5.1095l-355e-6.1663-1.9301 1.1474c-2.195 1.305-2.1519 1.2803-2.1527 1.231zm-2.767-1.1814-1.2426-.83369-.52316-2.6237c-.28774-1.4431-.51787-2.6297-.51141-2.6371.013606-.015118 2.648 1.6215 2.7321 1.6978.048151.043842.85818 4.9077.85818 5.153.0.04573-.015874.08202-.03515.08013-.019276-.001585-.59437-.37815-1.2779-.83668zm-.30013-6.4717c-.81502-.50785-1.4767-.94016-1.4703-.96068.010961-.034016 4.0645-1.8972 4.379-2.0117.14128-.051402.19404-.022677 1.6328.87598.81774.51103 1.4699.94356 1.4493.96121-.020788.018898-.89265.41941-1.9378.8928-1.0452.47339-2.0513.92935-2.2358 1.0133l-.33547.15231z" style="stroke-width:3.7795"/></svg>
+Linode
+</a><a href=https://azuremarketplace.microsoft.com/en/marketplace/apps/kali-linux.kali title="Microsoft Azure" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M5.483 21.3H24L14.025 4.013l-3.038 8.347 5.836 6.938L5.483 21.3zM13.23 2.7 6.105 8.677.0 19.253h5.505v.014L13.23 2.7z"/></svg>
+Microsoft Azure
+</a><a href=https://www.microsoft.com/en-us/p/kali-linux/9pkr34tncv07 title="Microsoft Store" rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6.0H12.6V0H24v11.4z"/></svg>
+Microsoft Store (WSL)
+</a><a href=https://portal.cloud.hashicorp.com/vagrant/discover/kalilinux title=Vagrant rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M5.672 6.774V4.917l3.164-1.822L3.56.005.397 1.852v2.263L7.52 21.41 12 23.995v-6.496l2.107-1.224-.024-.015 4.245-9.486V4.917l5.275-3.065L20.439.005l-5.272 3.087h-.003v2.11L12 12.584v2.467l-2.11 1.224zm3.164-3.66L8.814 3.1 5.672 4.917v1.857l4.218 9.501L12 15.234v-2.65L8.836 5.202zm9.492 1.803v1.857l-4.22 9.101L12 17.332v6.663l4.521-2.607L23.603 4.05V1.852z"/></svg>
+Vagrant</a></div><div><h4>Development</h4><a href=https://bugs.kali.org/ rel=noopener target=_blank>Bug Tracker</a>
+<a href=https://autopkgtest.kali.org/ rel=noopener target=_blank>Continuous Integration</a>
+<a href=https://http.kali.org/README?mirrorlist rel=noopener target=_blank>Network Mirror</a>
+<a href=https://pkg.kali.org/ rel=noopener target=_blank>Package Tracker</a>
+<a href=https://gitlab.com/kalilinux title=GitLab rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.423-.73-.423-.867.0L16.418 9.45H7.582L4.919 1.263C4.783.84 4.185.84 4.05 1.26L1.386 9.449.044 13.587c-.121.375.014.789.331 1.023L12 23.054l11.625-8.443c.318-.235.453-.647.33-1.024"/></svg>
+GitLab</a></div><div><h4>Community</h4><a href=https://discord.kali.org/ title=Discord rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M20.317 4.3698a19.7913 19.7913.0 00-4.8851-1.5152.0741.0741.0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868.0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077.0 00-.0785-.037 19.7363 19.7363.0 00-4.8852 1.515.0699.0699.0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824.0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777.0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076.0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077.0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743.0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614.0a.0739.0739.0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077.0 01-.0066.1276 12.2986 12.2986.0 01-1.873.8914.0766.0766.0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076.0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077.0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061.0 00-.0312-.0286zM8.02 15.3312c-1.1825.0-2.1569-1.0857-2.1569-2.419.0-1.3332.9555-2.4189 2.157-2.4189 1.2108.0 2.1757 1.0952 2.1568 2.419.0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748.0c-1.1825.0-2.1569-1.0857-2.1569-2.419.0-1.3332.9554-2.4189 2.1569-2.4189 1.2108.0 2.1757 1.0952 2.1568 2.419.0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+Discord
+</a><a href=https://forums.kali.org/ rel=noopener target=_blank>Support Forum</a><br><a href=https://video.infosec.exchange/c/kalilinux/videos title=PeerTube rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 6.545v10.91L20.727 12M3.273 12v12L12 17.455M3.273.0v12L12 6.545"/></svg>
+PeerTube</a></div><div><h4>Follow Us</h4><a href=https://bsky.app/profile/kalilinux.bsky.social title=Bluesky rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908.0 3.08.0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741.0 01-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478.0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+Bluesky
+</a><a href=https://www.facebook.com/KaliLinux title=Facebook rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M23.9981 11.9991C23.9981 5.37216 18.626.0 11.9991.0 5.37216.0.0 5.37216.0 11.9991c0 5.9891 4.38789 10.9531 10.1242 11.8533V15.4676H7.07758V11.9991H10.1242V9.35553c0-3.00727 1.7914-4.66839 4.5322-4.66839 1.3128.0 2.686.23435 2.686.23435v2.9529h-1.513C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991h3.3279l-.532 3.4685H13.8739v8.3848C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991z"/></svg>
+Facebook
+</a><a href=https://www.instagram.com/kalilinux/ title=Instagram rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M12 0C8.74.0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333.0 8.74.0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26.0 12 0zm0 2.16c3.203.0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211.0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844.0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405.0-6.162 2.76-6.162 6.162.0 3.405 2.76 6.162 6.162 6.162 3.405.0 6.162-2.76 6.162-6.162.0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21.0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795.0-1.44-.646-1.44-1.44.0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+Instagram
+</a><a rel=me href=https://infosec.exchange/@kalilinux title=Mastodon rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="m11.193 24c-1.434.0-2.928-.208-4.456-.621-5.772-1.565-5.752-8.642-5.736-14.326l.002-.916c0-5.302 3.417-6.927 3.563-6.993C7.83-.387 16.176-.39 19.443 1.147c.139.063 3.556 1.688 3.556 6.99.001.142.034 3.697-.455 6.243-.381 1.985-3.118 3.897-6.101 4.263l-.237.031c-1.188.156-4.176.551-7.768-.154.326 1.349 1.425 1.625 3.613 1.702 1.835.07 3.511-.466 3.527-.471.223-.073.465-.035.657.099s.311.349.321.581l.083 1.854c.013.286-.137.554-.388.691-.063.035-1.578.853-4.209 1-.28.016-.563.024-.849.024zm.809-22.504c-2.687.0-5.374.336-6.805 1.008-.111.054-2.694 1.336-2.694 5.633l-.002.92c-.015 5.442-.033 11.61 4.628 12.875 1.675.453 3.3.642 4.827.546 1.525-.085 2.611-.423 3.162-.637l-.018-.421c-.754.163-1.891.344-3.099.302-1.759-.062-4.699-.167-5.114-3.364-.034-.249-.05-.514-.05-.796.0-.231.106-.449.289-.591.182-.143.419-.19.644-.137 3.768.942 7.019.513 8.242.353l.25-.032c2.476-.304 4.582-1.864 4.811-3.058.46-2.399.428-5.917.428-5.952.0-4.305-2.582-5.588-2.692-5.64-1.433-.673-4.12-1.009-6.807-1.009z"/><path d="m18.725 15c-.414.0-.75-.336-.75-.75.0-1.065.008-1.976.015-2.759.033-3.665.017-4.298-.753-5.174-.511-.562-1.359-.876-2.21-.809-.448.035-1.281.215-1.817 1.029l-.567.94c-.136.225-.379.362-.642.362s-.506-.138-.642-.362l-.583-.966c-.521-.789-1.356-.97-1.806-1.004-.848-.064-1.699.25-2.217.82-.76.86-.776 1.497-.744 5.188.007.778.015 1.681.015 2.735.0.414-.336.75-.75.75s-.75-.336-.75-.75c0-1.05-.008-1.947-.015-2.723-.032-3.746-.042-4.877 1.128-6.201.831-.913 2.152-1.413 3.447-1.313 1.204.093 2.262.688 2.916 1.636.668-.957 1.717-1.543 2.91-1.636 1.296-.103 2.621.397 3.444 1.304 1.18 1.34 1.169 2.464 1.136 6.188-.007.779-.015 1.686-.015 2.745.0.414-.336.75-.75.75z"/><path d="m11.999 12.13c-.414.0-.75-.336-.75-.75V7.091c0-.414.336-.75.75-.75s.75.336.75.75v4.289c0 .414-.336.75-.75.75z"/></svg>
+Mastodon
+</a><a href=https://kalilinux.substack.com/ title=Substack rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="m22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812zm21.08-10.812H1.46v2.836h21.08z"/></svg>
+Substack
+</a><a href=https://x.com/kalilinux title=X rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zM17.61 20.644h2.039L6.486 3.24H4.298z"/></svg>
+X</a><br><a href=https://www.kali.org/newsletter/ title=Newsletter rel=noopener target=_blank><svg viewBox="0 0 32 32" fill="currentcolor" width="24" height="24"><path d="m0 0h32v32H0z" fill="none"/><path d="m0 4v24h32V4zm28.149 2-12.151 9.719L3.851 6zM2 25.999V7.081l13.998 11.197L29.999 7.081v18.918z"/></svg>
+Newsletter
+</a><a href=https://www.kali.org/rss.xml title=RSS rel=noopener target=_blank><svg viewBox="0 0 24 24" fill="currentcolor" width="24" height="24"><path d="M19.199 24C19.199 13.467 10.533 4.8.0 4.8V0c13.165.0 24 10.835 24 24h-4.801zM3.291 17.415c1.814.0 3.293 1.479 3.293 3.295.0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526.0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727.0 15.909 7.184 15.909 15.91z"/></svg>
+RSS</a></div><div><h4>Policies</h4><a href=https://www.kali.org/docs/policy/cookie/>Cookie Policy</a>
+<a href=https://www.kali.org/docs/policy/privacy/>Privacy Policy</a>
+<a href=https://www.kali.org/docs/policy/trademark/>Trademark Policy</a></div><div><svg id="footer-logo" viewBox="0 0 135.47 135.47"><path fill="currentcolor" d="m71.766 36.352s-10.212-.6795-27.602 4.7619c-17.722 5.5452-27.773 13.405-27.773 13.405s26.414-14.748 56.228-15.586zm38.09 16.035 1.3276-.08664s-7.6062-9.2286-22.165-13.724c8.1839 3.3267 15.307 7.7345 20.837 13.81zm2.1727 3.8344c.20411-.3539.86302 1.1243 1.3634 1.7453.0212.124.0564.19967-.23373.13998-.0244-.12747-.0665-.16444-.0665-.16444s-.70029-.41667-.91499-.71224c-.21487-.29556-.253-.81255-.14825-1.0086zm17.867 43.93s1.6147-18.538-27.511-22.812c-3.6915-.54163-8.3599-.9585-13.082-.97044-23.344.30865-24.195-26.924-6.6044-28.299 7.2901-.60152 15.995 3.3311 24.505 7.2941-.0316 1.0569.0121 1.9961.70646 2.864.69414.86762 3.3607 1.8142 4.2128 2.3031.85203.48907 3.5816 2.2245 5.2543 4.4017.36275-.67854 3.3921-2.6504 3.3921-2.6504s-.72571.01579-2.414-.61519c-1.6885-.63098-3.6921-2.5401-3.7395-2.6504-.0473-.11052-.0788-.28401.31578-.36295.2996-.25224-.37893-1.0727-.67874-1.3723-.2996-.2998-2.3036-3.7073-2.3508-3.7863-.0473-.07894-.0632-.1577-.20507-.25243-.4419-.1421-2.3826.20506-2.3826.20506s-2.9847-1.4659-4.0135-4.6264c.015.55358-.5118 1.158.0 2.4298-1.5562-.65832-2.8929-1.7811-3.9472-4.5557-.62751 1.5781.0 2.5815.0 2.5815s-3.6646-1.024-4.2509-4.4036c-.6435 1.5171.0 2.4296.0 2.4296s-5.9742-3.1172-15.901-3.1624c-6.646-.60961-8.0296-12.301-7.4139-14.269.0.0-9.586-5.0521-28.456-7.2841-18.87-2.2322-34.346-.33638-34.346-.33638s33.421-1.6039 60.195 9.2356c.91018 4.0709 3.6482 10.851 5.1229 14.11-4.2197 2.9175-8.9781 5.6609-9.7191 15.391-.74074 9.7297 7.6245 18.288 17.998 18.552 9.8502.52469 16.656.59921 24.905 4.8759 7.8739 4.3537 14.33 17.62 14.969 29.551.69008-8.8524-2.632-27.889-18.134-33.669 21.667 3.7917 23.573 19.854 23.573 19.854zm-58.64-65.253-.77963-2.5147s-12.864-2.2844-30.16-1.055c-17.296 1.2294-34.759 7.2839-34.759 7.2839s35.732-8.991 65.698-3.7143"/></svg>
+© OffSec Services Limited 2026. All rights reserved.</div></div><div id=offsec-partnership><svg viewBox="0 0 504 180" class="astro-TVRURPNS w-44" style="enable-background:new 0 0 504 180" id="Layer_1"><style>.st0{fill:currentcolor}</style><switch class="astro-TVRURPNS"><g class="astro-TVRURPNS"><path d="M194.6 54.6c-21.7.0-37.5 15.5-37.5 36.9v.8c0 21.7 15.4 36.8 37.5 36.8s37.3-15.3 37.3-37.1v-.8c0-21.5-15.3-36.6-37.3-36.6zm-22.1 36.8c0-15.5 8.5-25.1 22.2-25.1s22.1 9.8 22.1 25v.8c0 15.3-8.6 25.2-21.9 25.2s-22.4-10.3-22.4-25.1v-.8zM299.9 51.8c-2.4-.8-4.3-1-7.3-1-11.7.0-18.4 6.7-18.4 18.2v5.7h-20.4v-6.3c0-5.9 3.5-7.1 6.5-7.1 2.3.0 4.1.6 5.3 1 .2.1.4.0.5-.1.2-.1.2-.3.2-.5v-9.4c0-.2-.2-.5-.4-.5-2.4-.7-4.3-1-7.2-1-11.9.0-18.4 6.5-18.4 18.2v58.6c0 .3.3.6.6.6h12.3c.3.0.6-.3.6-.6V85h20.4v42.6c0 .3.3.6.6.6h12.3c.3.0.6-.3.6-.6V85h11.6c.3.0.6-.3.6-.6v-9.1c0-.3-.3-.6-.6-.6h-11.6v-6.2c0-5.9 3.5-7.1 6.5-7.1 2.4.0 4.3.5 5.4.9.2.1.4.0.5-.1s.2-.3.2-.5v-9.4c.1-.2-.1-.4-.4-.5zm36.3 32.8c-12.5-1.8-14.6-4.5-14.6-9.9s4.5-8.8 12-8.8c8.2.0 12.2 3.1 13.5 10.2.0.3.3.5.6.5h12.4c.2.0.3-.1.4-.2.1-.1.2-.3.1-.4-1.4-13.9-10.8-21.2-27.1-21.2-15.3.0-25.9 8.7-25.9 21s7.3 19 26.2 21.4c12.6 2 14.7 4.9 14.7 10.4.0 6.2-5.3 10.4-13.2 10.4-12.3.0-14.8-6.1-15.6-12.7.0-.3-.3-.5-.6-.5h-13c-.2.0-.3.1-.4.2-.1.1-.2.3-.1.4.8 10.8 6.7 23.7 29.8 23.7 15.9.0 27.4-9.5 27.4-22.6-.1-15.3-10.2-19.7-26.6-21.9zM415.2 80c-4.5-4.1-10.7-6.3-17.9-6.3-15.9.0-27.1 11.3-27.1 27.5v.8c0 16.2 11.1 27.1 27.6 27.1 14.2.0 23.3-6.4 25-17.5.0-.2.0-.3-.1-.4-.1-.1-.3-.2-.4-.2h-11.9c-.3.0-.5.2-.6.5-.9 5-4.8 7.5-11.7 7.5-8.5.0-13.5-5.1-14.1-14.4h38.4c.3.0.6-.3.6-.6v-3.5c-.1-8.8-2.7-15.7-7.8-20.5zm-31 15.5c1.4-7.6 6.1-11.9 13-11.9 7.5.0 11.6 4 12.3 11.9h-25.3zm99.7 12.3c-.1-.1-.3-.2-.4-.2h-11.3c-.3.0-.5.2-.6.5-.6 6.5-5.4 10.7-12.3 10.7-9 0-14.2-6.1-14.2-16.8v-.8c0-10.1 5.5-16.6 13.9-16.6 6.8.0 10.8 3.2 11.7 9.4.0.3.3.5.6.5h11.9c.2.0.3-.1.4-.2.1-.1.2-.3.1-.4-1.3-12.8-10.3-20.1-24.9-20.1-15.9.0-27.5 11.6-27.5 27.6v.8c0 16.2 11 27 27.5 27 14.3.0 24.2-8.2 25.2-21 .1-.2.1-.3-.1-.4z" class="astro-TVRURPNS st0"/><linearGradient gradientUnits="userSpaceOnUse" id="SVGID_1_" x1="70.2755" x2="70.2755" y1="177.9512" y2="62.096" class="astro-TVRURPNS" gradientTransform="matrix(1 0 0 -1 0 210.0236)"><stop offset="0" class="astro-TVRURPNS" style="stop-color:#00bfcb"/><stop offset="1" class="astro-TVRURPNS" style="stop-color:#6619d0"/></linearGradient><path d="M74.1 85.7c0 12 .9 23.9 2.6 35.8l3.7 25.5c-3.3.6-6.7.9-10.1.9s-6.8-.3-10.1-.9l3.7-25.5c1.7-11.9 2.6-23.8 2.6-35.8V32.2c1.3-.1 2.6-.1 3.9-.1 1.3.0 2.6.1 3.9.1v53.5zm-38.9 50.4 15.1-29.3c1.1-2.2 1.7-4.7 1.7-7.2V35c-23 7.7-39.7 29.4-39.7 55 0 18.8 9 35.5 22.9 46.1zm53.3-36.5c0 2.5.6 4.9 1.7 7.2l15.1 29.3c13.9-10.6 22.9-27.3 22.9-46.1.0-25.6-16.6-47.3-39.7-55v64.6z" class="astro-TVRURPNS" style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_)"/><path d="m489.6 77.1-1.6-3.6h.6l1.1 2.7 1.1-2.7h.6l-1.6 3.6h-.2zm-1.7.0v-3.6h.6v3.6h-.6zm3.1.0v-3.6h.6v3.6h-.6zm-5.5.0v-3.3h.6v3.3h-.6zm-1.1-3v-.6h2.8v.6h-2.8z" class="astro-TVRURPNS st0"/></g></switch></svg><div>Kali Linux is part of OffSec's Community Projects<br><a href="https://www.offsec.com/community/?utm_source=kali&utm_medium=web&utm_campaign=www#projects" rel=noopener target=_blank>Learn more about OffSec's free, open-source penetration testing tools for cybersecurity professionals</a></div></div></footer><script src="../../script.min.js"></script></body></html>
